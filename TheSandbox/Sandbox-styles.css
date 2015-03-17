@@ -59,6 +59,12 @@ nav {
 	bottom: -10px;
 }
 
+.title {
+	position: absolute;
+	left: 50px;
+	bottom: 30px;
+}
+
 aside {
 	position: fixed;
 	right: 20%;
@@ -89,32 +95,36 @@ aside > div {
 	clear: both;
 }
 
-.title {
+.story_title {
 	margin: 0 auto;
 	float: left;
-	height: 50px;
-	width: 100px;
+	height: 40px;
+	width: 120px;
 	background-color: red;
 }
 
 .commits {
 	margin: 0 auto;
 	float: right;
-	height: 50px;
-	width: 100px;
+	height: 40px;
+	width: 120px;
 	background-color: green;
 }
 
 .feature_story {
 	background-color: grey;
-	min-height: 500px;
+	height: 300px;
 	padding: 10px;
 	display: inline-block;
+	overflow: scroll;
 }
 
 .feature_comments {
 	float: left;
 	margin: 10px 0;
+	background-color: purple;
+	height: 400px;
+	overflow: scroll;
 }
 
 .comment {
@@ -127,10 +137,17 @@ aside > div {
 	width: 50px;
 	height: 60px;
 	background-color: red;
+	text-align: center;
 }
 
 .username {
 	background-color: lightblue;
+	padding-left: 55px;
+}
+
+.comment_description {
+	padding: 5px;
+	margin-left: 55px;
 }
 
 .feature_add_comment {
@@ -155,4 +172,5 @@ aside > div {
 footer {
 	text-align: center;
 	background-color: lightgreen;
+	height: 50px;
 }
