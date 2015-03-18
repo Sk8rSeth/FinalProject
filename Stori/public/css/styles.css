@@ -4,6 +4,15 @@ body {
 
 a {
 	text-decoration: none;
+	color: inherit;
+}
+
+.displayNone {
+	display: none;
+}
+
+li {
+	padding: 5px;
 }
 
 body > div {
@@ -54,6 +63,37 @@ nav {
 	bottom: -10px;
 }
 
+@media screen and (max-width: 400px) {
+	body > div {
+		width: 375px;
+	}
+
+	.options {
+		display: none;
+	}
+	.logo {
+		width: 30%;
+		height: 10%;
+	}
+}
+
+.info_menu > div {
+	font-size: 9pt;
+	background-color: red;
+	width: 120px;
+	position: absolute;
+	top: 30px;
+}
+
+.info_label {
+	background-color: lightblue;
+	transform: translateX(-15px);
+	margin: 5px;
+	font-size: 12pt;
+	padding: 2px;
+	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+}
+
 .login {
 	background-color: yellow;
 	width: 100px;
@@ -61,6 +101,41 @@ nav {
 	position: absolute;
 	right: 40px;
 	bottom: -10px;
+}
+
+.login > div {
+	background-color: brown;
+	position: absolute;
+	top: 30px;
+	width: 120px;
+	padding-bottom: 15px;
+}
+
+.login .login_label {
+	background-color: lightblue;
+	transform: translateX(-15px);
+	margin: 5px;
+	padding: 2px;
+	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+}
+
+.login input {
+	font-size: 10pt;
+	width: 100px;
+}
+
+.login button {
+	font-size: 10pt;
+	position: absolute;
+	bottom: -8px;
+	right: -10px;
+}
+
+.login a {
+	font-size: 10pt;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
 }
 
 .title {
@@ -73,25 +148,30 @@ nav {
 aside {
 	position: fixed;
 	right: 20%;
-	top: 200px;
+	top: 220px;
 	width: 120px;
-	height: 290px;
+	height: 280px;
 	background-color: #16ade9;
 	text-align: right;
 }
 
-aside > div {
+aside div {
 	padding: 20px;
+}
+
+aside div:hover {
+	background-color: rgba(255,255,255,0.3);
 }
 
 .featureblock {
 	background-color: magenta;
-	height: 1000px;
+	min-height: 1000px;
 }
 
 .featureblock > div {
 	margin: 0 auto;
 	width: 600px;
+	position: relative;
 }
 
 .featureblock > div::after {
@@ -146,11 +226,14 @@ aside > div {
 	background-color: purple;
 	height: 400px;
 	overflow: scroll;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .comment {
 	background-color: blue;
 	width: 300px;
+	margin-top: 5px;
 }
 
 .score {
@@ -159,6 +242,10 @@ aside > div {
 	height: 60px;
 	background-color: red;
 	text-align: center;
+}
+
+.score div {
+	margin: 2px auto;
 }
 
 .username {
@@ -194,4 +281,81 @@ footer {
 	text-align: center;
 	background-color: lightgreen;
 	height: 100px;
+}
+
+/*
+* Non Story Layout
+*/
+
+.block_container {
+	width: 400px;
+	margin: 0 auto;
+	background-color: yellow;
+	padding: 5px;
+	position: relative;
+}
+
+.label {
+	background-color: lightblue;
+	width: 200px;
+	height: 35px;
+	margin: 10px;
+	transform: translateX(-25px);
+	font-size: 19pt;
+	padding-top: 15px;
+	text-align: center;
+	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+}
+
+.block_container input {
+	margin-left: 100px;
+	height: 30px;
+	width: 200px;
+	font-size: 16pt;
+}
+
+.block_container button {
+	position: absolute;
+	width: 100px;
+	height: 35px;
+	bottom: -15px;
+	right: 50px;
+}
+
+.block_container ul {
+	font-size: 18pt;
+	margin-left: 50px;
+}
+
+/*
+* Reader
+*/
+
+.story {
+	background-color: gray;
+	height: 500px;
+	padding: 10px;
+	display: inline-block;
+	overflow: scroll;
+	text-align: center;
+}
+
+.hover_info {
+	float: left;
+	background-color: red;
+	position: absolute;
+	left: -140px;
+	top: 150px;
+	min-height: 200px;
+	min-width: 150px;
+	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+	text-align: center;
+}
+
+.hover_label {
+	background-color: lightblue;
+	transform: translateX(-15px);
+	margin: 10px;
+	padding: 5px;
+	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
 }
