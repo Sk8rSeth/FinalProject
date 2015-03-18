@@ -1,0 +1,19 @@
+{
+  "name": "ReptileForms",
+  "homepage": "https://github.com/bradwestfall/ReptileForms",
+  "authors": [
+    "Brad Westfall <brad@azpixels.com>"
+  ],
+  "main": [
+    "dist/reptileforms.min.js",
+    "dist/reptileforms.min.css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}

@@ -3,8 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Stori</title>
-	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script src="{{ URL('js/main.js') }}"></script>
 	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
 	<link rel="stylesheet" href="{{ URL('css/styles.css') }}">
 </head>
@@ -62,4 +60,5 @@
 		</footer>
 	</div>
 </body>
+	<script src="{{ URL('js/build.js') }}"></script>
 </html>

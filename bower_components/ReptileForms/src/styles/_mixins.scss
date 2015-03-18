@@ -1,0 +1,28 @@
+@mixin reptile-forms-structure {
+	.field {
+		margin: 10px 0;
+
+		> label {
+			padding-right: 10px;
+			float: left;
+			width: 180px;
+			box-sizing: border-box;
+			text-align: right;
+		}
+
+		> .field-input {
+			margin-left: 180px;
+		}
+
+		&.radio-group, &.checkbox-group {
+			.field-input > label {
+				margin-right: 5px;
+				input {
+					margin-right: 5px;
+				}
+			}
+		}
+
+	}
+
+}

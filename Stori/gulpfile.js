@@ -1,16 +1,34 @@
-var elixir = require('laravel-elixir');
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Less
- | file for our application, as well as publishing vendor resources.
- |
- */
+gulp.task('js', function() {
+	gulp.src([
+		'../bower_components/jquery/dist/jquery.js',
+		'../bower_components/ReptileForms/dist/reptileforms.js',
+		'./public/js/src/*.js',
+		])
+    .pipe(concat('build.js'))	
+    // .pipe(uglify())
+    .pipe(gulp.dest('./public/js/'));
+});
 
-elixir(function(mix) {
-    mix.less('app.less');
+gulp.task('watch', function() {
+  gulp.watch(['./public/js/src/*.js'], ['js']);
+  gulp.watch(['./public/css/scss/*.scss'], ['sass']);
+});
+
+gulp.task('default', ['watch', 'js', 'sass']);
+
+
+gulp.task('sass', function () {
+    gulp.src('./public/css/scss/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        	}))
+        .pipe(gulp.dest('./public/css'));
 });

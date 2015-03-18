@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ReptileForms Sample Code</title>
+
+	<!-- Example Dependencies -->
+	<link rel="stylesheet" href="../dist/reptileforms.min.css">
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../dist/reptileforms.js"></script>
+
+	<script>
+	$(function() {
+
+		var form = new ReptileForm('form');
+
+		// Validation Error
+		form.on('validationError', function(e, err) {
+			$('body').append('<p>Errors: ' + JSON.stringify(err) + '</p>');
+		});
+
+		// Before Submit
+		form.on('beforeSubmit', function() {
+			$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
+		});
+
+		// XHR (AJAX) Success
+		form.on('xhrSuccess', function(e, data) {
+			$('body').append('<p>Received Data: ' + JSON.stringify(data) + '</p>');
+		});
+
+	});
+	</script>
+
+</head>
+<body>
+
+	<p>Radio Groups are just like Checkbox Groups, but with a different data-type</p>
+	<form class="reptile-form" action="response.json">
+		
+		<div class="field-input" title="Skills" data-type="radio-group">
+			<label><input type="radio" name="skills" value="html" required><label>HTML</label>
+			<label><input type="radio" name="skills" value="css">CSS</label>
+			<label><input type="radio" name="skills" value="js">JavaScript</label>
+		</div>
+
+		<button type="submit">Submit</button>
+		
+	</form>
+
+</body>
+</html>

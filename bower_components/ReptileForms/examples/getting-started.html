@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ReptileForms Sample Code</title>
+
+	<!-- Example Dependencies -->
+	<link rel="stylesheet" href="../dist/reptileforms.min.css">
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../dist/reptileforms.js"></script>
+
+	<script>
+	$(function() {
+
+		var form = new ReptileForm('.reptile-form');
+
+	});
+	</script>
+
+</head>
+<body>
+
+	<p>Note: This form has the bare-minimum configurations and does not
+	give any indication successes or errors. It does submit however, via AJAX
+	which you can monitor in your Network Console</p>
+	<form class="reptile-form" action="response.json">
+		<input type="text" name="first_name" title="First Name" required>
+		<input type="text" name="last_name" title="Last Name" required>
+		<button type="submit">Submit</button>
+	</form>
+	
+</body>
+</html>

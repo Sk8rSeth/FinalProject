@@ -1,3 +1,7 @@
+/***************************************************************************
+********************** Main Layout and Standard Desktop ********************
+*****************************************************************************/
+
 body {
 	background-color: #ccc;
 }
@@ -19,6 +23,21 @@ body > div {
 	width: 960px;
 	margin: 0 auto;
 }
+
+/*************************************
+******* Footer
+*************************************/
+
+
+footer {
+	text-align: center;
+	background-color: lightgreen;
+	height: 100px;
+}
+
+/*********************************************************************
+************************ hero section ********************************
+*********************************************************************/
 
 .hero {
 	background-color: blue;
@@ -53,6 +72,17 @@ nav {
 	background-color: lightblue;
 	display: inline-block;
 }
+
+.title {
+	position: absolute;
+	left: 50px;
+	bottom: 30px;
+	background-color: #aaa;
+}
+
+/*********************************
+***** Info Menu Section
+*********************************/
 
 .info_menu {
 	background-color: green;
@@ -93,6 +123,10 @@ nav {
 	padding: 2px;
 	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
 }
+
+/*********************************
+***** Login Section
+*********************************/
 
 .login {
 	background-color: yellow;
@@ -138,12 +172,9 @@ nav {
 	left: 10px;
 }
 
-.title {
-	position: absolute;
-	left: 50px;
-	bottom: 30px;
-	background-color: #aaa;
-}
+/*********************************
+***** Aside Menu Section
+*********************************/
 
 aside {
 	position: fixed;
@@ -162,6 +193,11 @@ aside div {
 aside div:hover {
 	background-color: rgba(255,255,255,0.3);
 }
+
+/*******************************************************************
+********************** Main Content Area ***************************
+*******************************************************************/
+
 
 .featureblock {
 	background-color: magenta;
@@ -220,6 +256,10 @@ aside div:hover {
 	text-align: center;
 }
 
+/*******************************
+******* Comment Blocks
+*******************************/
+
 .feature_comments {
 	float: left;
 	margin: 10px 0;
@@ -277,15 +317,9 @@ aside div:hover {
 	background-color: yellow;
 }
 
-footer {
-	text-align: center;
-	background-color: lightgreen;
-	height: 100px;
-}
-
-/*
-* Non Story Layout
-*/
+/***************************************************************
+*********************** Non Story Layout ***********************
+***************************************************************/
 
 .block_container {
 	width: 400px;
@@ -327,9 +361,9 @@ footer {
 	margin-left: 50px;
 }
 
-/*
-* Reader
-*/
+/********************************************************************
+********************* Reader and main story pages *******************
+********************************************************************/
 
 .story {
 	background-color: gray;

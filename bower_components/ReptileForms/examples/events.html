@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ReptileForms Sample Code</title>
+
+	<!-- Example Dependencies -->
+	<link rel="stylesheet" href="../dist/reptileforms.min.css">
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../dist/reptileforms.js"></script>
+
+	<script>
+	$(function() {
+
+		var form = new ReptileForm('form');
+
+		// Do something before validation starts
+		form.on('beforeValidation', function() {
+			$('body').append('<p>Before Validation</p>');
+		});
+
+		// Do something when errors are detected.
+		form.on('validationError', function(e, err) {
+			$('body').append('<p>Errors: ' + JSON.stringify(err) + '</p>');
+		});
+
+		// Do something after validation is successful, but before the form submits.
+		form.on('beforeSubmit', function() {
+			$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
+		});
+
+		// Do something when the AJAX request has returned in success
+		form.on('xhrSuccess', function(e, data) {
+			$('body').append('<p>Received Data: ' + JSON.stringify(data) + '</p>');
+		});
+
+		// Do something when the AJAX request has returned with an error
+		form.on('xhrError', function(e, xhr, settings, thrownError) {
+			$('body').append('<p>Submittion Error</p>');
+		});
+
+	});
+	</script>
+
+</head>
+<body>
+
+	<p>This page documents all available event emitters. See the code for more details.</p>
+	<form class="reptile-form" action="response.json">
+		<input type="text" name="first_name" title="First Name" required>
+		<input type="text" name="last_name" title="Last Name" required>
+		<button type="submit">Submit</button>
+	</form>
+	
+</body>
+</html>

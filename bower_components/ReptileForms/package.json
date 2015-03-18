@@ -1,0 +1,18 @@
+{
+  "name": "ReptileForms",
+  "version": "0.2.11",
+  "description": "",
+  "main": "reptileforms.min.js",
+  "devDependencies": {
+    "gulp": "~3.8.6",
+    "gulp-uglify": "~0.3.1",
+    "gulp-sass": "~0.7.2",
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-load-plugins": "~0.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}

@@ -20,6 +20,11 @@ Route::get('/archive', 'ArchiveController@getAll');
 Route::get('/seeds', 'SeedController@getAll');
 
 
+//commenting
+Route::get('/submitComment', 'commentController@addNew');
+
+
+
 Route::post('/signup/', 'UserController@signup');
 Route::get('/signup', function(){
 	return view('signup');
