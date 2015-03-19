@@ -9613,29 +9613,46 @@ $(document).ready(function() {
 	});
 
 	//login button close
-	$('.login').on('focusout', function() {
-		// $('.login > div').addClass('displayNone');
-	});
+	// $('.login').on('click', function() {
+	// 	$('.login > div').addClass('displayNone');
+	// });
 
 	//info menu open and close
 	$('.info_menu').on('click', function() {
 		$('.info_menu > div').toggleClass('displayNone');
-		// $('.info_menu > div').removeClass('displayNone');
 		$('.info_menu > div').focus();
 	});
 	
-
 	//displays comment info on hover
-	$('.story').hover(function(){
+	$('.story div').hover(function(){
 		$('.hover_info').removeClass('displayNone');
+		$(this).addClass('highlight');
+
+		// comment info ajax call
+		var sendData = {comment_id: $(this).attr('comment-id')}
+		$.get('/getComment', sendData, function (data) {
+			$('.hover_username').text(data);
+		});
+		var comment_length = $(this).text().length;
+		$('.hover_length').text(comment_length);
+		console.log(comment_length);
 	}, function() {
 		$('.hover_info').addClass('displayNone');
+		$(this).removeClass('highlight');
+		$('.hover_username').text();
 	});
 
 	// Comment AJAX submission
-	var message $('.feature_add_comment textarea').val();
-	$.get('/submitComment', {}, function(){
-
+	$('.feature_add_comment').on('submit', function(event) {
+		event.preventDefault();
+		var message = $('.feature_add_comment input').val();
+		// $.get('/submitComment', {}, function(){
+		// });
 	});
+
+// 	//delete comment AJAX
+// 	var message $('.feature_add_comment textarea').val();
+// 	$.get('/submitComment', {}, function(){
+
 
 });

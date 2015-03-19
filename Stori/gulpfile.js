@@ -18,6 +18,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
   gulp.watch(['./public/js/src/*.js'], ['js']);
   gulp.watch(['./public/css/scss/*.scss'], ['sass']);
+  gulp.watch(['./public/css/scss/scaffolding/*.scss'], ['sass']);
 });
 
 gulp.task('default', ['watch', 'js', 'sass']);
@@ -26,9 +27,9 @@ gulp.task('default', ['watch', 'js', 'sass']);
 gulp.task('sass', function () {
     gulp.src('./public/css/scss/*.scss')
         .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        	}))
+        // .pipe(autoprefixer({
+        //     browsers: ['last 2 versions'],
+        //     cascade: false
+        // 	}))
         .pipe(gulp.dest('./public/css'));
 });
