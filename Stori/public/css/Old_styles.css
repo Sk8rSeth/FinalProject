@@ -145,7 +145,7 @@ nav {
 	padding-bottom: 15px;
 }
 
-.login .login_label {
+.login_label {
 	background-color: lightblue;
 	transform: translateX(-15px);
 	margin: 5px;
@@ -165,7 +165,7 @@ nav {
 	right: -10px;
 }
 
-.login a {
+.login .signup {
 	font-size: 10pt;
 	position: absolute;
 	bottom: 0;
@@ -178,7 +178,7 @@ nav {
 
 aside {
 	position: fixed;
-	right: 20%;
+	right: calc((100% - 960px) / 2 - 5px);
 	top: 220px;
 	width: 120px;
 	height: 280px;
@@ -312,7 +312,7 @@ aside div:hover {
 .feature_add_comment input {
 	margin: 10px 0;
 	width: 280px;
-	height: 100px;
+	height: 50px;
 }
 
 .feature_add_comment button {
@@ -341,7 +341,7 @@ aside div:hover {
 	height: 35px;
 	margin: 10px;
 	transform: translateX(-25px);
-	font-size: 19pt;
+	font-size: 18pt;
 	padding-top: 15px;
 	text-align: center;
 	box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);

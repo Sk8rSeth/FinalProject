@@ -2,13 +2,24 @@ aside {
 	display: none;
 }
 
-@media screen and (min-width: 475px) {
+
+@media screen and (min-width: $small-screen-width) {
 	aside {
+		display: block;
 		position: fixed;
-		width: 50px;
-		height: 200px;
-		right: 0;
-		top: 20%;
-		background-color: blue;
+		right: calc((100% - 960px) / 2 - 5px);
+		top: 220px;
+		width: 120px;
+		height: 280px;
+		background-color: #16ade9;
+		text-align: right;
+	}
+
+	aside div {
+		padding: 20px;
+	}
+
+	aside div:hover {
+		background-color: rgba(255,255,255,0.3);
 	}
 }

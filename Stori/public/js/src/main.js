@@ -1,9 +1,30 @@
 $(document).ready(function() {
 
+
+	//mobile nav bar
+	$('.phone_menu').on('click', function(){
+		$('.phone_menu > div').toggleClass('displayNone');
+	});
+
+	// remove title on scroll
+	if ($(window).width() <= 500){	
+		$(window).scroll(function(){
+	   		if($(window).scrollTop()<18){
+	        	$('.title').stop(true,true).fadeIn("slow");
+	        	$('.story_score').stop(true,true).fadeIn("slow");
+	   		} else {
+	        	$('.title').stop(true,true).fadeOut("slow");
+	        	$('.story_score').stop(true,true).fadeOut("slow");
+			}
+		});
+	};
+
+
+
 	//login button drop open
 	$('.login').on('click', function() {
 		$('.login > div').removeClass('displayNone');
-		$('#username').focus();
+		// $('#username').focus();
 	});
 
 	//login button close

@@ -1,18 +1,3 @@
-html {
-  font-size: 10pt;
-  width: 100%;
-  height: 100%; }
-
-body {
-  background-color: #ccc; }
-
-a {
-  text-decoration: none;
-  color: inherit; }
-
-li {
-  padding: 5px; }
-
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -335,14 +320,419 @@ table {
 td, th {
   padding: 0; }
 
+body {
+  background-color: #ccc; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+li {
+  padding: 5px; }
+
+.displayNone {
+  display: none; }
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 10pt;
+    width: 100%;
+    height: 100%; }
+  footer {
+    display: none; } }
+
+@media screen and (min-width: 500px) {
+  body > div {
+    width: 960px;
+    margin: 0 auto; } }
+
 aside {
   display: none; }
 
-@media screen and (min-width: 475px) {
+@media screen and (min-width: 500px) {
   aside {
+    display: block;
     position: fixed;
-    width: 50px;
-    height: 200px;
+    right: calc((100% - 960px) / 2 - 5px);
+    top: 220px;
+    width: 120px;
+    height: 280px;
+    background-color: #16ade9;
+    text-align: right; }
+  aside div {
+    padding: 20px; }
+  aside div:hover {
+    background-color: rgba(255, 255, 255, 0.3); } }
+
+@media screen and (max-width: 499px) {
+  .info_menu, .login, .options {
+    display: none; }
+  .title {
+    background-color: #FFF;
+    font-size: 14pt;
+    margin-top: 5px; }
+  .hero {
+    position: fixed;
+    top: 0;
     right: 0;
-    top: 20%;
-    background-color: blue; } }
+    left: 0;
+    background-color: red;
+    text-align: center;
+    height: 30px; }
+  .phone_menu {
+    position: absolute;
+    font-size: 20pt;
+    background-color: orange;
+    width: 100px; }
+    .phone_menu div {
+      font-size: 15pt;
+      margin: 10px 0;
+      background-color: blue;
+      z-index: auto; }
+  nav {
+    margin: 0 auto;
+    width: 100px; }
+  .logo {
+    margin: 0 auto;
+    background-color: gray;
+    height: 30px;
+    width: 100px;
+    font-size: 20pt; } }
+
+@media screen and (min-width: 500px) {
+  .phone_menu {
+    display: none; }
+  .hero {
+    background-color: blue;
+    position: relative;
+    height: 250px; }
+  nav {
+    background-color: orange;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center; }
+  .options {
+    background-color: red;
+    width: 100px;
+    display: inline-block;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: top; }
+  .logo {
+    margin: 0 auto;
+    font-size: 64pt;
+    width: 250px;
+    height: 75px;
+    background-color: lightblue;
+    display: inline-block; }
+  .title {
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+    background-color: #aaa; }
+  /*********************************
+	***** Info Menu Section
+	*********************************/
+  .info_menu {
+    background-color: green;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 40px;
+    bottom: -10px;
+    z-index: 1000; }
+  .info_menu > div {
+    font-size: 9pt;
+    background-color: red;
+    width: 120px;
+    position: absolute;
+    top: 30px; }
+  .info_label {
+    background-color: lightblue;
+    transform: translateX(-15px);
+    margin: 5px;
+    font-size: 12pt;
+    padding: 2px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.4); }
+  /*********************************
+	***** Login Section
+	*********************************/
+  .login {
+    background-color: yellow;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 40px;
+    bottom: -10px; }
+  .login > div {
+    background-color: brown;
+    position: absolute;
+    top: 30px;
+    width: 120px;
+    padding-bottom: 15px; }
+  .login_label {
+    background-color: lightblue;
+    transform: translateX(-15px);
+    margin: 5px;
+    padding: 2px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.4); }
+  .login input {
+    font-size: 10pt;
+    width: 100px; }
+  .login button {
+    font-size: 10pt;
+    position: absolute;
+    bottom: -8px;
+    right: -10px; }
+  .login .signup {
+    font-size: 10pt;
+    position: absolute;
+    bottom: 0;
+    left: 10px; } }
+
+@media screen and (max-width: 500px) {
+  .featureblock {
+    margin: 70px auto 0 auto;
+    width: 80%; }
+  .story_title {
+    float: left;
+    background-color: red;
+    min-width: 50px;
+    font-size: 15pt; }
+  .feature_story {
+    background-color: #fff;
+    padding: 5px;
+    height: 200px; }
+    .feature_story p {
+      height: 190px;
+      overflow: hidden; }
+  .story {
+    background-color: #FFF;
+    padding: 10px; }
+  .story_score {
+    float: right;
+    background-color: green;
+    font-size: 14pt; } }
+
+@media screen and (min-width: 500px) {
+  .featureblock {
+    background-color: magenta;
+    min-height: 1000px; }
+  .featureblock > div {
+    margin: 0 auto;
+    width: 600px;
+    position: relative; }
+  .featureblock > div::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .story_title {
+    margin: 0 auto;
+    float: left;
+    height: 40px;
+    min-width: 120px;
+    background-color: red; }
+  .story_score {
+    margin: 0 auto;
+    float: right;
+    height: 40px;
+    min-width: 50px;
+    background-color: green;
+    font-size: 28pt; }
+  .story_score span {
+    margin: auto 5px; }
+  .stats {
+    text-align: center;
+    background-color: gray;
+    float: right;
+    width: 285px;
+    margin: 10px 0; }
+  .stats div {
+    padding: 5px; }
+  .stats strong {
+    text-decoration: underline; }
+  .feature_story {
+    background-color: grey;
+    height: 300px;
+    padding: 10px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center; } }
+
+@media screen and (max-width: 500px) {
+  .feature_comments {
+    background-color: blue;
+    margin: 5px;
+    padding: 5px 0; }
+  .comment {
+    background-color: green;
+    margin: 5px;
+    padding: 5px; }
+  .score {
+    width: 30px;
+    float: left;
+    text-align: center; }
+    .score .fa {
+      width: 100%;
+      background-color: #FFF; } }
+
+@media screen and (min-width: 500px) {
+  .feature_comments {
+    float: left;
+    margin: 10px 0;
+    background-color: purple;
+    height: 400px;
+    overflow: scroll;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .comment {
+    background-color: blue;
+    width: 300px;
+    margin-top: 5px; }
+  .score {
+    float: left;
+    width: 50px;
+    height: 60px;
+    background-color: red;
+    text-align: center; }
+  .score div {
+    margin: 2px auto; }
+  .username {
+    background-color: lightblue;
+    padding-left: 55px; }
+  .comment_description {
+    padding: 5px;
+    margin-left: 55px; } }
+
+@media screen and (max-width: 500px) {
+  .stats {
+    display: none; }
+  .plz_login {
+    text-align: center;
+    font-size: 13pt; }
+    .plz_login a {
+      text-decoration: underline; }
+  .feature_add_comment {
+    width: 80%;
+    background-color: orange;
+    margin: 0 auto;
+    text-align: center; }
+  .feature_add_comment input {
+    width: 100%; }
+  .feature_add_comment button {
+    margin: 10px;
+    width: 200px;
+    height: 30px; } }
+
+@media screen and (min-width: 500px) {
+  .feature_add_comment {
+    float: right;
+    position: relative; }
+  .feature_add_comment input {
+    margin: 10px 0;
+    width: 280px;
+    height: 50px; }
+  .feature_add_comment button {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    height: 30px;
+    background-color: yellow; }
+  .stats {
+    text-align: center;
+    background-color: gray;
+    float: right;
+    width: 285px;
+    margin: 10px 0; }
+  .stats div {
+    padding: 5px; }
+  .stats strong {
+    text-decoration: underline; } }
+
+@media screen and (max-width: 500px) {
+  .block_container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: yellow;
+    padding-bottom: 10px; }
+  .label {
+    background-color: lightblue;
+    transform: translateX(-10px);
+    font-size: 14pt; }
+  .block_container input {
+    margin: 10px; }
+  .block_container button {
+    margin: 10px;
+    width: 200px;
+    height: 30px; }
+  .block_container ul {
+    font-size: 18pt; } }
+
+@media screen and (min-width: 500px) {
+  .block_container {
+    width: 400px;
+    margin: 0 auto;
+    background-color: yellow;
+    padding: 5px;
+    position: relative; }
+  .label {
+    background-color: lightblue;
+    width: 200px;
+    height: 35px;
+    margin: 10px;
+    transform: translateX(-25px);
+    font-size: 18pt;
+    padding-top: 15px;
+    text-align: center;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.4); }
+  .block_container input {
+    margin-left: 100px;
+    height: 30px;
+    width: 200px;
+    font-size: 16pt; }
+  .block_container button {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    bottom: -15px;
+    right: 50px; }
+  .block_container ul {
+    font-size: 18pt;
+    margin-left: 50px; } }
+
+@media screen and (min-width: 500px) {
+  .story {
+    background-color: gray;
+    height: 500px;
+    width: 580px;
+    padding: 10px;
+    display: inline-block;
+    overflow: scroll;
+    text-align: center;
+    line-height: 120%; }
+  /*************************
+	********** Hover Info
+	**************************/
+  .hover_info {
+    float: left;
+    background-color: red;
+    position: absolute;
+    left: -140px;
+    top: 150px;
+    min-height: 200px;
+    width: 150px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.4);
+    text-align: center; }
+  .hover_info div {
+    padding: 5px; }
+  .highlight {
+    text-shadow: 0px 0px 1px yellow; }
+  .hover_label {
+    background-color: lightblue;
+    transform: translateX(-15px);
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.4); } }

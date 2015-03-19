@@ -1,0 +1,100 @@
+@media screen and (max-width: $small-screen-width) {
+	.featureblock {
+		margin: 70px auto 0 auto;
+		width: 80%;
+	}
+
+	.story_title {
+		float: left;
+		background-color: red;
+		min-width: 50px;
+		font-size: 15pt;
+	}
+
+	.feature_story {
+		background-color: #fff;
+		padding: 5px;
+		height: 200px;
+
+		p {	
+			height: 190px;
+			overflow: hidden;
+		}
+	}
+
+	.story {
+		background-color: #FFF;
+		padding: 10px;
+	}
+	.story_score {
+		float: right;
+		background-color: green;
+		font-size: 14pt;
+	}
+}
+
+
+@media screen and (min-width: $small-screen-width) {
+	.featureblock {
+		background-color: magenta;
+		min-height: 1000px;
+	}
+
+	.featureblock > div {
+		margin: 0 auto;
+		width: 600px;
+		position: relative;
+	}
+
+	.featureblock > div::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.story_title {
+		margin: 0 auto;
+		float: left;
+		height: 40px;
+		min-width: 120px;
+		background-color: red;
+	}
+
+	.story_score {
+		margin: 0 auto;
+		float: right;
+		height: 40px;
+		min-width: 50px;
+		background-color: green;
+		font-size: 28pt;
+	}
+
+	.story_score span {
+		margin: auto 5px;
+	}
+
+	.stats {
+		text-align: center;
+		background-color: gray;
+		float: right;
+		width: 285px;
+		margin: 10px 0;
+	}
+
+	.stats div {
+		padding: 5px;
+	}
+
+	.stats strong {
+		text-decoration: underline;
+	}
+
+	.feature_story {
+		background-color: grey;
+		height: 300px;
+		padding: 10px;
+		display: inline-block;
+		overflow: hidden;
+		text-align: center;
+	}
+}

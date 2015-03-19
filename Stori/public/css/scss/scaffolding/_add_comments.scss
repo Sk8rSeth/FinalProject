@@ -1,0 +1,71 @@
+@media screen and (max-width: $small-screen-width) {
+	.stats {
+		display: none;
+	}
+
+	.plz_login {
+		text-align: center;
+		font-size: 13pt;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	.feature_add_comment {;
+		width: 80%;
+		background-color: orange;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.feature_add_comment input {
+		width: 100%;
+	}
+
+	.feature_add_comment button {
+		margin: 10px;
+		width: 200px;
+		height: 30px;
+	}
+
+}
+
+
+@media screen and (min-width: $small-screen-width) {
+
+	.feature_add_comment {
+		float: right;
+		position: relative;
+	}
+
+	.feature_add_comment input {
+		margin: 10px 0;
+		width: 280px;
+		height: 50px;
+	}
+
+	.feature_add_comment button {
+		position: absolute;
+		right: 0;
+		bottom: -10px;
+		height: 30px;
+		background-color: yellow;
+	}
+
+	.stats {
+		text-align: center;
+		background-color: gray;
+		float: right;
+		width: 285px;
+		margin: 10px 0;
+	}
+
+	.stats div {
+		padding: 5px;
+	}
+
+	.stats strong {
+		text-decoration: underline;
+	}
+}

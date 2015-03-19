@@ -1,0 +1,175 @@
+@media screen and (max-width: $small-screen-width - 1px) {
+	.info_menu , .login, .options{
+		display: none;
+	}
+
+	.title {
+		background-color: #FFF;
+		font-size: 14pt;
+		margin-top: 5px;
+	}
+
+	.hero {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		background-color: red;
+		text-align: center;
+		height: 30px;
+	}
+
+	.phone_menu {
+		position: absolute;
+		font-size: 20pt;
+		background-color: orange;
+		width: 100px;
+
+		div {
+			font-size: 15pt;
+			margin: 10px 0;
+			background-color: blue;
+			z-index: auto;
+		}
+	}
+
+	nav {
+		margin: 0 auto;
+		width: 100px;
+	}
+
+	.logo {
+		margin: 0 auto;
+		background-color: gray;
+		height: 30px;
+		width: 100px;
+		font-size: 20pt;
+	}
+}
+
+@media screen and (min-width: $small-screen-width) {
+	.phone_menu {
+		display: none;
+	}
+
+	.hero {
+		background-color: blue;
+		position: relative;
+		height: 250px;
+	}
+
+	nav {
+		background-color: orange;
+		position: absolute;
+		top: 0;	
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+
+	.options {
+		background-color: red;
+		width: 100px;
+		display: inline-block;
+		height: 40px;
+		margin-left: 10px;
+		margin-right: 10px;
+		vertical-align: top;
+	}
+	.logo {
+		margin: 0 auto;
+		font-size: 64pt;
+		width: 250px;
+		height: 75px;
+		background-color: lightblue;
+		display: inline-block;
+	}
+
+
+	.title {
+		position: absolute;
+		left: 50px;
+		bottom: 30px;
+		background-color: #aaa;
+	}
+
+	/*********************************
+	***** Info Menu Section
+	*********************************/
+
+	.info_menu {
+		background-color: green;
+		width: 100px;
+		height: 30px;
+		position: absolute;
+		left: 40px;
+		bottom: -10px;
+		z-index: 1000;
+	}
+
+
+	.info_menu > div {
+		font-size: 9pt;
+		background-color: red;
+		width: 120px;
+		position: absolute;
+		top: 30px;
+	}
+
+	.info_label {
+		background-color: lightblue;
+		transform: translateX(-15px);
+		margin: 5px;
+		font-size: 12pt;
+		padding: 2px;
+		box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+	}
+
+	/*********************************
+	***** Login Section
+	*********************************/
+
+	.login {
+		background-color: yellow;
+		width: 100px;
+		height: 30px;
+		position: absolute;
+		right: 40px;
+		bottom: -10px;
+	}
+
+	.login > div {
+		background-color: brown;
+		position: absolute;
+		top: 30px;
+		width: 120px;
+		padding-bottom: 15px;
+	}
+
+	.login_label {
+		background-color: lightblue;
+		transform: translateX(-15px);
+		margin: 5px;
+		padding: 2px;
+		box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+	}
+
+	.login input {
+		font-size: 10pt;
+		width: 100px;
+	}
+
+	.login button {
+		font-size: 10pt;
+		position: absolute;
+		bottom: -8px;
+		right: -10px;
+	}
+
+	.login .signup {
+		font-size: 10pt;
+		position: absolute;
+		bottom: 0;
+		left: 10px;
+	}
+}
