@@ -6,13 +6,14 @@ Highest Ranking Story Of The Day!
 
 	@section('story_header')
 		<a href="/story/{{$story->story_id}}"><div class="story_title">{{$seed->title}}</div></a>
-		<div class="story_score">{{$story->score}}</div>
+		<div class="story_score" story-id="{{$story->story_id}}"><i class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{$story->score}}</span><i class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
 		<a href="/story/{{$story->story_id}}">
 			<div class="feature_story">
-				<p>
-					<div>{{ $seed->seed_body }}</div>
+				<p class="phone_story">{{$story->story_body}}</p>
+				<p class="full_story">
+					<div class="full_story">{{ $seed->seed_body }}</div>
 					@foreach ($comments->getArray() as $comment) 
-						<div comment-id="{{$comment->comment_id}}">{!! $comment->comment_body !!} </div>
+						<div class="full_story" comment-id="{{$comment->comment_id}}">{!! $comment->comment_body !!} </div>
 					@endforeach
 				</p>
 			</div>
@@ -20,18 +21,18 @@ Highest Ranking Story Of The Day!
 		@endsection
 
 	@section('comments')
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
+		<div class="comment" comment-id="{{$comment->comment_id}}1">
+			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div><div>90</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
 			<div class="username">Sk8rSeth - 32</div>
 			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
 		</div>
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
+		<div class="comment" comment-id="{{$comment->comment_id}}3">
+			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div><div>90</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
 			<div class="username">Sk8rSeth - 32</div>
 			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
 		</div>
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
+		<div class="comment" comment-id="{{$comment->comment_id}}2">
+			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div><div>90</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
 			<div class="username">Sk8rSeth - 32</div>
 			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
 		</div>
@@ -47,7 +48,9 @@ Highest Ranking Story Of The Day!
 	
 	@section('add_comment')
 		<div class="feature_add_comment">
-			<input type="textarea" min=1 max=140 placeholder="Please Enter A Comment Here...">
+			<textarea maxlength=140 placeholder="Please Enter A Comment Here..."></textarea>
 			<button>Comment</button>
 		</div>
 	@endsection
+
+	<script></script>

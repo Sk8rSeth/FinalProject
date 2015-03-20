@@ -27,6 +27,27 @@ Route::get('/submitComment', 'commentController@addNew');
 Route::get('/getComment', 'commentController@getCommentById');
 
 
+//=========
+// Voting
+//=========
+
+//story
+Route::get('/storyUpvote', 'StoryController@upvote');
+Route::get('/storyDownvote', 'StoryController@downvote');
+
+//comments
+Route::get('/commentUpvote', 'CommentController@upvote');
+Route::get('/commentDownvote', 'CommentController@downvote');
+
+//seeds
+Route::get('/seedUpvote', 'SeedController@upvote');
+Route::get('/seedDownvote', 'SeedController@downvote');
+
+//users
+Route::get('/userUpvote', 'UserController@upvote');
+Route::get('/userDownvote', 'UserController@downvote');
+
+
 Route::get('/signup', function(){
 	return view('signup');
 });

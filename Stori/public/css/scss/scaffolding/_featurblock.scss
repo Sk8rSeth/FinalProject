@@ -11,6 +11,10 @@
 		font-size: 15pt;
 	}
 
+	.full_story {
+		display: none;
+	}
+
 	.feature_story {
 		background-color: #fff;
 		padding: 5px;
@@ -19,6 +23,7 @@
 		p {	
 			height: 190px;
 			overflow: hidden;
+			margin: 15px auto;
 		}
 	}
 
@@ -50,6 +55,10 @@
 		content: '';
 		display: block;
 		clear: both;
+	}
+
+	.phone_story {
+		display: none;
 	}
 
 	.story_title {

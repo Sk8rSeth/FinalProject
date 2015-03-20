@@ -502,13 +502,16 @@ aside {
     background-color: red;
     min-width: 50px;
     font-size: 15pt; }
+  .full_story {
+    display: none; }
   .feature_story {
     background-color: #fff;
     padding: 5px;
     height: 200px; }
     .feature_story p {
       height: 190px;
-      overflow: hidden; }
+      overflow: hidden;
+      margin: 15px auto; }
   .story {
     background-color: #FFF;
     padding: 10px; }
@@ -529,6 +532,8 @@ aside {
     content: '';
     display: block;
     clear: both; }
+  .phone_story {
+    display: none; }
   .story_title {
     margin: 0 auto;
     float: left;
@@ -639,7 +644,7 @@ aside {
   .feature_add_comment button {
     position: absolute;
     right: 0;
-    bottom: -10px;
+    bottom: -5px;
     height: 30px;
     background-color: yellow; }
   .plz_login {

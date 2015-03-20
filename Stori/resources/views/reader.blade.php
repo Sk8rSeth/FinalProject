@@ -19,7 +19,7 @@
 			<p>
 				<div>{!! $seed->seed_body !!}</div>
 				@foreach ($comments->getArray() as $comment) 
-					<div comment-id="{{$comment->comment_id}}">{!! $comment->comment_body !!} </div>
+					<div comment-id="{{$comment->comment_id}}">- {!! $comment->comment_body !!} </div>
 				@endforeach
 			</p>
 		</div>
