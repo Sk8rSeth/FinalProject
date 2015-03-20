@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Comment;
+use App\Models\Seed;
+use App\Models\Story;
+
 class HomeController extends Controller {
 
 	/*

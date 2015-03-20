@@ -19,8 +19,9 @@
 		text-align: center;
 	}
 
-	.feature_add_comment input {
+	.feature_add_comment textarea {
 		width: 100%;
+		resize: none;
 	}
 
 	.feature_add_comment button {
@@ -39,10 +40,10 @@
 		position: relative;
 	}
 
-	.feature_add_comment input {
+	.feature_add_comment textarea {
 		margin: 10px 0;
 		width: 280px;
-		height: 50px;
+		height: 80px;
 	}
 
 	.feature_add_comment button {
@@ -51,6 +52,15 @@
 		bottom: -10px;
 		height: 30px;
 		background-color: yellow;
+	}
+
+	.plz_login {
+		text-align: center;
+		font-size: 13pt;
+
+		a {
+			text-decoration: underline;
+		}
 	}
 
 	.stats {

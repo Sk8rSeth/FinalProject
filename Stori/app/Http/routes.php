@@ -1,10 +1,10 @@
 <?php
 
-Route::get('/', function(){
-	return view('home');
-});
+// Route::get('/', function(){
+// 	return view('home');
+// });
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'StoryController@getRanked');
 
 // story
 Route::get('/story', 'StoryController@getAll');
@@ -35,9 +35,7 @@ Route::get('/login', function(){
 	return view('login');
 });
 
-Route::get('/tests', function(){
-	return view('nonStory');
-});
+Route::get('/', 'StoryController@getRanked');
 
 // Auth
 Route::controllers([

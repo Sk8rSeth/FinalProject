@@ -36,4 +36,22 @@ class StoryController extends Controller {
 	public function storyOfGenre($genre_id) {
 		return view('genre');
 	}
+
+	public function getRanked (){
+		$story = Story::getRanked();
+		$seed = new Seed($story->seed_id);
+		$user = new User($seed->user_id);
+		$g = new Genre($story->genre_id);
+		$genre = $g->genre_description;
+		$comments = Comment::all(['story_id' => $story->story_id]);
+
+		print_r($seed);
+
+		return view('home', ['story' => $story,
+								'seed' => $seed, 
+								'genre' => $genre, 
+								'user' => $user, 
+								'comments' => $comments
+								]);
+	}
 }

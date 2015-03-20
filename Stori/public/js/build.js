@@ -9666,7 +9666,7 @@ $(document).ready(function() {
 	// Comment AJAX submission
 	$('.feature_add_comment').on('submit', function(event) {
 		event.preventDefault();
-		var message = $('.feature_add_comment input').val();
+		var message = $('.feature_add_comment textarea').val();
 		// $.get('/submitComment', {}, function(){
 		// });
 	});

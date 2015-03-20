@@ -620,8 +620,9 @@ aside {
     background-color: orange;
     margin: 0 auto;
     text-align: center; }
-  .feature_add_comment input {
-    width: 100%; }
+  .feature_add_comment textarea {
+    width: 100%;
+    resize: none; }
   .feature_add_comment button {
     margin: 10px;
     width: 200px;
@@ -631,16 +632,21 @@ aside {
   .feature_add_comment {
     float: right;
     position: relative; }
-  .feature_add_comment input {
+  .feature_add_comment textarea {
     margin: 10px 0;
     width: 280px;
-    height: 50px; }
+    height: 80px; }
   .feature_add_comment button {
     position: absolute;
     right: 0;
     bottom: -10px;
     height: 30px;
     background-color: yellow; }
+  .plz_login {
+    text-align: center;
+    font-size: 13pt; }
+    .plz_login a {
+      text-decoration: underline; }
   .stats {
     text-align: center;
     background-color: gray;
@@ -706,7 +712,7 @@ aside {
 @media screen and (min-width: 500px) {
   .story {
     background-color: gray;
-    height: 500px;
+    height: 490px;
     width: 580px;
     padding: 10px;
     display: inline-block;
