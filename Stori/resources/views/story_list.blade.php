@@ -14,17 +14,21 @@ All The Stories!!
 		<a href="/currentgenre/5"><li>Mystery</li></a>
 	</ul>
 	<div class="label">Top 5 Ongoing</div>
-	<ul>
-		<a href="/story/1"><li>1title1</li></a>
-		<a href="/story/2"><li>2title2</li></a>
-		<a href="/story/311"><li>3title3</li></a>
-		<a href="/story/4"><li>4title4</li></a>
-		<a href="/story/12"><li>5title5</li></a>
-	</ul>
+	<ol>
+		@foreach ($allTop5 as $each)
+			<li>{!!$each!!}</li>
+		@endforeach
+	</ol>
 	<div class="label">Other</div>
 	<ul>
 		<a><li>ShortShort Stories</li></a>
 		<a><li>Long Stories</li></a>
 		<a href="/seeds/"><li>Seeds</li></a>
+	</ul>
+	<div class="label all_stories">All Active Stories</div>
+	<ul class="all_stories displayNone">
+		@foreach ($all as $each)
+			<li>{!!$each!!}</li>
+		@endforeach
 	</ul>
 @stop

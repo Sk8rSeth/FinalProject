@@ -6,7 +6,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('js', function() {
 	gulp.src([
-		'../bower_components/jquery/dist/jquery.js',
+    '../bower_components/jquery/dist/jquery.js',
+		'../bower_components/handlebars/handlebars.js',
 		'../bower_components/ReptileForms/dist/reptileforms.js',
 		'./public/js/src/*.js',
 		])

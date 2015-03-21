@@ -30,7 +30,8 @@ CREATE TABLE comment (
     comment_body TEXT NOT NULL,
     created_at TIMESTAMP,
     score INT DEFAULT 1,
-    assessed INT DEFAULT 0
+    assessed INT DEFAULT 0,
+    in_story INT DEFAULT 0
 );
 
 CREATE TABLE seed (
@@ -112,52 +113,52 @@ INSERT INTO seed (user_id, genre_id, title, seed_body) VALUES (2, 2, "Him", 'I b
 
 -- comments
 
--- story 1 
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (2, 1, 1, '"What do you mean?" she asked. She shifted in her seat.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (3, 1, 1, 'Book spines on the shelf in front of her read Sagan, Herbert, Wells. Anything was better than dealing with this, she thought.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (5, 1, 1, 'He still examined the floor in front of him. “Neutrinos are lonely. They almost never interact with any other particle.”');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (1, 1, 1, 'He paused, looked at her shoes then back to the floor.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (5, 1, 1, '“A neutrino could pass through a light-year of lead without hitting anything,” he said.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (2, 1, 1, 'She clenched her jaw. She knew what she was supposed to do, maybe say she was sorry or explain just what was bothering her.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (3, 1, 1, ' She said nothing.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (2, 1, 1, '"You’re lonely," he said. "Passing through the world, trying so hard not to touch anything." Again, the floor stole his gaze.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (2, 1, 1, 'She softened at the words. Crumbled. “But no matter how lonely,” she whispered, “something eventually touches them…”');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (4, 1, 1, 'Out of the corner, he could see her feet shuffle towards him.');
+-- story 1  1,
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 1, 1, 1, '"What do you mean?" she asked. She shifted in her seat.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (3, 1, 1, 1, 'Book spines on the shelf in front of her read Sagan, Herbert, Wells. Anything was better than dealing with this, she thought.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (5, 1, 1, 1, 'He still examined the floor in front of him. “Neutrinos are lonely. They almost never interact with any other particle.”');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1, 1, 1, 1, 'He paused, looked at her shoes then back to the floor.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (5, 1, 1, 1, '“A neutrino could pass through a light-year of lead without hitting anything,” he said.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 1, 1, 1, 'She clenched her jaw. She knew what she was supposed to do, maybe say she was sorry or explain just what was bothering her.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (3, 1, 1, 1, ' She said nothing.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 1, 1, 1, '"You’re lonely," he said. "Passing through the world, trying so hard not to touch anything." Again, the floor stole his gaze.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 1, 1, 1, 'She softened at the words. Crumbled. “But no matter how lonely,” she whispered, “something eventually touches them…”');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4, 1, 1, 1, 'Out of the corner, he could see her feet shuffle towards him.');
 
 -- story 2
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (2,2, 1, 'The immense door swung shut behind her, the rapid change in air pressure letting her know that it had sealed itself,');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (3,2, 1, 'sucking the contaminated air from the tiny chamber as it did so. The UV lights flared on around her and her helmet’s filter automatically darkened.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (5,2, 1, 'The familiar patter of the chemical shower beat down against her visor.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (3,2, 1, 'After a few minutes, the yellow indicator light on the wall blinked a calming green, letting her know that she was cleared of contaminants.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (1,2, 1, 'She felt the rush of the air press against her suit as the room re-pressurized itself.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (6,2, 1, 'She unlatched her helmet with a tiny hiss, relieved to be free of the stale recycled air of her suit.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (7,2, 1, 'The bunker’s air was recycled too, she knew, but somehow it felt less stifling.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (3,2, 1, 'Funny how that feeling never got old, she thought, no matter how many times she’d been in and out of that stupid suit.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (5,2, 1, 'And how many times had it been? She glanced at the date indicator on her arm and realized with a start, she knew exactly how many times.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (1,2, 1, 'In the antechamber beyond the airlock, she released the airtight seals at her wrists and ankles');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (5,2, 1, 'and stepped carefully out of the suit, placing it gently back in its storage chamber.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (1,2, 1, 'She took the handle of the heavy wheeled chest that contained today’s salvage and started towards her lab.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (4,2, 1, 'Normally she’d turn on some music while she worked to stave off the unending silence of the bunker,');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (4,2, 1, 'vintage audio files that she’d pulled from previous salvages.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (2,2, 1, '1980’s pop rock was her favorite, Bowie and Journey and Depeche Mode. But not today.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (1,2, 1, 'She punched up a file on her viewscreen, and the monitor filled with the image of a handsome young man in a lab coat.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (5,2, 1, '“Hi baby,” he said with a grin, clear blue eyes sparkling despite the pixelated image.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (6,2, 1, '“Sorry, I think I have a bad connection-but you won’t believe it, babe. I figured it out. I found the answer.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (7,2, 1, 'I can’t believe we’ve been missing it this whole time, when it was right in front of us.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (8,2, 1, 'I spoke with the council, and they’re flying me out in about six hours to meet with the President. This could all be over by tomorrow.”');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (8,2, 1, 'He continued to explain the details of his findings, and she smiled in spite of herself as she watched him gesturing excitedly,');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (7,2, 1, 'only pausing momentarily to sweep his long hair back out of his eyes.');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (4,2, 1, 'He went on for several minutes, until the transmission image began to crackle and waver,');
-INSERT INTO comment (user_id, story_id, assessed, comment_body) VALUES (6,2, 1, 'finally freezing on his childlike half-smile, the last image she would ever see of him. The date stamp read one year ago today."');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2,2, 1, 1, 'The immense door swung shut behind her, the rapid change in air pressure letting her know that it had sealed itself,');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (3,2, 1, 1, 'sucking the contaminated air from the tiny chamber as it did so. The UV lights flared on around her and her helmet’s filter automatically darkened.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (5,2, 1, 1, 'The familiar patter of the chemical shower beat down against her visor.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (3,2, 1, 1, 'After a few minutes, the yellow indicator light on the wall blinked a calming green, letting her know that she was cleared of contaminants.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1,2, 1, 1, 'She felt the rush of the air press against her suit as the room re-pressurized itself.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6,2, 1, 1, 'She unlatched her helmet with a tiny hiss, relieved to be free of the stale recycled air of her suit.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (7,2, 1, 1, 'The bunker’s air was recycled too, she knew, but somehow it felt less stifling.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (3,2, 1, 1, 'Funny how that feeling never got old, she thought, no matter how many times she’d been in and out of that stupid suit.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (5,2, 1, 1, 'And how many times had it been? She glanced at the date indicator on her arm and realized with a start, she knew exactly how many times.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1,2, 1, 1, 'In the antechamber beyond the airlock, she released the airtight seals at her wrists and ankles');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (5,2, 1, 1, 'and stepped carefully out of the suit, placing it gently back in its storage chamber.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1,2, 1, 1, 'She took the handle of the heavy wheeled chest that contained today’s salvage and started towards her lab.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4,2, 1, 1, 'Normally she’d turn on some music while she worked to stave off the unending silence of the bunker,');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4,2, 1, 1, 'vintage audio files that she’d pulled from previous salvages.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2,2, 1, 1, '1980’s pop rock was her favorite, Bowie and Journey and Depeche Mode. But not today.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1,2, 1, 1, 'She punched up a file on her viewscreen, and the monitor filled with the image of a handsome young man in a lab coat.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (5,2, 1, 1, '“Hi baby,” he said with a grin, clear blue eyes sparkling despite the pixelated image.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6,2, 1, 1, '“Sorry, I think I have a bad connection-but you won’t believe it, babe. I figured it out. I found the answer.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (7,2, 1, 1, 'I can’t believe we’ve been missing it this whole time, when it was right in front of us.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (8,2, 1, 1, 'I spoke with the council, and they’re flying me out in about six hours to meet with the President. This could all be over by tomorrow.”');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (8,2, 1, 1, 'He continued to explain the details of his findings, and she smiled in spite of herself as she watched him gesturing excitedly,');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (7,2, 1, 1, 'only pausing momentarily to sweep his long hair back out of his eyes.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4,2, 1, 1, 'He went on for several minutes, until the transmission image began to crackle and waver,');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6,2, 1, 1, 'finally freezing on his childlike half-smile, the last image she would ever see of him. The date stamp read one year ago today."');
 
 -- stories  
 INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
     VALUES (1, 1, 11,
-        '"You’re a neutrino," he said, staring at the ground. He felt her head turn at his voice, eyes on him. He didn’t move.<br><br>
-        "What do you mean?" she asked. She shifted in her seat. Book spines on the shelf in front of her read Sagan, Herbert, Wells. Anything was better than dealing with this, she thought.<br><br>
-        He still examined the floor in front of him. “Neutrinos are lonely. They almost never interact with any other particle.” He paused, looked at her shoes then back to the floor. “A neutrino could pass through a light-year of lead without hitting anything,” he said.<br><br>
-        She clenched her jaw. She knew what she was supposed to do, maybe say she was sorry or explain just what was bothering her. She said nothing.<br><br>
-        "You’re lonely," he said. "Passing through the world, trying so hard not to touch anything." Again, the floor stole his gaze.<br><br>
+        '"You’re a neutrino," he said, staring at the ground. He felt her head turn at his voice, eyes on him. He didn’t move.<br>
+        "What do you mean?" she asked. She shifted in her seat. Book spines on the shelf in front of her read Sagan, Herbert, Wells. Anything was better than dealing with this, she thought.<br>
+        He still examined the floor in front of him. “Neutrinos are lonely. They almost never interact with any other particle.” He paused, looked at her shoes then back to the floor. “A neutrino could pass through a light-year of lead without hitting anything,” he said.<br>
+        She clenched her jaw. She knew what she was supposed to do, maybe say she was sorry or explain just what was bothering her. She said nothing.<br>
+        "You’re lonely," he said. "Passing through the world, trying so hard not to touch anything." Again, the floor stole his gaze.<br>
         She softened at the words. Crumbled. “But no matter how lonely,” she whispered, “something eventually touches them…” Out of the corner, he could see her feet shuffle towards him.');
 INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
     VALUES (2, 1, 24, 

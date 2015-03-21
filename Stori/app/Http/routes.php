@@ -1,9 +1,5 @@
 <?php
 
-// Route::get('/', function(){
-// 	return view('home');
-// });
-
 Route::get('home', 'StoryController@getRanked');
 
 // story
@@ -21,11 +17,10 @@ Route::get('/archive', 'ArchiveController@getAll');
 //seeds
 Route::get('/seeds', 'SeedController@getAll');
 
-
 //commenting
 Route::get('/submitComment', 'commentController@addNew');
 Route::get('/getComment', 'commentController@getCommentById');
-
+Route::get('/allCommentsByStory', 'CommentController@getAllByStory');
 
 //=========
 // Voting

@@ -29,6 +29,17 @@ class Collection {
 		return $this->models;
 	}
 	/**
+	 * Transform into json
+	 */
+	public function getArrayDeep() {
+		$a = [];
+		foreach($this->models as $model) {
+			$a[] = $model->getData();
+		}
+		return $a;
+	}
+
+	/**
 	 * Magic To String
 	 */
 	public function __toString() {

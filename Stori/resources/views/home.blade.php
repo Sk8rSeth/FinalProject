@@ -9,7 +9,7 @@ Highest Ranking Story Of The Day!
 		<div class="story_score" story-id="{{$story->story_id}}"><i class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{$story->score}}</span><i class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
 		<a href="/story/{{$story->story_id}}">
 			<div class="feature_story">
-				<p class="phone_story">{{$story->story_body}}</p>
+				<p class="phone_story">{!!$story->story_body!!}</p>
 				<p class="full_story">
 					<div class="full_story">{{ $seed->seed_body }}</div>
 					@foreach ($comments->getArray() as $comment) 
@@ -47,10 +47,9 @@ Highest Ranking Story Of The Day!
 	@endsection
 	
 	@section('add_comment')
-		<div class="feature_add_comment">
+		<form class="feature_add_comment">
 			<textarea maxlength=140 placeholder="Please Enter A Comment Here..."></textarea>
 			<button>Comment</button>
-		</div>
+		</form>
 	@endsection
 
-	<script></script>

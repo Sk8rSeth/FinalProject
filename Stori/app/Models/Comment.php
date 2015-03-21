@@ -1,5 +1,6 @@
 <?php 
 namespace App\Models;
+
 use DB;
 use App\Library\SQL;
 use App\Models\Model;

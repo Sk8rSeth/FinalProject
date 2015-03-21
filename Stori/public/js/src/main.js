@@ -21,7 +21,11 @@ $(document).ready(function() {
 		});
 	};
 
-
+	//view all stories toggle
+	$('.all_stories').on('click', function(){
+		$('.all_stories').removeClass('displayNone');
+		// console.log($('.all_stories > ul').attr('class'));
+	});
 
 	//login button drop open
 	$('.login').on('click', function() {
@@ -70,13 +74,62 @@ $(document).ready(function() {
 	// Comment Submission / Deletion 
 	// ============================================
 
-	// Comment AJAX submission
-	$('.feature_add_comment').on('submit', function(event) {
-		event.preventDefault();
-		var message = $('.feature_add_comment textarea').val();
-		// $.get('/submitComment', {}, function(){
-		// });
+	// get all comments
+	function renderCommentsAll(data){
+		var source = $('#template-comment').html();
+		var template = Handlebars.compile(source);
+		var output = template({
+			comment_body: data.comments.comment_body,
+			comment_score: data.comments.score,
+			comment_id: data.comments.comment_id,
+			username: data.username,
+			user_score: data.user_score,
+
+		});
+		return output;	
+	};
+
+	//get all comments for story
+	var allCommData = {
+		story_id: $('.story_score').attr('story-id')
+	}
+
+	$.get('/allCommentsByStory', allCommData, function (data){
+		console.log(data);
+		// var output = renderComment(data)
+		// $('.feature_comments').append(output)
 	});
+
+
+	// submission
+	function renderComment(data){
+		var source = $('#template-comment').html();
+		var template = Handlebars.compile(source);
+		var output = template({
+			comment_body: data.comments.comment_body,
+			comment_score: data.comments.score,
+			comment_id: data.comments.comment_id,
+			username: data.username,
+			user_score: data.user_score,
+
+		});
+		return output;	
+	};
+	// Comment AJAX submission
+	$('form.feature_add_comment').on('submit', function(event) {
+		event.preventDefault();
+		var sendData = {
+			comment_body: $('.feature_add_comment textarea').val(),
+			user_id: $('.story_score .fa-sort-asc').attr('user-id'),
+			story_id: $('.story_score').attr('story-id')
+		}
+
+		$.get('/submitComment', sendData, function (data){
+			var output = renderComment(data);
+			$('.feature_comments').append(output);
+		});
+	});
+
 
 // 	//delete comment AJAX
 // 	var message $('.feature_add_comment textarea').val();

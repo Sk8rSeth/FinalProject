@@ -565,7 +565,8 @@ aside {
     padding: 10px;
     display: inline-block;
     overflow: hidden;
-    text-align: center; } }
+    text-align: center;
+    width: 580px; } }
 
 @media screen and (max-width: 500px) {
   .feature_comments {
@@ -576,6 +577,17 @@ aside {
     background-color: green;
     margin: 5px;
     padding: 5px; }
+    .comment .comment_description {
+      min-height: 30px;
+      margin-left: 40px;
+      padding-left: 5px;
+      margin-top: 5px;
+      border-left: 1px solid #333; }
+  .username {
+    margin-left: 40px;
+    padding-left: 5px;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333; }
   .score {
     width: 30px;
     float: left;
@@ -610,7 +622,8 @@ aside {
     padding-left: 55px; }
   .comment_description {
     padding: 5px;
-    margin-left: 55px; } }
+    margin-left: 55px;
+    min-height: 40px; } }
 
 @media screen and (max-width: 500px) {
   .stats {
@@ -627,6 +640,7 @@ aside {
     text-align: center; }
   .feature_add_comment textarea {
     width: 100%;
+    height: 4em;
     resize: none; }
   .feature_add_comment button {
     margin: 10px;
@@ -640,7 +654,7 @@ aside {
   .feature_add_comment textarea {
     margin: 10px 0;
     width: 280px;
-    height: 80px; }
+    height: 4em; }
   .feature_add_comment button {
     position: absolute;
     right: 0;
@@ -672,14 +686,14 @@ aside {
   .label {
     background-color: lightblue;
     transform: translateX(-10px);
-    font-size: 14pt; }
+    font-size: 18pt; }
   .block_container input {
     margin: 10px; }
   .block_container button {
     margin: 10px;
     width: 200px;
     height: 30px; }
-  .block_container ul {
+  .block_container ul, ol {
     font-size: 18pt; } }
 
 @media screen and (min-width: 500px) {
@@ -710,7 +724,7 @@ aside {
     height: 35px;
     bottom: -15px;
     right: 50px; }
-  .block_container ul {
+  .block_container ul, ol {
     font-size: 18pt;
     margin-left: 50px; } }
 
@@ -721,7 +735,7 @@ aside {
     width: 580px;
     padding: 10px;
     display: inline-block;
-    overflow: scroll;
+    overflow-y: auto;
     text-align: center;
     line-height: 120%; }
   /*************************

@@ -10,7 +10,7 @@
 	.label {
 		background-color: lightblue;
 		transform: translateX(-10px);
-		font-size: 14pt;
+		font-size: 18pt;
 	}
 	
 	.block_container input {
@@ -23,7 +23,7 @@
 		height: 30px;
 	}
 	
-	.block_container ul {
+	.block_container ul, ol {
 		font-size: 18pt;
 	}
 }
@@ -65,7 +65,7 @@
 		right: 50px;
 	}
 
-	.block_container ul {
+	.block_container ul, ol {
 		font-size: 18pt;
 		margin-left: 50px;
 	}

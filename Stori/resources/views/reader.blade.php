@@ -6,7 +6,7 @@
 
 	@section('story_header')
 		<div class="story_title">{{ $story->number_comments }} Comments</div>
-		<div class="story_score"><span class="fa fa-sort-asc"></span><span>{{ $story->score }}</span><span class="fa fa-sort-desc"></span></div>
+		<div class="story_score"story-id="{{$story->story_id}}"><i class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{ $story->score }}</span><i class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
 		<div class="hover_info displayNone">
 			<div class="hover_label">Author: </div>
 			<div class="hover_username">{{ $user->username }}</div>

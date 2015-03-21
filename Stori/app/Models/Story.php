@@ -22,4 +22,42 @@ class Story extends Model {
 		
 		return $story;
 	}
+	public static function getTop5All() {
+        // SQL
+        $sql = "
+            SELECT * FROM story ORDER BY score desc LIMIT 5";
+        // Get Results
+        $results = DB::select($sql);
+        // Make Collection
+        $collection = new Collection();
+        foreach($results as $row) {
+            // Create new Model
+            $model = new Story();
+            $model->setData($row->{Story::$key}, (array)$row);
+           
+            // Add Model to Collection
+            $collection->add($model);
+        }
+        return $collection;
+    }
+
+
+    public static function getTop5Genre($genre_id) {
+        // SQL
+        $sql = "
+            SELECT * FROM story WHERE genre_id = " . $genre_id . " ORDER BY score desc LIMIT 5";
+        // Get Results
+        $results = DB::select($sql);
+        // Make Collection
+        $collection = new Collection();
+        foreach($results as $row) {
+            // Create new Model
+            $model = new Story();
+            $model->setData($row->{Story::$key}, (array)$row);
+           
+            // Add Model to Collection
+            $collection->add($model);
+        }
+        return $collection;
+    }
 }
