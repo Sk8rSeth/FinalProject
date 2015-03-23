@@ -85,7 +85,7 @@ INSERT INTO user (first_name, last_name, username, password, email)
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Cap. Mal', 'Reynolds', 'Cap.MalReynolds', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 'mal@reynolds.com');
 INSERT INTO user (first_name, last_name, username, password, email)
-    VALUES ('John', 'M.', 'John117', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 'spartan@halo.com');
+    VALUES ('John', 'M.', 'John117', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 'spartan@halo.com');
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Buffy', 'Summers', 'TheSlayer', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 'buffy@summers.com');
 INSERT INTO user (first_name, last_name, username, password, email)

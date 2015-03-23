@@ -507,11 +507,11 @@ aside {
   .feature_story {
     background-color: #fff;
     padding: 5px;
-    height: 200px; }
+    height: 205px; }
     .feature_story p {
       height: 190px;
       overflow: hidden;
-      margin: 15px auto; }
+      margin: 20px auto; }
   .story {
     background-color: #FFF;
     padding: 10px; }
@@ -573,6 +573,9 @@ aside {
     background-color: blue;
     margin: 5px;
     padding: 5px 0; }
+  .seed {
+    font-size: 1.2em;
+    font-style: italic; }
   .comment {
     background-color: green;
     margin: 5px;
@@ -583,6 +586,8 @@ aside {
       padding-left: 5px;
       margin-top: 5px;
       border-left: 1px solid #333; }
+    .comment .delete {
+      float: right; }
   .username {
     margin-left: 40px;
     padding-left: 5px;
@@ -605,11 +610,20 @@ aside {
     overflow: scroll;
     padding-left: 5px;
     padding-right: 5px;
-    min-width: 300px; }
+    width: 300px; }
+  .seed {
+    font-size: 1.2em;
+    font-style: italic; }
   .comment {
     background-color: blue;
     width: 300px;
     margin-top: 5px; }
+    .comment .comment_description {
+      padding: 5px;
+      margin-left: 55px;
+      min-height: 40px; }
+    .comment .delete {
+      float: right; }
   .score {
     float: left;
     width: 50px;

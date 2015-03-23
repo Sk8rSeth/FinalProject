@@ -15,7 +15,7 @@ class Comment extends Model {
 		$vars = [
 			'story_id' => $story_id
 		];
-		$sql = "SELECT comment_id, comment_body, comment.score as score, comment.created_at, username, user.score as user_score
+		$sql = "SELECT comment_id, comment_body, comment.score as score, comment.created_at, username, user_id, user.score as user_score
 				FROM comment
 				JOIN user
 				USING (user_id)

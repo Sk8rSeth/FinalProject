@@ -51,23 +51,26 @@ $(document).ready(function() {
 	//displays comment info on hover
 	if ($(window).width() > 499) {
 		$('.story div').hover(function(){
-			$('.hover_info').removeClass('displayNone');
-			$(this).addClass('highlight');
+			if ($(this).attr('class') !== 'seed') {
+				$('.hover_info').removeClass('displayNone');
+				$(this).addClass('highlight');
 
-			// comment info ajax call
-			var sendData = {comment_id: $(this).attr('comment-id')}
-			$.get('/getComment', sendData, function (data) {
-				$('.hover_username').text(data);
-			});
+				// comment info ajax call
+				var sendData = {comment_id: $(this).attr('comment-id')}
+				$.get('/getComment', sendData, function (data) {
+					$('.hover_username').text(data);
+				});
 
-			var comment_length = $(this).text().length;
-			$('.hover_length').text(comment_length);
-			console.log(comment_length);
+				var comment_length = $(this).text().length;
+				$('.hover_length').text(comment_length);
+				console.log(comment_length);
+			} 
 		}, function() {
-			$('.hover_info').addClass('displayNone');
-			$(this).removeClass('highlight');
-			$('.hover_username').text();
-		});
+				$('.hover_info').addClass('displayNone');
+				$(this).removeClass('highlight');
+				$('.hover_username').text();
+			}
+		);
 	};
 
 	//=============================================
@@ -118,16 +121,17 @@ $(document).ready(function() {
 
 	//listen for an upvote vote
 	$('.fa-sort-asc').on('click', function(){
+		var thisthis = $(this);
 		//check logged in
-		if ($(this).attr('user-id') == ''){
+		if (thisthis.attr('user-id') == ''){
 			alert('Please Login To Vote');
 		} else {
 			//what did i click on?
 			// ===== story
-			if ($(this).parent().attr('class') == 'story_score') {
+			if (thisthis.parent().attr('class') == 'story_score') {
 				var sendData = {
-					'user_id': $(this).attr('user-id'),
-					'story_id': $(this).parent('.story_score').attr('story-id')
+					'user_id': thisthis.attr('user-id'),
+					'story_id': thisthis.parent('.story_score').attr('story-id')
 				}
 				$.get('/storyUpvote', sendData, function (data){
 					console.log(data);
@@ -136,20 +140,19 @@ $(document).ready(function() {
 				console.log('i upvoted a story');
 
 			// ===== comment
-			} else if ($(this).parent().attr('class') == 'score') {
+			} else if (thisthis.parent().attr('class') == 'score') {
 				var sendData = {
-					'user_id': $(this).attr('user-id'),
-					'comment_id': $(this).parents('.comment').attr('comment-id')
+					'user_id': thisthis.attr('user-id'),
+					'comment_id': thisthis.parents('.comment').attr('comment-id')
 				}
 				$.get('/commentUpvote', sendData, function (data){
 					console.log(data);
-					console.log($(this));
-					var test = $(this).parent('.score').find('.comment_score').text();
+					var test = thisthis.parent('.score').find('.comment_score').text(data);
 				});
 				console.log('i upvoted a comment');
 
 			// ===== seed
-			} else if ($(this).attr('class') == 'seed_score') {
+			} else if (thisthis.attr('class') == 'seed_score') {
 				console.log('seed');
 			}
 		}
@@ -157,20 +160,40 @@ $(document).ready(function() {
 
 	//listen for a downvote click
 	$('.fa-sort-desc').on('click', function(){
-		//what did i click on?
-		if ($(this).parent().attr('class') == 'story_score') {
+		var thisthis = $(this);
+		//check logged in
+		if (thisthis.attr('user-id') == ''){
+			alert('Please Login To Vote');
+		} else {
+			//what did i click on?
+			// ===== story
+			if (thisthis.parent().attr('class') == 'story_score') {
 				var sendData = {
-					'user_id': $(this).attr('user-id'),
-					'story_id': $(this).parent('.story_score').attr('story-id')
+					'user_id': thisthis.attr('user-id'),
+					'story_id': thisthis.parent('.story_score').attr('story-id')
 				}
 				$.get('/storyDownvote', sendData, function (data){
 					console.log(data);
 					$('.story_score').find('span').text(data);
 				});
-		} else if ($(this).parent().attr('class') == 'score') {
-			console.log('i downvoted a comment');
-		} else if ($(this).attr('class') == 'seed_score') {
-			console.log('seed');
+				console.log('i Downvoted a story');
+
+			// ===== comment
+			} else if (thisthis.parent().attr('class') == 'score') {
+				var sendData = {
+					'user_id': thisthis.attr('user-id'),
+					'comment_id': thisthis.parents('.comment').attr('comment-id')
+				}
+				$.get('/commentDownvote', sendData, function (data){
+					console.log(data);
+					var test = thisthis.parent('.score').find('.comment_score').text(data);
+				});
+				console.log('i Downvoted a comment');
+
+			// ===== seed
+			} else if (thisthis.attr('class') == 'seed_score') {
+				console.log('seed');
+			}
 		}
 	});
 

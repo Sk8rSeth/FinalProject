@@ -81,7 +81,7 @@ class CommentController extends Controller {
 			'comment_id' => $comment_id
 		];
 
-		$sql = "UPDATE story 
+		$sql = "UPDATE comment 
 				SET score = :new_score 
 				WHERE comment_id = :comment_id";
 
