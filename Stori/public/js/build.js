@@ -13427,47 +13427,21 @@ $(document).ready(function() {
 	// Comment Submission / Deletion 
 	// ============================================
 
-	// get all comments
-	function renderCommentsAll(data){
-		var source = $('#template-comment').html();
-		var template = Handlebars.compile(source);
-		var output = template({
-			comment_body: data.comments.comment_body,
-			comment_score: data.comments.score,
-			comment_id: data.comments.comment_id,
-			username: data.username,
-			user_score: data.user_score,
-
-		});
-		return output;	
-	};
-
-	//get all comments for story
-	var allCommData = {
-		story_id: $('.story_score').attr('story-id')
-	}
-
-	$.get('/allCommentsByStory', allCommData, function (data){
-		console.log(data);
-		// var output = renderComment(data)
-		// $('.feature_comments').append(output)
-	});
-
-
 	// submission
 	function renderComment(data){
 		var source = $('#template-comment').html();
 		var template = Handlebars.compile(source);
 		var output = template({
-			comment_body: data.comments.comment_body,
-			comment_score: data.comments.score,
-			comment_id: data.comments.comment_id,
+			comment_body: data.comment.comment_body,
+			comment_score: data.comment.score,
+			comment_id: data.comment.comment_id,
 			username: data.username,
 			user_score: data.user_score,
 
 		});
 		return output;	
 	};
+
 	// Comment AJAX submission
 	$('form.feature_add_comment').on('submit', function(event) {
 		event.preventDefault();
@@ -13478,8 +13452,10 @@ $(document).ready(function() {
 		}
 
 		$.get('/submitComment', sendData, function (data){
+			console.log(data);
 			var output = renderComment(data);
 			$('.feature_comments').append(output);
+			$('.feature_add_comment textarea').val('');
 		});
 	});
 
@@ -13493,13 +13469,14 @@ $(document).ready(function() {
 	// upvote, downvote
 	//=============================================
 
-	//listen for a vote
+	//listen for an upvote vote
 	$('.fa-sort-asc').on('click', function(){
 		//check logged in
 		if ($(this).attr('user-id') == ''){
 			alert('Please Login To Vote');
 		} else {
 			//what did i click on?
+			// ===== story
 			if ($(this).parent().attr('class') == 'story_score') {
 				var sendData = {
 					'user_id': $(this).attr('user-id'),
@@ -13510,21 +13487,28 @@ $(document).ready(function() {
 					$('.story_score').find('span').text(data);
 				});
 				console.log('i upvoted a story');
+
+			// ===== comment
 			} else if ($(this).parent().attr('class') == 'score') {
 				var sendData = {
 					'user_id': $(this).attr('user-id'),
-					'comment_id': $(this).parent('.story_score').attr('story-id')
+					'comment_id': $(this).parents('.comment').attr('comment-id')
 				}
-				$.get('/storyUpvote', sendData, function (data){
+				$.get('/commentUpvote', sendData, function (data){
 					console.log(data);
-					$('.story_score').find('span').text(data);
+					console.log($(this));
+					var test = $(this).parent('.score').find('.comment_score').text();
 				});
 				console.log('i upvoted a comment');
+
+			// ===== seed
 			} else if ($(this).attr('class') == 'seed_score') {
 				console.log('seed');
 			}
 		}
 	});
+
+	//listen for a downvote click
 	$('.fa-sort-desc').on('click', function(){
 		//what did i click on?
 		if ($(this).parent().attr('class') == 'story_score') {

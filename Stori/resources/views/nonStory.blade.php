@@ -58,8 +58,8 @@
 					<div class="displayNone">
 						<form role="form" action="/auth/login" method="POST">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							<div class="login_label">Email</div>
-							<input type="text" id="username" name="email">
+							<div class="login_label">Username</div>
+							<input type="text" id="username" name="username">
 							<div class="login_label">Password</div>
 							<input type="password" name="password">
 							<a href="/signup" class="signup">Or Signup</a>

@@ -12,24 +12,9 @@ class CommentController extends Controller {
 
 	public function getAllByStory() {
 		$story_id = Request::input('story_id');
-		$comments = Comment::all(['story_id' => $story_id, 'assessed' => 0]);
-		$username = [];
-		$user_score = [];
+		$comments = Comment::fetchOngoing($story_id);
 
-		foreach ($comments->getArray() as $comment) {
-			$user = new User($comment->user_id);
-			$username[] = $user->username;
-			$user_score[] = $user->score;
-		}
-
-		// $allCommentBodies = [];
-		// $allComments = [];
-		// foreach ($comments->getArrayDeep() as $comment) {
-		// 	$allCommentBodies[] = $comment['comment_body'];
-		// 	$allComments[] = $comment;
-		// }
-
-		return ['comments' => $comments->getArrayDeep(), 'username' => $username, 'user_score' => $user_score];
+		return ['comments' => $comments];
 	}
 
 	public function getCommentById() {
@@ -58,8 +43,51 @@ class CommentController extends Controller {
 		$comment = new Comment($comment_id);
 
 		return['comment' => $comment->getData(), 'username' => $username, 'user_score' => $user_score];
+	}
+
+	
+	public function upvote() {
+		$user_id = Request::input('user_id');
+		$comment_id = Request::input('comment_id');
+
+		$comment = new Comment($comment_id);
+		$new_score = $comment->score + 1;
 
 
+		$vals = [
+			'new_score' => $new_score,
+			'comment_id' => $comment_id
+		];
+
+		$sql = "UPDATE comment 
+				SET score = :new_score 
+				WHERE comment_id = :comment_id";
+
+		DB::update($sql, $vals);
+ 		
+		return $new_score;
+	}
+
+	public function downvote() {
+		$user_id = Request::input('user_id');
+		$comment_id = Request::input('comment_id');
+
+		$comment = new Comment($comment_id);
+		$new_score = $comment->score - 1;
+
+
+		$vals = [
+			'new_score' => $new_score,
+			'comment_id' => $comment_id
+		];
+
+		$sql = "UPDATE story 
+				SET score = :new_score 
+				WHERE comment_id = :comment_id";
+
+		DB::update($sql, $vals);
+ 		
+		return $new_score;
 	}
 
 }

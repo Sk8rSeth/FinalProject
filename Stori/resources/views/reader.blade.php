@@ -27,26 +27,7 @@
 	@endsection
 
 	@section('comments')
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
-			<div class="username">Sk8rSeth - 32</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
-		</div>
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
-			<div class="username">Sk8rSeth - 32</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis accusamus tempora molestiae labore, quae blanditiis! Ipsam veniam, repellat asperiores laudantium!</div>
-		</div>
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
-			<div class="username">Minnie - 25</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
-		</div>
-		<div class="comment">
-			<div class="score"><div class="fa fa-sort-asc"></div><div>90</div><div class="fa fa-sort-desc"></div></div>
-			<div class="username">Sk8rSeth - 32</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, voluptatem?</div>
-		</div>
+		
 	@endsection
 
 	@section('story_stats')

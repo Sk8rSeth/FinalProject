@@ -61,8 +61,8 @@
 					<div class="displayNone">
 						<form role="form" action="/auth/login" method="POST">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							<div class="login_label">Email</div>
-							<input type="text" id="username" name="email">
+							<div class="login_label">Username</div>
+							<input type="text" id="username" name="username">
 							<div class="login_label">Password</div>
 							<input type="password" name="password">
 							<a href="/signup" class="signup">Or Signup</a>
@@ -128,11 +128,20 @@
 	</div>
 </body>
 	<script src="{{ URL('js/build.js') }}"></script>
-	<script id="template-comment">
+	<script id="template-comment" type="text/x-handlebars-template">
 		<div class="comment" comment-id="@{{comment_id}}">
 			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";} else{echo Auth::user()->user_id;}?>"></div><div>@{{comment_score}}</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
 			<div class="username">@{{username}}- @{{user_score}}</div>
 			<div class="comment_description">@{{comment_body}}</div>
 		</div>
+	</script>
+	<script id="template-commentsAll" type="text/x-handlebars-template">
+		@{{#each this}}
+		<div class="comment" comment-id="@{{comment_id}}">
+			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";} else{echo Auth::user()->user_id;}?>"></div><div>@{{comment_score}}</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
+			<div class="username">@{{username}}- @{{user_score}}</div>
+			<div class="comment_description">@{{comment_body}}</div>
+		</div>
+		@{{/each}}
 	</script>
 </html>

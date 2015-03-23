@@ -17,8 +17,8 @@ Login
 	<form action="/auth/login" method="POST">
 	<input type="hidden" class="token" name="_token" value="{{ csrf_token() }}">
 
-		<div class="label">Email</div>
-		<input type="text" name="email">
+		<div class="label">Username</div>
+		<input type="text" name="username">
 
 		<div class="label">Password</div>
 		<input type="password" name="password">

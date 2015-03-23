@@ -2,6 +2,11 @@
 
 Route::get('home', 'StoryController@getRanked');
 
+
+//==========
+// Gen Page Loads
+//==========
+
 // story
 Route::get('/story', 'StoryController@getAll');
 Route::get('/story/{story_id}', 'StoryController@read');
@@ -21,6 +26,11 @@ Route::get('/seeds', 'SeedController@getAll');
 Route::get('/submitComment', 'commentController@addNew');
 Route::get('/getComment', 'commentController@getCommentById');
 Route::get('/allCommentsByStory', 'CommentController@getAllByStory');
+
+//users
+Route::get('/profile', function(){
+	return view('profile');
+});
 
 //=========
 // Voting

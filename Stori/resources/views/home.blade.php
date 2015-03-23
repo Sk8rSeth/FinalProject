@@ -21,21 +21,20 @@ Highest Ranking Story Of The Day!
 		@endsection
 
 	@section('comments')
-		<div class="comment" comment-id="{{$comment->comment_id}}1">
-			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div><div>90</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
-			<div class="username">Sk8rSeth - 32</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
-		</div>
-		<div class="comment" comment-id="{{$comment->comment_id}}3">
-			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div><div>90</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
-			<div class="username">Sk8rSeth - 32</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
-		</div>
-		<div class="comment" comment-id="{{$comment->comment_id}}2">
-			<div class="score"><div class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div><div>90</div><div class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></div></div>
-			<div class="username">Sk8rSeth - 32</div>
-			<div class="comment_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ullam?</div>
-		</div>
+	<?php foreach ($ongoing_comments as $comm) {
+		if(Auth::guest()) {
+			$cust_id = '';
+		} else {
+			$cust_id = Auth::user()->user_id;
+		}
+		$comment = '<div class="comment" comment-id="' . $comm->comment_id . '">
+			<div class="score"><div class="fa fa-sort-asc" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc" user-id="' . $cust_id . '"></div></div>
+			<div class="username">'.$comm->username.'- '.$comm->user_score.'</div>
+			<div class="comment_description">'.$comm->comment_body.'</div>
+		</div>';
+		echo $comment;
+	} ?>
+
 	@endsection
 
 	@section('story_stats')

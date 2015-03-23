@@ -75,14 +75,15 @@ class StoryController extends Controller {
 		$g = new Genre($story->genre_id);
 		$genre = $g->genre_description;
 		$comments = Comment::all(['story_id' => $story->story_id, 'in_story' => 1]);
-		// $ongoing_comments = Comment::all(['story_id' => $story_id, 'assessed' => 0]);
-		
+		$ongoing_comments = Comment::fetchOngoing($story->story_id);
 
+	
 		return view('home', ['story' => $story,
 								'seed' => $seed, 
 								'genre' => $genre, 
 								'user' => $user, 
-								'comments' => $comments
+								'comments' => $comments,
+								'ongoing_comments' => $ongoing_comments
 								]);
 	}
 
