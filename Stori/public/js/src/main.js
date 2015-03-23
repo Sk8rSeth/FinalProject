@@ -24,13 +24,11 @@ $(document).ready(function() {
 	//view all stories toggle
 	$('.all_stories').on('click', function(){
 		$('.all_stories').removeClass('displayNone');
-		// console.log($('.all_stories > ul').attr('class'));
 	});
 
 	//login button drop open
 	$('.login').on('click', function() {
 		$('.login > div').removeClass('displayNone');
-		// $('#username').focus();
 	});
 
 	//login button close
@@ -110,9 +108,17 @@ $(document).ready(function() {
 	});
 
 
-// 	//delete comment AJAX
-// 	var message $('.feature_add_comment textarea').val();
-// 	$.get('/submitComment', {}, function(){
+	//delete comment AJAX
+	$('.delete').on('click', function() {
+		var thisthis = $(this);
+		var sendData = {
+			'comment_id': thisthis.parents('.comment').attr('comment-id')
+		}
+		$.get('/deleteComment', sendData, function (data) {
+			thisthis.parents('.comment').remove();
+			console.log(data);
+		});
+	})
 
 
 	//=============================================
@@ -196,6 +202,21 @@ $(document).ready(function() {
 			}
 		}
 	});
+
+	//=================================================
+	// Preview Comments
+	//=================================================
+
+	if ($(window).width() > 499) {
+		$('.reader').hover(function(){
+			var comment_text = $(this).find('.comment_description').text();
+			console.log(comment_text);
+			$('.story').append('<div class="hover_added">- ' + comment_text + '</div>')
+		}, function() {
+			console.log('nothing');
+			$('.hover_added').remove();
+		}
+	)}
 
 
 });

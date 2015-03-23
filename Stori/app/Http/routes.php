@@ -24,6 +24,7 @@ Route::get('/seeds', 'SeedController@getAll');
 
 //commenting
 Route::get('/submitComment', 'commentController@addNew');
+Route::get('/deleteComment', 'commentController@delete');
 Route::get('/getComment', 'commentController@getCommentById');
 Route::get('/allCommentsByStory', 'CommentController@getAllByStory');
 

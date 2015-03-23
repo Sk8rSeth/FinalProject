@@ -575,7 +575,8 @@ aside {
     padding: 5px 0; }
   .seed {
     font-size: 1.2em;
-    font-style: italic; }
+    font-style: italic;
+    margin-bottom: 5px; }
   .comment {
     background-color: green;
     margin: 5px;
@@ -613,7 +614,8 @@ aside {
     width: 300px; }
   .seed {
     font-size: 1.2em;
-    font-style: italic; }
+    font-style: italic;
+    margin-bottom: 5px; }
   .comment {
     background-color: blue;
     width: 300px;

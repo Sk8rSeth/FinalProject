@@ -90,4 +90,9 @@ class CommentController extends Controller {
 		return $new_score;
 	}
 
+	public function delete() {
+		$comment_id = Request::input('comment_id');
+		Comment::deleteComment($comment_id);
+		return [$comment_id];
+	}
 }

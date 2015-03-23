@@ -28,4 +28,12 @@ class Comment extends Model {
 
 		return($comments);
 	}
+
+	public static function deleteComment($comment_id) {
+		$vars =  [':comment_id' => $comment_id];
+		$sql = "DELETE FROM comment
+				WHERE comment_id = :comment_id
+				";
+		DB::delete($sql, $vars);
+	}
 }

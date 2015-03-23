@@ -44,7 +44,7 @@
 							</div>';
 				}
 			} 
-			$comment = '<div class="comment" comment-id="' . $comm->comment_id . '">
+			$comment = '<div class="comment reader" comment-id="' . $comm->comment_id . '">
 				<div class="score"><div class="fa fa-sort-asc" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc" user-id="' . $cust_id . '"></div></div>
 				<div class="username">'.$comm->username.'- '.$comm->user_score.$delete.'</div>
 				<div class="comment_description">'.$comm->comment_body.'</div>
