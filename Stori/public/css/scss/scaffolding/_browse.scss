@@ -1,4 +1,4 @@
-@media screen and (max-width: $small-screen-width) {
+@media screen and (max-device-width: $small-screen-width) {
 
 	.block_container {
 		width: 80%;
@@ -29,7 +29,7 @@
 }
 
 
-@media screen and (min-width: $small-screen-width) {
+@media screen and (min-device-width: $small-screen-width) {
 	.block_container {
 		width: 400px;
 		margin: 0 auto;

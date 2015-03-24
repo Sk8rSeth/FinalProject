@@ -1,4 +1,4 @@
-@media screen and (max-width: $small-screen-width) {
+@media screen and (max-device-width: $small-screen-width) {
 	.stats {
 		display: none;
 	}
@@ -34,7 +34,7 @@
 }
 
 
-@media screen and (min-width: $small-screen-width) {
+@media screen and (min-device-width: $small-screen-width) {
 
 	.feature_add_comment {
 		float: right;
@@ -62,21 +62,5 @@
 		a {
 			text-decoration: underline;
 		}
-	}
-
-	.stats {
-		text-align: center;
-		background-color: gray;
-		float: right;
-		width: 285px;
-		margin: 10px 0;
-	}
-
-	.stats div {
-		padding: 5px;
-	}
-
-	.stats strong {
-		text-decoration: underline;
 	}
 }

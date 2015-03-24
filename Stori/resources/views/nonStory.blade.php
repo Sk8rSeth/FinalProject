@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Stori</title>
 	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{ URL('css/styles.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome/css/font-awesome.min.css') }}">
 </head>
@@ -33,14 +35,23 @@
 			</div>	
 		</div>
 			<nav>
-				<div class="info_menu">Info
+				<div class="info_menu" tabindex = "-1">Info
 					<div class="displayNone">
-						<div class="info_label">Rules:</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, odio.</p>
-						<div class="info_label">{genre?//descrptn?}</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, odio.</p>
-						<div class="info_label">{setting?}</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, odio.</p>
+						<div class="info_label">About</div>
+						<p>Stori is about creating collaberative short stories wit the community. Be creative, but be mindful that anyone can be reading..</p>
+						<div class="info_label">Rules</div>
+						<p>
+							<div>- Keep On Topic</div>
+							<div>- Curse Only When Appropriate</div>
+							<div>- Keep In The Spirit Of The Story</div>
+						</p>
+						<div class="info_label">More</div>
+						<p>
+							this is a student project by Seth Howell.
+							<div>&copy; 2015</div> 
+							<a href="/aboutUs">About Us</a> |
+							<a href="/FAQ">FAQ</a>
+						</p>
 					</div>
 				</div>
 				@if (Auth::guest())
@@ -54,7 +65,7 @@
 							print_r($errors);
 						?>
 						@endif
-				<div class="login">Login
+				<div class="login" tabindex = "-1">Login
 					<div class="displayNone">
 						<form role="form" action="/auth/login" method="POST">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">

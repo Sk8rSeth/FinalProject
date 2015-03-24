@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Stori</title>
 	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{ URL('css/styles.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome/css/font-awesome.min.css') }}">
 </head>
@@ -36,14 +38,10 @@
 			</div>	
 		</div>
 			<nav>
-				<div class="info_menu">Info
+				<div class="info_menu" tabindex = "-1">Info
 					<div class="displayNone">
-						<div class="info_label">Rules:</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, odio.</p>
-						<div class="info_label">{genre?//descrptn?}</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, odio.</p>
-						<div class="info_label">{setting?}</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, odio.</p>
+					@section('info_menu')
+					@show
 					</div>
 				</div>
 				@if (Auth::guest())
@@ -57,7 +55,7 @@
 							print_r($errors);
 						?>
 						@endif
-				<div class="login">Login
+				<div class="login" tabindex = "-1">Login
 					<div class="displayNone">
 						<form role="form" action="/auth/login" method="POST">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -91,7 +89,7 @@
 			<aside>
 				<a href="/story"><div class="stories">Stories - </div></a>
 				<a href="/seeds"><div class="seeds">Seeds - </div></a>
-				<a href="/"><div class="feature1">Feature1 - </div></a>
+				<a href="/random"><div class="feature1">Random - </div></a>
 				<a href="/"><div class="feature2">Feature2 - </div></a>
 				<a href="/"><div class="feature3">Feature3 - </div></a>
 			</aside>

@@ -132,4 +132,16 @@ class StoryController extends Controller {
  		
 		return $new_score;
 	}
+
+	public function getUsernames() {
+		$story_id = Request::input('story_id');
+		$usernamesall = User::getUsernames($story_id);
+
+		// $usernames = [];
+		// foreach ($usernamesall as $key => $value) {
+		// 	$usernames[] =[$value->comment_id => $value->username];
+		// }
+
+		return $usernamesall;
+	}
 }

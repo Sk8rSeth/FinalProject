@@ -1,5 +1,5 @@
 @extends('nonStory')
 
 @section('main_content')
-Profile Page Comming Soon!!
+Profile Page Coming Soon!!
 @endsection

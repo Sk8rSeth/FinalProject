@@ -3,14 +3,14 @@ aside {
 }
 
 
-@media screen and (min-width: $small-screen-width) {
+@media screen and (min-device-width: $small-screen-width) {
 	aside {
 		display: block;
 		position: fixed;
 		right: calc((100% - 960px) / 2 - 5px);
-		top: 220px;
+		top: 230px;
 		width: 120px;
-		height: 280px;
+		height: 295px;
 		background-color: #16ade9;
 		text-align: right;
 	}

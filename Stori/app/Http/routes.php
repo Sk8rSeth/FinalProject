@@ -27,6 +27,7 @@ Route::get('/submitComment', 'commentController@addNew');
 Route::get('/deleteComment', 'commentController@delete');
 Route::get('/getComment', 'commentController@getCommentById');
 Route::get('/allCommentsByStory', 'CommentController@getAllByStory');
+Route::get('/getusernames', 'StoryController@getUsernames');
 
 //users
 Route::get('/profile', function(){

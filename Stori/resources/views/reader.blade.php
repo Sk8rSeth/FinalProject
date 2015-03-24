@@ -68,3 +68,5 @@
 			<button>Comment</button>
 		</form>
 	@endsection
+
+	<script id="username_list">{{}}</script>

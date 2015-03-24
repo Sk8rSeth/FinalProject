@@ -1,4 +1,4 @@
-@media screen and (max-width: $small-screen-width) {
+@media screen and (max-device-width: $small-screen-width) {
 	.featureblock {
 		margin: 70px auto 0 auto;
 		width: 80%;
@@ -29,7 +29,7 @@
 	}
 
 	.story {
-		background-color: #FFF;
+		background-color: #c2c2c2;
 		padding: 10px;
 	}
 	.story_score {
@@ -40,7 +40,7 @@
 }
 
 
-@media screen and (min-width: $small-screen-width) {
+@media screen and (min-device-width: $small-screen-width) {
 	.featureblock {
 		background-color: magenta;
 		min-height: 1000px;
@@ -68,6 +68,7 @@
 		height: 40px;
 		min-width: 120px;
 		background-color: red;
+		font-size: 2em;
 	}
 
 	.story_score {
@@ -85,7 +86,7 @@
 
 	.stats {
 		text-align: center;
-		background-color: gray;
+		background-color: #c2c2c2;
 		float: right;
 		width: 285px;
 		margin: 10px 0;
@@ -100,7 +101,7 @@
 	}
 
 	.feature_story {
-		background-color: grey;
+		background-color: #c2c2c2;
 		height: 300px;
 		padding: 10px;
 		display: inline-block;

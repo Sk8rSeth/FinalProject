@@ -2,6 +2,10 @@
 
 body {
   background-color: #ccc;
+  // font-family: 'Poiret One', cursive;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: -1px;
+  color: #333;
 }
 
 a {
@@ -17,7 +21,7 @@ li {
   display: none;
 }
 
-@media screen and (max-width: $small-screen-width){
+@media screen and (max-device-width: $small-screen-width){
 	html {
 	  font-size: 10pt;
 	  width: 100%;
@@ -29,7 +33,7 @@ li {
 	}
 }
 
-@media screen and (min-width: $small-screen-width) {
+@media screen and (min-device-width: $small-screen-width) {
 	body > div {
 		width: 960px;
 		margin: 0 auto;

@@ -30,16 +30,17 @@ $(document).ready(function() {
 	$('.login').on('click', function() {
 		$('.login > div').removeClass('displayNone');
 	});
-
-	//login button close
-	// $('.login').on('click', function() {
-	// 	$('.login > div').addClass('displayNone');
-	// });
+	$('.login').focusout(function() {
+		// $('.login > div').addClass('displayNone');	
+	})
 
 	//info menu open and close
 	$('.info_menu').on('click', function() {
-		$('.info_menu > div').toggleClass('displayNone');
-		$('.info_menu > div').focus();
+		$('.info_menu > div').removeClass('displayNone');
+	});
+
+	$('.info_menu').focusout(function() {
+		$('.info_menu > div').addClass('displayNone');
 	});
 
 	//===============================================
@@ -48,20 +49,28 @@ $(document).ready(function() {
 
 	//displays comment info on hover
 	if ($(window).width() > 499) {
+		//get all comments per story
+		var CommUsernames = {};
+		var sendStory = {story_id: $('.story_score').attr('story-id')}
+		//ajax to get comment_id:username
+		$.get('/getusernames', sendStory, function (data){
+			return CommUsernames = data;
+		})
 		$('.story div').hover(function(){
 			if ($(this).attr('class') !== 'seed') {
 				$('.hover_info').removeClass('displayNone');
 				$(this).addClass('highlight');
 
-				// comment info ajax call
-				var sendData = {comment_id: $(this).attr('comment-id')}
-				$.get('/getComment', sendData, function (data) {
-					$('.hover_username').text(data);
-				});
+				//filter array of objects by comment_id that i hover over
+				var comm_id = $(this).attr('comment-id');
+				var username_array = CommUsernames.filter(function(o){
+					return o.comment_id == comm_id; 
+				})
+				// replace hover_info username
+				$('.hover_username').text(username_array[0].username)
 
 				var comment_length = $(this).text().length;
 				$('.hover_length').text(comment_length);
-				console.log(comment_length);
 			} 
 		}, function() {
 				$('.hover_info').addClass('displayNone');
