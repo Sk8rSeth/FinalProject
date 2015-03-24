@@ -13563,10 +13563,8 @@ $(document).ready(function() {
 	if ($(window).width() > 499) {
 		$('.reader').hover(function(){
 			var comment_text = $(this).find('.comment_description').text();
-			console.log(comment_text);
 			$('.story').append('<div class="hover_added">- ' + comment_text + '</div>')
 		}, function() {
-			console.log('nothing');
 			$('.hover_added').remove();
 		}
 	)}
