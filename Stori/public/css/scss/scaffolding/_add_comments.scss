@@ -14,7 +14,7 @@
 
 	.feature_add_comment {;
 		width: 80%;
-		background-color: orange;
+		background-color: $bg;
 		margin: 0 auto;
 		text-align: center;
 	}
@@ -52,7 +52,8 @@
 		right: 0;
 		bottom: -5px;
 		height: 30px;
-		background-color: yellow;
+		border-radius: 10px;
+		box-shadow: 1px 1px 2px 2px rgba(0,0,0,.4);
 	}
 
 	.plz_login {

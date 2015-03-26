@@ -3,12 +3,15 @@
 	.block_container {
 		width: 80%;
 		margin:0 auto;
-		background-color: yellow;
+		background-color: $gray;
 		padding-bottom: 10px;
+		padding-top: 10px;
+		text-align: center;
+		border-radius: 10px;
 	}	
 
 	.label {
-		background-color: lightblue;
+		background-color: $blue;
 		transform: translateX(-10px);
 		font-size: 18pt;
 	}
@@ -21,6 +24,10 @@
 		margin: 10px;
 		width: 200px;
 		height: 30px;
+		border-radius: 10px;
+		background-color: $lightGray;
+		font-size: 1.5em;
+		box-shadow: 1px 1px 2px 2px rgba(0,0,0,.4);
 	}
 	
 	.block_container ul, ol {
@@ -33,13 +40,17 @@
 	.block_container {
 		width: 400px;
 		margin: 0 auto;
-		background-color: yellow;
+		background-color: $gray;
 		padding: 5px;
+		padding-bottom: 15px;
 		position: relative;
+		border-radius: 15px;
+		border-bottom: 1px solid rgba(194,194,194,0.4);
+		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 	}
 
 	.label {
-		background-color: lightblue;
+		background-color: $blue;
 		width: 200px;
 		height: 35px;
 		margin: 10px;
@@ -48,6 +59,8 @@
 		padding-top: 15px;
 		text-align: center;
 		box-shadow: 1px 2px 2px 2px rgba(0,0,0,.4);
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
 	}
 
 	.block_container input {
@@ -63,6 +76,8 @@
 		height: 35px;
 		bottom: -15px;
 		right: 50px;
+		border-radius: 10px;
+		box-shadow: 1px 1px 2px 2px rgba(0,0,0,.4);
 	}
 
 	.block_container ul, ol {

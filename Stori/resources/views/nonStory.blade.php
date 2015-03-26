@@ -1,8 +1,9 @@
+<?php $login_errors = []; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
 	<title>Stori</title>
 	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
 	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
@@ -55,22 +56,12 @@
 					</div>
 				</div>
 				@if (Auth::guest())
-						@if(count($errors) > 0)
-							<span class="head-error">Whoops!</span>
-							<div class="main-error">There were some problems with your input.</div>
-					 	<?php
-							foreach($errors->keys() as $key) {
-								$my_errors[$key] = $errors->get($key)[0];
-							}
-							print_r($errors);
-						?>
-						@endif
 				<div class="login" tabindex = "-1">Login
 					<div class="displayNone">
 						<form role="form" action="/auth/login" method="POST">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="login_label">Username</div>
-							<input type="text" id="username" name="username">
+							<input type="text" name="username" value="{{ old('username') }}">
 							<div class="login_label">Password</div>
 							<input type="password" name="password">
 							<a href="/signup" class="signup">Or Signup</a>
@@ -114,7 +105,9 @@
 			</div>
 		</main>
 		<footer>
-			footer things!!
+			<a href="/aboutUs"><div class="footerOptions">About Us</div></a>
+			<div class="logo"><a href="/">Stori</a></div>
+			<a href="/faq"><div class="footerOptions">F.A.Q.</div></a>
 		</footer>
 	</div>
 </body>

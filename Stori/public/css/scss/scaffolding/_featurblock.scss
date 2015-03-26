@@ -6,9 +6,10 @@
 
 	.story_title {
 		float: left;
-		background-color: red;
+		background-color: $blue;
 		min-width: 50px;
 		font-size: 15pt;
+		padding: 0 5px;
 	}
 
 	.full_story {
@@ -16,7 +17,7 @@
 	}
 
 	.feature_story {
-		background-color: #fff;
+		background-color: $lightGray;
 		padding: 5px;
 		height: 205px;
 
@@ -29,20 +30,24 @@
 	}
 
 	.story {
-		background-color: #c2c2c2;
+		background-color: $lightGray;
 		padding: 10px;
 	}
 	.story_score {
 		float: right;
-		background-color: green;
+		background-color: $blue;
 		font-size: 14pt;
+
+		span {
+			margin: 0 5px;
+		}
 	}
 }
 
 
 @media screen and (min-device-width: $small-screen-width) {
 	.featureblock {
-		background-color: magenta;
+		background-color: $bg;
 		min-height: 1000px;
 	}
 
@@ -67,8 +72,15 @@
 		float: left;
 		height: 40px;
 		min-width: 120px;
-		background-color: red;
+		background-color: $blue;
+		padding-left: 5px;
+		padding-right: 5px;
 		font-size: 2em;
+		box-shadow: 0px 2px 5px 1px rgba(0,0,0,.4);
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
 	}
 
 	.story_score {
@@ -76,8 +88,16 @@
 		float: right;
 		height: 40px;
 		min-width: 50px;
-		background-color: green;
+		padding-left: 5px;
+		padding-right: 5px;
+		background-color: $blue;
 		font-size: 28pt;
+		// box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.6);
+		box-shadow: 0px 2px 5px 1px rgba(0,0,0,.4);
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
 	}
 
 	.story_score span {
@@ -86,14 +106,24 @@
 
 	.stats {
 		text-align: center;
-		background-color: #c2c2c2;
+		background-color: $gray;
 		float: right;
 		width: 285px;
 		margin: 10px 0;
+		padding-bottom: 5px;
+		border-radius: 15px;
+		border-bottom: 1px solid rgba(194,194,194,0.4);
+		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
+
+		h2 {
+			margin-bottom: .6em;
+		}
+		
 	}
 
 	.stats div {
 		padding: 5px;
+
 	}
 
 	.stats strong {
@@ -101,12 +131,18 @@
 	}
 
 	.feature_story {
-		background-color: #c2c2c2;
+		background-color: $gray;
 		height: 300px;
 		padding: 10px;
 		display: inline-block;
 		overflow: hidden;
 		text-align: center;
 		width: 580px;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-bottom: 1px solid rgba(194,194,194,0.4);
+		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 	}
 }

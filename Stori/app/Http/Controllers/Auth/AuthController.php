@@ -46,14 +46,33 @@ class AuthController extends Controller {
 
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
-			return redirect()->intended($this->redirectPath());
+			return redirect()->back();
 		}
+
 
 		return redirect($this->loginPath())
 					->withInput($request->only('username', 'remember'))
 					->withErrors([
-						'username' => $this->getFailedLoginMessage(),
+						'username' => $this->getWrongUsernameMessage(),
+						'password' => $this->getWrongPasswordMessage(),
 					]);
+	}
+
+	public function getLogout()
+	{
+		$this->auth->logout();
+
+		return redirect()->back();
+	}
+
+	protected function getWrongUsernameMessage()
+	{
+		return 'You\'re Username Is Incorrect Yo.';
+	}
+	
+	protected function getWrongPasswordMessage()
+	{
+		return 'Password\'s Wrong. Dunno Why.';
 	}
 
 }

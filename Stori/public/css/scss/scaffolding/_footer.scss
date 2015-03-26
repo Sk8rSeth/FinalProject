@@ -1,0 +1,25 @@
+@media screen and (max-device-width: $small-screen-width) {
+	footer {
+
+	}
+}
+
+@media screen and (min-device-width: $small-screen-width) {
+	
+	footer {
+		margin: 0;
+		background-color: $lightGray;
+	}
+
+	.footerOptions {
+		background-color: $gray;
+		width: 100px;
+		display: inline-block;
+		height: 40px;
+		margin-left: 10px;
+		margin-right: 10px;
+		vertical-align: bottom;
+		box-shadow: 1px -1px 5px rgba(0,0,0,0.4);
+		font-size: 1.4em;
+	}
+}

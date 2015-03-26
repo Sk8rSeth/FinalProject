@@ -60,7 +60,7 @@ Route::get('/signup', function(){
 });
 
 Route::get('/login', function(){
-	return view('login');
+	return view('auth.login');
 });
 
 Route::get('/', 'StoryController@getRanked');

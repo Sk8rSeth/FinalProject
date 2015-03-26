@@ -1,61 +1,42 @@
-@extends('app')
+@extends('nonStory')
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+@section('title')
+Login
+@endsection
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
+@section('main_content')
+	@if(count($errors) > 0)
+		<div class="error">
+			<div>
+			<i class="fa fa-exclamation left"></i>
+			<i class="fa fa-exclamation right"></i>
+			<span class="er">Oh Snap!</span>
+			<div class="er">Your Login Attempt Sucked.</div>
 			</div>
 		</div>
-	</div>
-</div>
+	<?php
+		foreach($errors->keys() as $key) {
+			$login_errors[$key] = $errors->get($key)[0];
+		}
+	?>	
+	@endif
+	<form action="/auth/login" method="POST">
+	<input type="hidden" class="token" name="_token" value="{{ csrf_token() }}">
+
+		<div class="label">Username</div>
+		<input type="text" name="username" value="{{ old('username') }}">
+			<span class="errors">
+				@if(isset($login_errors['username']))
+					{{$login_errors['username']}}
+				@endif
+			</span>
+		<div class="label">Password</div>
+		<input type="password" name="password">
+			<span class="errors">
+				@if(isset($login_errors['password']))
+					{{$login_errors['password']}}
+				@endif
+			</span>
+		<button>Submit</button>
+	</form>
 @endsection

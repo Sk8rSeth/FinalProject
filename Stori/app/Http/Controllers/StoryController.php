@@ -137,11 +137,6 @@ class StoryController extends Controller {
 		$story_id = Request::input('story_id');
 		$usernamesall = User::getUsernames($story_id);
 
-		// $usernames = [];
-		// foreach ($usernamesall as $key => $value) {
-		// 	$usernames[] =[$value->comment_id => $value->username];
-		// }
-
 		return $usernamesall;
 	}
 }

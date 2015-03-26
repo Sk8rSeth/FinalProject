@@ -8,18 +8,40 @@ aside {
 		display: block;
 		position: fixed;
 		right: calc((100% - 960px) / 2 - 5px);
-		top: 230px;
+		top: 210px;
 		width: 120px;
 		height: 295px;
-		background-color: #16ade9;
+		background-color: $blue;
 		text-align: right;
+		box-shadow: -3px 0px 15px 2px rgba(0,0,0,0.6);
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+
 	}
 
 	aside div {
 		padding: 20px;
+
+		.stories {
+			border-top-left-radius: 10px;
+		}
+
+		.feature3 {
+			border-bottom-left-radius: 10px;
+		}
 	}
 
 	aside div:hover {
 		background-color: rgba(255,255,255,0.3);
+
+		.stories {
+			border-top-left-radius: 10px;
+		}
+
+		.feature3 {
+			border-bottom-left-radius: 10px;
+		}
 	}
 }

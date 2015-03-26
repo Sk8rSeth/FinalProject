@@ -151,6 +151,7 @@ $(document).ready(function() {
 				$.get('/storyUpvote', sendData, function (data){
 					console.log(data);
 					$('.story_score').find('span').text(data);
+					$('.story_score .fa-s')
 				});
 				console.log('i upvoted a story');
 

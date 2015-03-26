@@ -4,7 +4,7 @@
 	}
 
 	.title {
-		background-color: #FFF;
+		background-color: $lightGray;
 		font-size: 14pt;
 		margin-top: 5px;
 	}
@@ -14,22 +14,28 @@
 		top: 0;
 		right: 0;
 		left: 0;
-		background-color: red;
+		background-color: $lightGray;
 		text-align: center;
 		height: 35px;
+		border-bottom: 1px solid $blue;
 	}
 
 	.phone_menu {
 		position: absolute;
 		font-size: 20pt;
-		background-color: orange;
-		width: 100px;
+		background-color: $blue;
+		width: 50px;
+		height: 35px;
 
 		div {
 			font-size: 15pt;
-			margin: 10px 0;
-			background-color: blue;
+			padding: 10px 0;
+			background-color: $blue;
 			z-index: auto;
+			width: 100px;
+		}
+		>div {
+			box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
 		}
 	}
 
@@ -40,8 +46,8 @@
 
 	.logo {
 		margin: 0 auto;
-		background-color: gray;
-		height: 30px;
+		background-color: $gray;
+		height: 35px;
 		width: 100px;
 		font-size: 24pt;
 	}
@@ -53,28 +59,30 @@
 	}
 
 	.hero {
-		background-color: blue;
+		background-color: $bg;
 		position: relative;
-		height: 250px;
+		height: 200px;
 	}
 
 	nav {
-		background-color: orange;
+		background-color: #ddd;
 		position: absolute;
 		top: 0;	
 		left: 0;
 		right: 0;
 		text-align: center;
+		box-shadow: 0 9px 9px -7px rgba(0,0,0,0.4);
 	}
 
 	.options {
-		background-color: red;
+		background-color: $gray;
 		width: 100px;
 		display: inline-block;
 		height: 40px;
 		margin-left: 10px;
 		margin-right: 10px;
 		vertical-align: top;
+		box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 	}
 
 	.archive {
@@ -85,17 +93,21 @@
 		margin: 0 auto;
 		font-size: 64pt;
 		width: 250px;
-		height: 75px;
-		background-color: lightblue;
+		height: 90px;
+		background-color: $gray;
 		display: inline-block;
+		box-shadow: 2px 0px 5px rgba(0,0,0,0.4), -2px 0px 5px rgba(0,0,0,0.4);
 	}
 
 
 	.title {
 		position: absolute;
 		left: 50px;
-		bottom: 30px;
-		background-color: #aaa;
+		bottom: 0px;
+		background-color: $gray;
+		padding: 5px 15px;
+		border-radius: 10px;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.3) inset, 0 0 10px 3px rgba(0,0,0,0.5) inset;
 	}
 
 	/*********************************
@@ -103,7 +115,7 @@
 	*********************************/
 
 	.info_menu {
-		background-color: green;
+		background-color: $gray;
 		width: 100px;
 		height: 30px;
 		position: absolute;
@@ -112,19 +124,21 @@
 		z-index: 1000;
 		outline: none;
 		font-size: 1.5em;
+		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
+		border-radius: 5px;
 	}
 
 
 	.info_menu > div {
-		font-size: .9em;
-		background-color: red;
+		font-size: .65em;
+		background-color: $gray;
 		width: 120px;
 		position: absolute;
 		top: 30px;
 	}
 
 	.info_label {
-		background-color: lightblue;
+		background-color: $blue;
 		transform: translateX(-15px);
 		margin: 5px;
 		font-size: 12pt;
@@ -137,26 +151,30 @@
 	*********************************/
 
 	.login {
-		background-color: yellow;
-		width: 100px;
+		background-color: $gray;
+		width: 120px;
 		height: 30px;
 		position: absolute;
 		right: 40px;
 		bottom: -10px;
 		outline: none;
-		font-size: 1.5em;
+		font-size: 1.4em;
+		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
+		border-radius: 5px;
 	}
 
 	.login > div {
-		background-color: brown;
+		background-color: $gray;
 		position: absolute;
 		top: 30px;
 		width: 120px;
 		padding-bottom: 15px;
+		font-size: .7em;
+		z-index: 1000;
 	}
 
 	.login_label {
-		background-color: lightblue;
+		background-color: $blue;
 		transform: translateX(-15px);
 		margin: 5px;
 		padding: 2px;
