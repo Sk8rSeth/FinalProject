@@ -337,7 +337,13 @@ li {
   display: none; }
 
 .selected {
-  color: #CC7A29; }
+  color: #CC7A29;
+  font-size: 1.01em; }
+
+.noComments {
+  text-align: center;
+  margin: 20px;
+  font-size: 2.5em; }
 
 footer {
   text-align: center; }
@@ -371,7 +377,9 @@ footer {
 @media screen and (min-device-width: 500px) {
   body > div {
     width: 960px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    background-color: #c2c2c2;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6), 0 0 20px 10px rgba(0, 0, 0, 0.6); }
   .error {
     text-align: center; }
     .error > div {
@@ -403,7 +411,7 @@ aside {
     height: 295px;
     background-color: #00ACE6;
     text-align: right;
-    box-shadow: -3px 0px 15px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.6);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 5px;
@@ -443,6 +451,8 @@ aside {
     background-color: #00ACE6;
     width: 50px;
     height: 35px; }
+    .phone_menu i {
+      padding-top: 5px; }
     .phone_menu div {
       font-size: 15pt;
       padding: 10px 0;
@@ -465,7 +475,7 @@ aside {
   .phone_menu {
     display: none; }
   .hero {
-    background-color: #eee;
+    background-color: #c2c2c2;
     position: relative;
     height: 200px; }
   nav {
@@ -523,7 +533,11 @@ aside {
     background-color: #9B9B9B;
     width: 120px;
     position: absolute;
-    top: 30px; }
+    top: 26px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5); }
   .info_label {
     background-color: #00ACE6;
     transform: translateX(-15px);
@@ -544,15 +558,18 @@ aside {
     outline: none;
     font-size: 1.4em;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.6);
-    border-radius: 5px; }
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
   .login > div {
     background-color: #9B9B9B;
     position: absolute;
-    top: 30px;
+    top: 26px;
     width: 120px;
     padding-bottom: 15px;
     font-size: .7em;
-    z-index: 1000; }
+    z-index: 1000;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5); }
   .login_label {
     background-color: #00ACE6;
     transform: translateX(-15px);
@@ -605,7 +622,7 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .featureblock {
-    background-color: #eee;
+    background-color: #c2c2c2;
     min-height: 1000px; }
   .featureblock > div {
     margin: 0 auto;
@@ -861,6 +878,8 @@ aside {
     box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.4);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px; }
+  .confirm {
+    font-size: 17pt; }
   .block_container input {
     margin-left: 100px;
     height: 30px;
@@ -925,7 +944,7 @@ aside {
 @media screen and (min-device-width: 500px) {
   footer {
     margin: 0;
-    background-color: #c2c2c2; }
+    background-color: #ddd; }
   .footerOptions {
     background-color: #9B9B9B;
     width: 100px;

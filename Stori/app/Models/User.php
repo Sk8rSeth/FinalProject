@@ -34,6 +34,6 @@ class User extends Model {
 				'new_score' => $new_score
 				];
 		DB::update($sql,$vals);
-		return $new_score;
+		// return $new_score;
 	}
 }

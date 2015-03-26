@@ -30,7 +30,7 @@
 	<?php
 	use App\Models\CommentVote;
 	if (count($ongoing_comments) < 1) {
-		echo "<div>There Are No Comments For This Story Yet Today</div>";
+		echo '<div class="noComments">There Are No Comments For This Story Yet Today</div>';
 	} else {
 		foreach ($ongoing_comments as $comm) {
 			if(Auth::guest()) {

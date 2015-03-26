@@ -44,15 +44,15 @@ class Comment extends Model {
 				AND in_story = 0
 				ORDER BY score desc";
 		$vals = [
-				"story_id" => $story_id
+				":story_id" => $story_id
 				];
 		$comments = DB::select($sql, $vals);
 
 		//update comments
 		foreach ($comments as $comment) {
-			$CommSLQ = "UPDATE comment SET assessed = 1 WHERE comment_id = :comment_id";
+			$CommSQL = "UPDATE comment SET assessed = 1 WHERE comment_id = :comment_id";
 			$vals = ['comment_id'=>$comment->comment_id]; 
-			DB::update($sql, $vals);
+			DB::update($CommSQL, $vals);
 		}
 
 		//select top comment 

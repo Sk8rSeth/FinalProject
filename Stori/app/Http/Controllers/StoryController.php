@@ -108,13 +108,27 @@ class StoryController extends Controller {
 		$comments = Comment::all(['story_id' => $story->story_id, 'in_story' => 1]);
 		$ongoing_comments = Comment::fetchOngoing($story->story_id);
 
+		$upSelected = '';
+		$downSelected = '';
+
+		//check vote for story
+		if (!Auth::guest()) {
+			$vote = StoryVote::getVote(Auth::user()->user_id, $story->story_id);
+			if ($vote == 'up') {
+				$upSelected = 'selected';
+			} else {
+				$downSelected = 'selected';
+			}
+		}
 	
 		return view('home', ['story' => $story,
 								'seed' => $seed, 
 								'genre' => $genre, 
 								'user' => $user, 
 								'comments' => $comments,
-								'ongoing_comments' => $ongoing_comments
+								'ongoing_comments' => $ongoing_comments,
+								'upSelected' => $upSelected,
+								'downSelected' => $downSelected
 								]);
 	}
 

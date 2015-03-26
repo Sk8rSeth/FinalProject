@@ -22,7 +22,13 @@ li {
 
 .selected {
 	color: $orange;
-	// text-shadow: 0px 3px 15px $orange, 0px -3px 15px $orange ;
+	font-size: 1.01em;
+}
+
+.noComments {
+	text-align: center;
+	margin: 20px;
+	font-size: 2.5em;
 }
 
 footer {
@@ -75,6 +81,9 @@ footer {
 	body > div {
 		width: 960px;
 		margin: 0 auto;
+		background-color: $lightGray;
+		// box-shadow: 0 0 30px 10px rgba(0,0,0,.4);
+		box-shadow: 0 1px 5px rgba(0,0,0,0.6), 0 0 20px 10px rgba(0,0,0,0.6);
 	}
 
 	.error {

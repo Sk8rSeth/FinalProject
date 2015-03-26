@@ -27,6 +27,10 @@
 		width: 50px;
 		height: 35px;
 
+		i {
+			padding-top: 5px;
+		}
+
 		div {
 			font-size: 15pt;
 			padding: 10px 0;
@@ -59,7 +63,7 @@
 	}
 
 	.hero {
-		background-color: $bg;
+		background-color: $lightGray;
 		position: relative;
 		height: 200px;
 	}
@@ -134,7 +138,11 @@
 		background-color: $gray;
 		width: 120px;
 		position: absolute;
-		top: 30px;
+		top: 26px;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
 	}
 
 	.info_label {
@@ -161,16 +169,20 @@
 		font-size: 1.4em;
 		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
 		border-radius: 5px;
+		// overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.login > div {
 		background-color: $gray;
 		position: absolute;
-		top: 30px;
+		top: 26px;
 		width: 120px;
 		padding-bottom: 15px;
 		font-size: .7em;
 		z-index: 1000;
+		box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
 	}
 
 	.login_label {

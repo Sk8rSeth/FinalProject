@@ -70,3 +70,10 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/aboutUs', function(){
+	return view('aboutUs');
+});
+Route::get('/faq', function(){
+	return view('faq');
+});

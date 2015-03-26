@@ -30,9 +30,10 @@ $(document).ready(function() {
 	$('.login').on('click', function() {
 		$('.login > div').removeClass('displayNone');
 	});
-	$('.login').focusout(function() {
-		// $('.login > div').addClass('displayNone');	
-	})
+	// $('.login').focusout(function() {
+	// 	console.log('oaksokaodka');
+	// 	$('.login > div').addClass('displayNone');	
+	// })
 
 	//info menu open and close
 	$('.info_menu').on('click', function() {

@@ -49,8 +49,8 @@
 						@if(count($errors) > 0)
 							
 						@endif
-				<div class="login" tabindex = "-1">Login
-					<div class="displayNone">
+				<div class="login">Login
+					<div class="displayNone" tabindex = "-1">
 						<form role="form" action="/auth/login" method="POST">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="login_label">Username</div>

@@ -24,7 +24,7 @@ The Current Highest Ranked Story!
 
 @section('story_header')
 	<a href="/story/{{$story->story_id}}"><div class="story_title">{{$seed->title}}</div></a>
-	<div class="story_score" story-id="{{$story->story_id}}"><i class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{$story->score}}</span><i class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
+	<div class="story_score" story-id="{{$story->story_id}}"><i class="fa fa-sort-asc {{$upSelected}}" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{$story->score}}</span><i class="fa fa-sort-desc {{$downSelected}}" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
 	<a href="/story/{{$story->story_id}}">
 		<div class="feature_story">
 			<p class="phone_story">{!!$story->story_body!!}</p>
@@ -41,7 +41,7 @@ The Current Highest Ranked Story!
 	@section('comments')
 	<?php
 	if (count($ongoing_comments) < 1) {
-		echo "<div>There Are No Comments For This Story Yet Today</div>";
+		echo '<div class="noComments">There Are No Comments For This Story Yet Today</div>';
 	} else {
 		foreach ($ongoing_comments as $comm) {
 			if(Auth::guest()) {

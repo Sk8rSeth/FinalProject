@@ -19,7 +19,7 @@ Create An Account
 		<div class="label">Password</div>
 		<input type="password" name="password">
 
-		<div class="label">Confirm Password</div>
+		<div class="label confirm">Confirm Password</div>
 		<input type="password" name="password_confirmation">
 
 		<div class="label">Email</div>
