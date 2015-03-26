@@ -5,9 +5,12 @@ use App\Models\Seed;
 use App\Models\Genre;
 use App\Models\User;
 use App\Models\Comment;
+use App\Models\StoryVote;
+use App\Models\CommentVote;
 
 use DB;
 use Request;
+use Auth;
 
 class StoryController extends Controller {
 
@@ -30,13 +33,35 @@ class StoryController extends Controller {
 	}
 
 	public function read($story_id) {
+		//set vote selected variables
+		$upSelected = '';
+		$downSelected = '';
+		$upComm = '';
+		$downComm = '';
+
+		//declarations and creations
 		$story = new Story($story_id);
 		$seed = new Seed($story->seed_id);
 		$user = new User($seed->user_id);
 		$g = new Genre($story->genre_id);
 		$genre = $g->genre_description;
+
+		//comments to build the story
 		$comments = Comment::all(['story_id' => $story_id, 'in_story' => 1]);
+
+		//ongoing comments for the day
 		$ongoing_comments = Comment::fetchOngoing($story->story_id);
+
+		//check vote for story
+		if (!Auth::guest()) {
+			$vote = StoryVote::getVote(Auth::user()->user_id, $story_id);
+			if ($vote == 'up') {
+				$upSelected = 'selected';
+			} else {
+				$downSelected = 'selected';
+			}
+		}
+
 
 
 		return view('reader', ['story' => $story,
@@ -44,7 +69,11 @@ class StoryController extends Controller {
 								'genre' => $genre, 
 								'user' => $user, 
 								'comments' => $comments,
-								'ongoing_comments' => $ongoing_comments
+								'ongoing_comments' => $ongoing_comments,
+								'upSelected' => $upSelected,
+								'downSelected' => $downSelected,
+								'upComm' => $upComm,
+								'downComm' => $downComm
 								]
 							);
 	}
@@ -92,8 +121,19 @@ class StoryController extends Controller {
 	public function upvote() {
 		$user_id = Request::input('user_id');
 		$story_id = Request::input('story_id');
-
 		$story = new Story($story_id);
+		$vote = StoryVote::getVote($user_id,$story_id);
+		if (is_null($vote)) {
+			$v = StoryVote::addVote($user_id, $story_id, 'up');
+		} else {
+			if ($vote != 'up'){
+				StoryVote::updateVote($user_id, $story_id, 'up');
+			} else {
+				$new_score = $story->score;
+				return (['new_score' => $new_score, 'vote' => $vote]);
+			}
+		}
+
 		$new_score = $story->score + 1;
 
 
@@ -108,14 +148,25 @@ class StoryController extends Controller {
 
 		DB::update($sql, $vals);
  		
-		return $new_score;
+		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
 	public function downvote() {
 		$user_id = Request::input('user_id');
 		$story_id = Request::input('story_id');
-
 		$story = new Story($story_id);
+		$vote = StoryVote::getVote($user_id,$story_id);
+		if (is_null($vote)) {
+			$v = StoryVote::addVote($user_id, $story_id, 'down');
+		} else {
+			if ($vote != 'down'){
+				StoryVote::updateVote($user_id, $story_id, 'down');
+			} else {
+				$new_score = $story->score;
+				return (['new_score' => $new_score, 'vote' => $vote]);
+			}
+		}
+
 		$new_score = $story->score - 1;
 
 
@@ -130,7 +181,7 @@ class StoryController extends Controller {
 
 		DB::update($sql, $vals);
  		
-		return $new_score;
+		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
 	public function getUsernames() {

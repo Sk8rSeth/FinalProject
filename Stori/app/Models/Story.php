@@ -60,4 +60,20 @@ class Story extends Model {
         }
         return $collection;
     }
+
+    public static function getEOD() {
+        $sql = "SELECT * FROM story WHERE is_alive = 1";
+
+        $stories = DB::select($sql);
+
+        return $stories;
+    }
+
+    public static function archiveEOD($story_id) {
+        $sql = "UPDATE story 
+                SET is_alive = 0 
+                WHERE story_id = :story_id";
+        $vals = ['story_id'=>$story_id];
+        DB::udpate($sql,$vals);
+    }
 }

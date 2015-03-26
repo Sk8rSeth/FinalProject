@@ -36,4 +36,38 @@ class Comment extends Model {
 				";
 		DB::delete($sql, $vars);
 	}
+
+	public static function getEOD($story_id) {
+		$sql = "SELECT * FROM comment 
+				WHERE story_id = :story_id
+				AND assessed = 0 
+				AND in_story = 0
+				ORDER BY score desc";
+		$vals = [
+				"story_id" => $story_id
+				];
+		$comments = DB::select($sql, $vals);
+
+		//update comments
+		foreach ($comments as $comment) {
+			$CommSLQ = "UPDATE comment SET assessed = 1 WHERE comment_id = :comment_id";
+			$vals = ['comment_id'=>$comment->comment_id]; 
+			DB::update($sql, $vals);
+		}
+
+		//select top comment 
+		$topComment = $comments[0];
+
+		return (['topComment'=>$topComment, 'story_id'=>$story_id]);
+	}
+
+	public static function updateEOD($comment_id) {
+		$sql = "UPDATE comment
+				SET in_story = 1
+				WHERE comment_id = :comment_id";
+		$vals = [
+				'comment_id' => $comment_id
+				];
+		DB::update($sql,$vals);
+	}
 }

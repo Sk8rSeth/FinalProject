@@ -6,7 +6,7 @@
 
 	@section('story_header')
 		<div class="story_title">{{ $story->number_comments }} Comments</div>
-		<div class="story_score"story-id="{{$story->story_id}}"><i class="fa fa-sort-asc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{ $story->score }}</span><i class="fa fa-sort-desc" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
+		<div class="story_score"story-id="{{$story->story_id}}"><i class="fa fa-sort-asc {{$upSelected}}" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{ $story->score }}</span><i class="fa fa-sort-desc {{$downSelected}}" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
 		<div class="hover_info displayNone">
 			<div class="hover_label">Author: </div>
 			<div class="hover_username">{{ $user->username }}</div>
@@ -28,6 +28,7 @@
 
 	@section('comments')
 	<?php
+	use App\Models\CommentVote;
 	if (count($ongoing_comments) < 1) {
 		echo "<div>There Are No Comments For This Story Yet Today</div>";
 	} else {
@@ -43,12 +44,20 @@
 							<i title="Delete Comment" class="fa fa-times"></i>
 							</div>';
 				}
+				$CommentVote = CommentVote::getVote(Auth::user()->user_id, $comm->comment_id);
+				if (is_null($CommentVote)) {
+				} elseif ($CommentVote == 'up') {
+					$upComm = 'selected';
+				} elseif ($CommentVote == 'down') {
+					$downComm = 'selected';
+				}
 			} 
 			$comment = '<div class="comment reader" comment-id="' . $comm->comment_id . '">
-				<div class="score"><div class="fa fa-sort-asc" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc" user-id="' . $cust_id . '"></div></div>
-				<div class="username">'.$comm->username.'- <strong>'.$comm->user_score.$delete.'</strong></div>
-				<div class="comment_description">'.$comm->comment_body.'</div>
+				<div class="score"><div class="fa fa-sort-asc ' .$upComm .'" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc '.$downComm.'" user-id="' . $cust_id . '"></div></div>
+				<div class="username">' . $comm->username . '- <strong>' . $comm->user_score . $delete . '</strong></div>
+				<div class="comment_description">' . $comm->comment_body . '</div>
 			</div>';
+
 			echo $comment;
 		} 
 	}?>

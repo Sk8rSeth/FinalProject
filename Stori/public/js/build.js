@@ -13376,7 +13376,7 @@ $(document).ready(function() {
 
 	//view all stories toggle
 	$('.all_stories').on('click', function(){
-		$('.all_stories').removeClass('displayNone');
+		$('.all_stories').toggleClass('displayNone');
 	});
 
 	//login button drop open
@@ -13391,7 +13391,6 @@ $(document).ready(function() {
 	$('.info_menu').on('click', function() {
 		$('.info_menu > div').removeClass('displayNone');
 	});
-
 	$('.info_menu').focusout(function() {
 		$('.info_menu > div').addClass('displayNone');
 	});
@@ -13502,9 +13501,12 @@ $(document).ready(function() {
 					'story_id': thisthis.parent('.story_score').attr('story-id')
 				}
 				$.get('/storyUpvote', sendData, function (data){
-					console.log(data);
-					$('.story_score').find('span').text(data);
-					$('.story_score .fa-s')
+					console.log(data.new_score);
+					$('.story_score').find('span').text(data.new_score);
+					if (data.vote == 'down') {
+						$('.story_score .fa-sort-asc').addClass('selected');
+						$('.story_score .fa-sort-desc').removeClass('selected');
+					}
 				});
 				console.log('i upvoted a story');
 
@@ -13516,7 +13518,11 @@ $(document).ready(function() {
 				}
 				$.get('/commentUpvote', sendData, function (data){
 					console.log(data);
-					var test = thisthis.parent('.score').find('.comment_score').text(data);
+					var test = thisthis.parent('.score').find('.comment_score').text(data.new_score);
+					if (data.vote == 'down') {
+						thisthis.parent('.score').find('.fa-sort-asc').addClass('selected');
+						thisthis.parent('.score').find('.fa-sort-desc').removeClass('selected');
+					}
 				});
 				console.log('i upvoted a comment');
 
@@ -13543,7 +13549,11 @@ $(document).ready(function() {
 				}
 				$.get('/storyDownvote', sendData, function (data){
 					console.log(data);
-					$('.story_score').find('span').text(data);
+					$('.story_score').find('span').text(data.new_score);
+					if (data.vote == 'up') {
+						$('.story_score .fa-sort-desc').addClass('selected');
+						$('.story_score .fa-sort-asc').removeClass('selected');
+					}
 				});
 				console.log('i Downvoted a story');
 
@@ -13555,7 +13565,11 @@ $(document).ready(function() {
 				}
 				$.get('/commentDownvote', sendData, function (data){
 					console.log(data);
-					var test = thisthis.parent('.score').find('.comment_score').text(data);
+					var test = thisthis.parent('.score').find('.comment_score').text(data.new_score);
+					if (data.vote == 'up') {
+						thisthis.parent('.score').find('.fa-sort-desc').addClass('selected');
+						thisthis.parent('.score').find('.fa-sort-asc').removeClass('selected');
+					}
 				});
 				console.log('i Downvoted a comment');
 

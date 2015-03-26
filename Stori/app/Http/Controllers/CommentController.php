@@ -4,6 +4,7 @@ use App\Models\Comment;
 use App\Models\User;
 use App\Models\Story;
 use App\Models\Seed;
+use App\Models\CommentVote;
 
 use Request;
 use DB;
@@ -49,8 +50,19 @@ class CommentController extends Controller {
 	public function upvote() {
 		$user_id = Request::input('user_id');
 		$comment_id = Request::input('comment_id');
-
 		$comment = new Comment($comment_id);
+		$vote = CommentVote::getVote($user_id,$comment_id);
+		if (is_null($vote)) {
+			$v = CommentVote::addVote($user_id, $comment_id, 'up');
+		} else {
+			if ($vote != 'up'){
+				CommentVote::updateVote($user_id, $comment_id, 'up');
+			} else {
+				$new_score = $comment->score;
+				return (['new_score' => $new_score, 'vote' => $vote]);
+			}
+		}
+
 		$new_score = $comment->score + 1;
 
 
@@ -65,14 +77,25 @@ class CommentController extends Controller {
 
 		DB::update($sql, $vals);
  		
-		return $new_score;
+		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
 	public function downvote() {
 		$user_id = Request::input('user_id');
 		$comment_id = Request::input('comment_id');
-
 		$comment = new Comment($comment_id);
+		$vote = CommentVote::getVote($user_id,$comment_id);
+		if (is_null($vote)) {
+			$v = CommentVote::addVote($user_id, $comment_id, 'down');
+		} else {
+			if ($vote != 'down'){
+				CommentVote::updateVote($user_id, $comment_id, 'down');
+			} else {
+				$new_score = $comment->score;
+				return (['new_score' => $new_score, 'vote' => $vote]);
+			}
+		}
+
 		$new_score = $comment->score - 1;
 
 

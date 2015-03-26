@@ -22,4 +22,18 @@ class User extends Model {
 		$usernames = DB::select($sql, $vars);
 		return $usernames;
 	}
+
+	public static function addPoints($user_id) {
+		$user = new User($user_id);
+		$new_score = $user->score + 1;
+		$sql = "UPDATE user
+				SET score = :new_score
+				WHERE user_id = :user_id";
+		$vals = [
+				'user_id' => $user_id,
+				'new_score' => $new_score
+				];
+		DB::update($sql,$vals);
+		return $new_score;
+	}
 }
