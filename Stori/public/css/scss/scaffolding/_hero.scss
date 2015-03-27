@@ -18,7 +18,7 @@
 		top: 0;
 		right: 0;
 		left: 0;
-		background-color: $lightGray;
+		background-color: $bg;
 		text-align: center;
 		height: 35px;
 		border-bottom: 1px solid $blue;
@@ -67,7 +67,7 @@
 	}
 
 	.hero {
-		background-color: #ccc;
+		background-color: $bg;
 		position: relative;
 		height: 200px;
 	}
@@ -123,13 +123,13 @@
 	*********************************/
 
 	.info_menu {
-		background-color: $gray;
+		background-color: $blue;
 		width: 100px;
 		height: 30px;
 		position: absolute;
 		left: 40px;
 		bottom: -10px;
-		z-index: 1000;
+		z-index: 10000;
 		outline: none;
 		font-size: 1.5em;
 		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);

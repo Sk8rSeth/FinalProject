@@ -321,7 +321,7 @@ td, th {
   padding: 0; }
 
 body {
-  background-color: #9B9B9B;
+  background-color: #eee;
   font-family: 'Quicksand', sans-serif;
   letter-spacing: -1px;
   color: #333; }
@@ -350,7 +350,7 @@ footer {
 
 @media screen and (max-device-width: 500px) {
   html {
-    font-size: 10pt;
+    font-size: 19pt;
     width: 100%;
     height: 100%; }
   .error {
@@ -376,8 +376,7 @@ footer {
   body > div {
     width: 960px;
     margin: 0 auto;
-    background-color: #c2c2c2;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6), 0 0 20px 10px rgba(0, 0, 0, 0.6); }
+    background-color: #eee; }
   .error {
     text-align: center; }
     .error > div {
@@ -442,7 +441,7 @@ aside {
     top: 0;
     right: 0;
     left: 0;
-    background-color: #c2c2c2;
+    background-color: #eee;
     text-align: center;
     height: 35px;
     border-bottom: 1px solid #00ACE6; }
@@ -476,7 +475,7 @@ aside {
   .phone_menu {
     display: none; }
   .hero {
-    background-color: #ccc;
+    background-color: #eee;
     position: relative;
     height: 200px; }
   nav {
@@ -518,13 +517,13 @@ aside {
 	***** Info Menu Section
 	*********************************/
   .info_menu {
-    background-color: #9B9B9B;
+    background-color: #00ACE6;
     width: 100px;
     height: 30px;
     position: absolute;
     left: 40px;
     bottom: -10px;
-    z-index: 1000;
+    z-index: 10000;
     outline: none;
     font-size: 1.5em;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.6);
@@ -625,7 +624,7 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .featureblock {
-    background-color: #ccc;
+    background-color: #eee;
     min-height: 1000px; }
   .featureblock > div {
     margin: 0 auto;
@@ -685,7 +684,7 @@ aside {
     text-decoration: underline; }
   .feature_story {
     background-color: #8C8C8C;
-    color: #eee;
+    color: #ddd;
     height: 300px;
     padding: 10px;
     display: inline-block;
@@ -909,13 +908,13 @@ aside {
 @media screen and (min-device-width: 500px) {
   .story {
     background-color: #9B9B9B;
+    line-height: 120%;
     height: 490px;
     width: 580px;
     padding: 10px;
     display: inline-block;
     overflow-y: auto;
     text-align: center;
-    line-height: 120%;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-top-left-radius: 5px;

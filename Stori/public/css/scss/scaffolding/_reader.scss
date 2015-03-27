@@ -17,14 +17,19 @@
 	.story {
 		background-color: $gray;
 		// background-color: #8C8C8C;
-		// color: $lightGray;
+		// color: #ddd;
+		// text-align: left;
+
+		//lines
+		// font-size: 1.9rem;
+		line-height: 120%;
+
 		height: 490px;
 		width: 580px;
 		padding: 10px;
 		display: inline-block;
 		overflow-y: auto;
 		text-align: center;
-		line-height: 120%;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
 		border-top-left-radius: 5px;
