@@ -484,8 +484,7 @@ aside {
     top: 0;
     left: 0;
     right: 0;
-    text-align: center;
-    box-shadow: 0 9px 9px -7px rgba(0, 0, 0, 0.4); }
+    text-align: center; }
   .options {
     background-color: #9B9B9B;
     width: 100px;
@@ -494,7 +493,8 @@ aside {
     margin-left: 10px;
     margin-right: 10px;
     vertical-align: top;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); }
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
   .archive {
     font-size: 1.2em; }
   .logo {
@@ -504,7 +504,8 @@ aside {
     height: 90px;
     background-color: #9B9B9B;
     display: inline-block;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.4), -2px 0px 5px rgba(0, 0, 0, 0.4); }
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
   .title {
     position: absolute;
     left: 50px;
@@ -606,7 +607,7 @@ aside {
     background-color: #c2c2c2;
     padding: 5px;
     height: 205px;
-    font-size: 1.3em; }
+    font-size: .83rem; }
     .feature_story p {
       height: 190px;
       overflow: hidden;
@@ -628,7 +629,7 @@ aside {
     min-height: 1000px; }
   .featureblock > div {
     margin: 0 auto;
-    width: 600px;
+    width: 700px;
     position: relative; }
   .featureblock > div::after {
     content: '';
@@ -645,11 +646,8 @@ aside {
     padding-left: 5px;
     padding-right: 5px;
     font-size: 2em;
-    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4);
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px; }
+    border-top-right-radius: 10px; }
   .story_score {
     margin: 0 auto;
     float: right;
@@ -659,11 +657,8 @@ aside {
     padding-right: 5px;
     background-color: #00ACE6;
     font-size: 28pt;
-    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4);
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px; }
+    border-top-right-radius: 10px; }
   .story_score span {
     margin: auto 5px; }
   .stats {
@@ -684,17 +679,15 @@ aside {
     text-decoration: underline; }
   .feature_story {
     background-color: #8C8C8C;
-    color: #ddd;
+    font-size: 1.2em;
     height: 300px;
     padding: 10px;
     display: inline-block;
     overflow: hidden;
     text-align: center;
-    width: 580px;
+    width: 680px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; } }
 
@@ -741,7 +734,7 @@ aside {
     overflow: scroll;
     padding-left: 5px;
     padding-right: 5px;
-    width: 300px;
+    width: 390px;
     border-radius: 15px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
@@ -751,7 +744,7 @@ aside {
     margin-bottom: 5px; }
   .comment {
     background-color: #9B9B9B;
-    width: 290px;
+    width: 380px;
     margin: 10px auto 0 auto;
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 0;
@@ -908,19 +901,20 @@ aside {
 @media screen and (min-device-width: 500px) {
   .story {
     background-color: #9B9B9B;
+    font-size: 1.3em;
     line-height: 120%;
     height: 490px;
-    width: 580px;
+    width: 680px;
     padding: 10px;
     display: inline-block;
     overflow-y: auto;
     text-align: center;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset;
+    padding-bottom: 100px;
+    z-index: 100; }
   .lineNumber {
     font-size: .6em;
     float: left; }
@@ -950,7 +944,9 @@ aside {
     transform: translateX(-15px);
     margin: 10px;
     padding: 5px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); } }
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); }
+  .seed {
+    border-bottom: 2px solid #888; } }
 
 @media screen and (max-device-width: 500px) {
   footer {

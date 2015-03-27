@@ -235,7 +235,7 @@ $(document).ready(function() {
 	if ($(window).width() > 499) {
 		$('.reader').hover(function(){
 			var comment_text = $(this).find('.comment_description').text();
-			$('.story').append('<div class="hover_added">- ' + comment_text + '</div>')
+			$('.story').append('<div class="hover_added"><span class=lineNumber>XX </span> ' + comment_text + '</div>')
 		}, function() {
 			$('.hover_added').remove();
 		}

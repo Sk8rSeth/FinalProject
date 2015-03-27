@@ -68,7 +68,7 @@
 						<a href="/profile"><div class="login_label">Profile</div></a>
 						<div>view your profile</div>
 						<a href="/auth/logout"><div class="login_label">Logout</div></a>
-						<div>or logout forever...</div>
+						<div>logout forever...</div>
 					</div>
 				</div>
 				@endif

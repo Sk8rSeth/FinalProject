@@ -79,7 +79,7 @@
 		left: 0;
 		right: 0;
 		text-align: center;
-		box-shadow: 0 9px 9px -7px rgba(0,0,0,0.4);
+		// box-shadow: 0 9px 9px -7px rgba(0,0,0,0.4);
 	}
 
 	.options {
@@ -90,7 +90,9 @@
 		margin-left: 10px;
 		margin-right: 10px;
 		vertical-align: top;
-		box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		// box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 	}
 
 	.archive {
@@ -104,7 +106,9 @@
 		height: 90px;
 		background-color: $gray;
 		display: inline-block;
-		box-shadow: 2px 0px 5px rgba(0,0,0,0.4), -2px 0px 5px rgba(0,0,0,0.4);
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		// box-shadow: 2px 0px 5px rgba(0,0,0,0.4), -2px 0px 5px rgba(0,0,0,0.4);
 	}
 
 

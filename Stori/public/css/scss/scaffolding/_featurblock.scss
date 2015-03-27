@@ -20,7 +20,7 @@
 		background-color: $lightGray;
 		padding: 5px;
 		height: 205px;
-		font-size: 1.3em;
+		font-size: .83rem;
 
 		p {	
 			height: 190px;
@@ -55,7 +55,7 @@
 
 	.featureblock > div {
 		margin: 0 auto;
-		width: 600px;
+		width: 700px;
 		position: relative;
 	}
 
@@ -78,11 +78,11 @@
 		padding-left: 5px;
 		padding-right: 5px;
 		font-size: 2em;
-		box-shadow: 0px 2px 5px 1px rgba(0,0,0,.4);
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		border-bottom-right-radius: 5px;
-		border-bottom-left-radius: 5px;
+		// box-shadow: 2px 2px 5px 1px rgba(0,0,0,.4);
+		// border-bottom-right-radius: 5px;
+		// border-bottom-left-radius: 5px;
 	}
 
 	.story_score {
@@ -94,11 +94,11 @@
 		padding-right: 5px;
 		background-color: $blue;
 		font-size: 28pt;
-		box-shadow: 0px 2px 5px 1px rgba(0,0,0,.4);
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		border-bottom-right-radius: 5px;
-		border-bottom-left-radius: 5px;
+		// box-shadow: 2px 2px 5px 1px rgba(0,0,0,.4);
+		// border-bottom-right-radius: 5px;
+		// border-bottom-left-radius: 5px;
 	}
 
 	.story_score span {
@@ -133,17 +133,18 @@
 
 	.feature_story {
 		background-color: #8C8C8C;
-		color: #ddd;
+		// color: #ddd;
+		font-size: 1.2em;
 		height: 300px;
 		padding: 10px;
 		display: inline-block;
 		overflow: hidden;
 		text-align: center;
-		width: 580px;
+		width: 680px;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		// border-top-left-radius: 5px;
+		// border-top-right-radius: 5px;
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 	}

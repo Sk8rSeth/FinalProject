@@ -17,7 +17,7 @@
 		</div>
 		<div class="story">
 			<p>
-				<div class="seed">{!! $seed->seed_body !!}</div>
+				<div class="seed"><span class="lineNumber">seed</span>{!! $seed->seed_body !!}</div>
 					<?php $i = 2; ?>
 				@foreach ($comments->getArray() as $comment) 
 					<div comment-id="{{$comment->comment_id}}"><span class="lineNumber">{{$i}} </span> {!! $comment->comment_body !!} </div>
