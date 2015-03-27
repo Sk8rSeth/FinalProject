@@ -1,9 +1,14 @@
 @media screen and (max-device-width: $small-screen-width) {
 	.story {
+		font-size: 1.3em;
 		
 	}
 	.comment_description {
 
+	}
+
+	.lineNumber {
+		font-size: .4em;
 	}
 }
 
@@ -11,6 +16,8 @@
 @media screen and (min-device-width: $small-screen-width) {
 	.story {
 		background-color: $gray;
+		// background-color: #8C8C8C;
+		// color: $lightGray;
 		height: 490px;
 		width: 580px;
 		padding: 10px;
@@ -24,6 +31,12 @@
 		border-top-right-radius: 5px;
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
+	}
+
+
+	.lineNumber {
+		font-size: .6em;
+		float: left;
 	}
 
 	/*************************

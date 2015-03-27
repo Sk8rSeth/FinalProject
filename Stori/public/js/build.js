@@ -13376,7 +13376,7 @@ $(document).ready(function() {
 
 	//view all stories toggle
 	$('.all_stories').on('click', function(){
-		$('.all_stories').toggleClass('displayNone');
+		$('.all_stories').removeClass('displayNone');
 	});
 
 	//login button drop open
@@ -13408,7 +13408,7 @@ $(document).ready(function() {
 		//ajax to get comment_id:username
 		$.get('/getusernames', sendStory, function (data){
 			return CommUsernames = data;
-		})
+		});
 		$('.story div').hover(function(){
 			if ($(this).attr('class') !== 'seed') {
 				$('.hover_info').removeClass('displayNone');
@@ -13417,10 +13417,10 @@ $(document).ready(function() {
 				//filter array of objects by comment_id that i hover over
 				var comm_id = $(this).attr('comment-id');
 				var username_array = CommUsernames.filter(function(o){
-					return o.comment_id == comm_id; 
+					return o.comment_id == comm_id;
 				})
 				// replace hover_info username
-				$('.hover_username').text(username_array[0].username)
+				$('.hover_username').text(username_array[0].username);
 
 				var comment_length = $(this).text().length;
 				$('.hover_length').text(comment_length);

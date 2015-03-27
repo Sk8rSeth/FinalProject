@@ -18,8 +18,10 @@
 		<div class="story">
 			<p>
 				<div class="seed">{!! $seed->seed_body !!}</div>
+					<?php $i = 2; ?>
 				@foreach ($comments->getArray() as $comment) 
-					<div comment-id="{{$comment->comment_id}}">- {!! $comment->comment_body !!} </div>
+					<div comment-id="{{$comment->comment_id}}"><span class="lineNumber">{{$i}} </span> {!! $comment->comment_body !!} </div>
+					<?php $i++; ?>
 				@endforeach
 			</p>
 		</div>

@@ -321,7 +321,7 @@ td, th {
   padding: 0; }
 
 body {
-  background-color: #eee;
+  background-color: #9B9B9B;
   font-family: 'Quicksand', sans-serif;
   letter-spacing: -1px;
   color: #333; }
@@ -353,8 +353,6 @@ footer {
     font-size: 10pt;
     width: 100%;
     height: 100%; }
-  footer {
-    display: none; }
   .error {
     text-align: center; }
     .error > div {
@@ -405,7 +403,7 @@ aside {
   aside {
     display: block;
     position: fixed;
-    right: calc((100% - 960px) / 2 - 5px);
+    right: calc((100% - 965px) / 2 - 5px);
     top: 210px;
     width: 120px;
     height: 295px;
@@ -436,6 +434,9 @@ aside {
     background-color: #c2c2c2;
     font-size: 14pt;
     margin-top: 5px; }
+    @media screen and (max-device-width: 325px) {
+      .title {
+        font-size: .8em; } }
   .hero {
     position: fixed;
     top: 0;
@@ -475,7 +476,7 @@ aside {
   .phone_menu {
     display: none; }
   .hero {
-    background-color: #c2c2c2;
+    background-color: #ccc;
     position: relative;
     height: 200px; }
   nav {
@@ -605,7 +606,8 @@ aside {
   .feature_story {
     background-color: #c2c2c2;
     padding: 5px;
-    height: 205px; }
+    height: 205px;
+    font-size: 1.3em; }
     .feature_story p {
       height: 190px;
       overflow: hidden;
@@ -616,13 +618,14 @@ aside {
   .story_score {
     float: right;
     background-color: #00ACE6;
-    font-size: 14pt; }
+    font-size: 14pt;
+    padding: 0 2px; }
     .story_score span {
       margin: 0 5px; } }
 
 @media screen and (min-device-width: 500px) {
   .featureblock {
-    background-color: #c2c2c2;
+    background-color: #ccc;
     min-height: 1000px; }
   .featureblock > div {
     margin: 0 auto;
@@ -681,7 +684,8 @@ aside {
   .stats strong {
     text-decoration: underline; }
   .feature_story {
-    background-color: #9B9B9B;
+    background-color: #8C8C8C;
+    color: #eee;
     height: 300px;
     padding: 10px;
     display: inline-block;
@@ -796,7 +800,6 @@ aside {
       text-decoration: underline; }
   .feature_add_comment {
     width: 80%;
-    background-color: #eee;
     margin: 0 auto;
     text-align: center; }
   .feature_add_comment textarea {
@@ -804,7 +807,7 @@ aside {
     height: 4em;
     resize: none; }
   .feature_add_comment button {
-    margin: 10px;
+    margin: 10px auto;
     width: 200px;
     height: 30px; } }
 
@@ -833,7 +836,7 @@ aside {
   .block_container {
     width: 80%;
     margin: 0 auto;
-    background-color: #9B9B9B;
+    background-color: #c2c2c2;
     padding-bottom: 10px;
     padding-top: 10px;
     text-align: center;
@@ -897,6 +900,12 @@ aside {
     font-size: 18pt;
     margin-left: 50px; } }
 
+@media screen and (max-device-width: 500px) {
+  .story {
+    font-size: 1.3em; }
+  .lineNumber {
+    font-size: .4em; } }
+
 @media screen and (min-device-width: 500px) {
   .story {
     background-color: #9B9B9B;
@@ -913,6 +922,9 @@ aside {
     border-top-right-radius: 5px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
+  .lineNumber {
+    font-size: .6em;
+    float: left; }
   /*************************
 	********** Hover Info
 	**************************/
@@ -940,6 +952,21 @@ aside {
     margin: 10px;
     padding: 5px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); } }
+
+@media screen and (max-device-width: 500px) {
+  footer {
+    background-color: #FFF;
+    visibility: hidden; }
+    footer .logo {
+      background-color: #333; }
+  .footerOptions {
+    display: inline-block;
+    background-color: red;
+    vertical-align: bottom;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    font-size: 1.2em; } }
 
 @media screen and (min-device-width: 500px) {
   footer {

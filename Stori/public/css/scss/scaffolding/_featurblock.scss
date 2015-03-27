@@ -20,6 +20,7 @@
 		background-color: $lightGray;
 		padding: 5px;
 		height: 205px;
+		font-size: 1.3em;
 
 		p {	
 			height: 190px;
@@ -37,6 +38,7 @@
 		float: right;
 		background-color: $blue;
 		font-size: 14pt;
+		padding: 0 2px;
 
 		span {
 			margin: 0 5px;
@@ -47,7 +49,7 @@
 
 @media screen and (min-device-width: $small-screen-width) {
 	.featureblock {
-		background-color: $lightGray;
+		background-color: #ccc;
 		min-height: 1000px;
 	}
 
@@ -92,7 +94,6 @@
 		padding-right: 5px;
 		background-color: $blue;
 		font-size: 28pt;
-		// box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.6);
 		box-shadow: 0px 2px 5px 1px rgba(0,0,0,.4);
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
@@ -131,7 +132,8 @@
 	}
 
 	.feature_story {
-		background-color: $gray;
+		background-color: #8C8C8C;
+		color: $bg;
 		height: 300px;
 		padding: 10px;
 		display: inline-block;

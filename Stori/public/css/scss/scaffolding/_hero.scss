@@ -7,6 +7,10 @@
 		background-color: $lightGray;
 		font-size: 14pt;
 		margin-top: 5px;
+
+		@media screen and (max-device-width: 325px) {
+			font-size: .8em;
+		}
 	}
 
 	.hero {
@@ -38,7 +42,7 @@
 			z-index: auto;
 			width: 100px;
 		}
-		>div {
+		> div {
 			box-shadow: 2px 3px 4px rgba(0,0,0,0.5);
 		}
 	}
@@ -63,7 +67,7 @@
 	}
 
 	.hero {
-		background-color: $lightGray;
+		background-color: #ccc;
 		position: relative;
 		height: 200px;
 	}

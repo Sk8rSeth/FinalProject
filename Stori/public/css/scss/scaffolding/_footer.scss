@@ -1,6 +1,21 @@
 @media screen and (max-device-width: $small-screen-width) {
 	footer {
+		background-color: #FFF;
+		visibility: hidden;
 
+		.logo {
+			background-color: #333;
+		}
+	}
+
+	.footerOptions {
+		display: inline-block;
+		background-color: red;
+		vertical-align: bottom;
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 100px;
+		font-size: 1.2em;
 	}
 }
 
