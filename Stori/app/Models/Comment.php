@@ -55,10 +55,14 @@ class Comment extends Model {
 			DB::update($CommSQL, $vals);
 		}
 
-		//select top comment 
-		$topComment = $comments[0];
+		if (count($comments) > 0 ){
+			//select top comment 
+			$topComment = $comments[0];
 
-		return (['topComment'=>$topComment, 'story_id'=>$story_id]);
+			return (['topComment'=>$topComment, 'story_id'=>$story_id]);
+		} else {
+			return NULL;
+		}
 	}
 
 	public static function updateEOD($comment_id) {

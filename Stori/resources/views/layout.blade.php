@@ -83,7 +83,7 @@
 			<aside>
 				<a href="/story"><div class="stories">Stories - </div></a>
 				<a href="/seeds"><div class="seeds">Seeds - </div></a>
-				<a href="/random"><div class="feature1">Random - </div></a>
+				<a href="/random"><div class="randomStory">Random - </div></a>
 				<a href="/"><div class="feature2">Feature2 - </div></a>
 				<a href="/"><div class="feature3">Feature3 - </div></a>
 			</aside>

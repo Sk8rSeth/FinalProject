@@ -1,10 +1,11 @@
 <?php
 
+Route::get('/', 'StoryController@getRanked');
 Route::get('home', 'StoryController@getRanked');
 
 
 //==========
-// Gen Page Loads
+// General Page Loads
 //==========
 
 // story
@@ -34,6 +35,11 @@ Route::get('/profile', function(){
 	return view('profile');
 });
 
+//random
+Route::get('/randomOngoing', 'StoryController@randomOngoing');
+Route::get('/randomArchive', 'StoryController@randomArchived');
+
+
 //=========
 // Voting
 //=========
@@ -59,11 +65,11 @@ Route::get('/signup', function(){
 	return view('signup');
 });
 
+
 Route::get('/login', function(){
 	return view('auth.login');
 });
 
-Route::get('/', 'StoryController@getRanked');
 
 // Auth
 Route::controllers([
@@ -77,3 +83,6 @@ Route::get('/aboutUs', function(){
 Route::get('/faq', function(){
 	return view('faq');
 });
+
+
+Route::get('/eod', 'EODController@EOD');

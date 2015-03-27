@@ -1,8 +1,9 @@
 @media screen and (max-device-width: $small-screen-width) {
 	.feature_comments {
 		background-color: $darkBlue;
-		margin: 5px;
+		margin: 5px auto;
 		padding: 5px 0;
+		font-size: .8em;
 	}
 
 	.seed {

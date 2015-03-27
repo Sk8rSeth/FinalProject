@@ -49,7 +49,8 @@
 
 @media screen and (min-device-width: $small-screen-width) {
 	.featureblock {
-		background-color: $bg;
+		// background-color: $bg;
+		background: $lightGray url('/images/bg-texture-00.svg');
 		min-height: 1000px;
 	}
 

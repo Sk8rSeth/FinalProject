@@ -241,5 +241,4 @@ $(document).ready(function() {
 		}
 	)}
 
-
 });

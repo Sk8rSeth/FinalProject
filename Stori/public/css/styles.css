@@ -321,10 +321,10 @@ td, th {
   padding: 0; }
 
 body {
-  background-color: #eee;
   font-family: 'Quicksand', sans-serif;
   letter-spacing: -1px;
-  color: #333; }
+  color: #333;
+  background: #c2c2c2 url('/images/bg-texture-00.svg'); }
 
 a {
   text-decoration: none;
@@ -475,11 +475,11 @@ aside {
   .phone_menu {
     display: none; }
   .hero {
-    background-color: #eee;
+    background: #c2c2c2 url('/images/bg-texture-00.svg');
     position: relative;
     height: 200px; }
   nav {
-    background-color: #ddd;
+    background-color: #ccc;
     position: absolute;
     top: 0;
     left: 0;
@@ -518,7 +518,7 @@ aside {
 	***** Info Menu Section
 	*********************************/
   .info_menu {
-    background-color: #00ACE6;
+    background-color: #9B9B9B;
     width: 100px;
     height: 30px;
     position: absolute;
@@ -625,7 +625,7 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .featureblock {
-    background-color: #eee;
+    background: #c2c2c2 url('/images/bg-texture-00.svg');
     min-height: 1000px; }
   .featureblock > div {
     margin: 0 auto;
@@ -694,8 +694,9 @@ aside {
 @media screen and (max-device-width: 500px) {
   .feature_comments {
     background-color: #006080;
-    margin: 5px;
-    padding: 5px 0; }
+    margin: 5px auto;
+    padding: 5px 0;
+    font-size: .8em; }
   .seed {
     font-size: 1.1em;
     font-style: italic;

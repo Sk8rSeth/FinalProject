@@ -61,6 +61,22 @@ class Story extends Model {
         return $collection;
     }
 
+    public static function fetchOngoing() {
+        $sql = "SELECT * FROM story WHERE is_alive = 1";
+        $stories = DB::select($sql);
+        return $stories;
+    }
+
+    public static function fetchArchived() {
+        $sql = "SELECT * FROM story WHERE is_alive = 0";
+        $stories = DB::select($sql);
+        $story_id = [];
+        foreach ($stories as $value) {
+            $story_id[] = $value->story_id;
+        }
+        return $story_id;
+    }
+
     public static function getEOD() {
         $sql = "SELECT * FROM story WHERE is_alive = 1";
 

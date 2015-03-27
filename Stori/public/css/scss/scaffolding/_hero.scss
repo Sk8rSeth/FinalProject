@@ -67,13 +67,14 @@
 	}
 
 	.hero {
-		background-color: $bg;
+		// background-color: $bg;
+		background: $lightGray url('/images/bg-texture-00.svg');
 		position: relative;
 		height: 200px;
 	}
 
 	nav {
-		background-color: #ddd;
+		background-color: #ccc;
 		position: absolute;
 		top: 0;	
 		left: 0;
@@ -127,7 +128,7 @@
 	*********************************/
 
 	.info_menu {
-		background-color: $blue;
+		background-color: $gray;
 		width: 100px;
 		height: 30px;
 		position: absolute;

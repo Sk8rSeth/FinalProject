@@ -204,4 +204,17 @@ class StoryController extends Controller {
 
 		return $usernamesall;
 	}
+
+	public function randomOngoing() {
+		$stories = Story::fetchOngoing();
+
+
+		return redirect('/Story/' . rand(1,$story));
+	}
+
+	public function randomArchived() {
+		$stories = Story::fetchArchived();
+
+		return redirect('/Archive/' . rand(1,$story));
+	}
 }

@@ -23,19 +23,21 @@ class EODController extends Controller {
 		}
 
 		foreach ($comments as $comment) {
-			//add comments to story
-			Comment::updateEOD($comment['topComment']->comment_id);
+			if (!is_null($comment)) {
+				//add comments to story
+				Comment::updateEOD($comment['topComment']->comment_id);
 
-			//add points to user who had top comment
-			User::addPoints($comment['topComment']->user_id);
+				//add points to user who had top comment
+				User::addPoints($comment['topComment']->user_id);
 
-			//logic to end story based on top comment content
-			if ($comment['topComment']->comment_body == '== End ==') {
-				Story::archiveEOD($comment['story_id']);
+				//logic to end story based on top comment content
+				if ($comment['topComment']->comment_body == '== End ==') {
+					Story::archiveEOD($comment['story_id']);
+				}
 			}
 
 		}
 
-		return redirect('/');
+		return 'success';
 	}
 }
