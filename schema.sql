@@ -78,7 +78,6 @@ CREATE TABLE genre (
 -- Insert sample data
 -- 
 
-
 -- users
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Seth', 'Howell', 'Sk8rSeth', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 's@h.com');

@@ -49,14 +49,14 @@
 
 @media screen and (min-device-width: $small-screen-width) {
 	.featureblock {
-		// background-color: $bg;
-		background: $lightGray url('/images/bg-texture-00.svg');
+		background-color: $lightGray;
+		// background: $lightGray url('/images/bg-texture-00.svg');
 		min-height: 1000px;
 	}
 
 	.featureblock > div {
-		margin: 0 auto;
-		width: 700px;
+		margin: 0 5px;
+		width: 960px;
 		position: relative;
 	}
 
@@ -108,17 +108,22 @@
 
 	.stats {
 		text-align: center;
-		background-color: $gray;
+		background-color: $darkBlue;
+		// background-color: $gray;
 		float: right;
-		width: 285px;
+		width: 395px;
 		margin: 10px 0;
-		padding-bottom: 5px;
+		padding-bottom: 10px;
 		border-radius: 15px;
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 
 		h2 {
 			margin-bottom: .6em;
+		}
+
+		div {
+			font-size: 1.3em;
 		}
 		
 	}
@@ -133,20 +138,23 @@
 	}
 
 	.feature_story {
-		background-color: #8C8C8C;
+		background-color: $darkBlue;
+		// background-color: #8C8C8C;
 		// color: #ddd;
-		font-size: 1.2em;
+		font-size: 1.3em;
 		height: 300px;
 		padding: 10px;
 		display: inline-block;
 		overflow: hidden;
 		text-align: center;
-		width: 680px;
+		width: 940px;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-		// border-top-left-radius: 5px;
-		// border-top-right-radius: 5px;
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
+
+		p {
+			margin: 0 auto;
+		}
 	}
 }

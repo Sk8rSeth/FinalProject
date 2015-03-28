@@ -59,22 +59,16 @@
 		overflow: scroll;
 		padding-left: 5px;
 		padding-right: 5px;
-		width: 390px;
+		width: 540px;
 		border-radius: 15px;
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.3) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 	}
-	
-	.seed {
-		font-size: 1.1em;
-		font-style: italic;
-		margin-bottom: 5px;
-	}
 
 	.comment {
 		background-color: $gray;
-		width: 380px;
-		margin: 10px auto 0 auto;
+		width: 520px;
+		margin: 15px auto 0 auto;
 		font-family: 'Open Sans Condensed', sans-serif;
 		letter-spacing: 0;
 		border-radius: 10px;

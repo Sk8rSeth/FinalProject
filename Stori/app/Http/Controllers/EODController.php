@@ -35,9 +35,7 @@ class EODController extends Controller {
 					Story::archiveEOD($comment['story_id']);
 				}
 			}
-
 		}
-
 		return 'success';
 	}
 }

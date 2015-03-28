@@ -1,22 +1,21 @@
 body {
-  // background-color: $bg;
-  font-family: 'Quicksand', sans-serif;
-  letter-spacing: -1px;
-  color: #333;
-  background: $lightGray url('/images/bg-texture-00.svg');
+	background-color: $bg;
+	font-family: 'Quicksand', sans-serif;
+	letter-spacing: -1px;
+	color: #333;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 li {
-  padding: 5px;
+	padding: 5px;
 }
 
 .displayNone {
-  display: none;
+	display: none;
 }
 
 .selected {
@@ -47,32 +46,39 @@ footer {
 
 		> div{
 			width: 80%;
-			height: 50px;
+			height: 60px;
 			padding: 5px 10px 0 10px;
 			margin: 0 auto 10px auto;
 			border-radius: 10px;
+			font-size: .6em;
 			background-color: red;
 		}
 
 		.fa-exclamation.left {
 			float: left;
-			font-size: 3em;
+			font-size: 3.5em;
 		}
 
 		.fa-exclamation.right {
 			float: right;
-			font-size: 3em;
+			font-size: 3.5em;
 		}
 	}
 	
 	.errors {
 		display: block;
 		color: red;
+		font-size: .6em;
 	}
 
 }
 
 @media screen and (min-device-width: $small-screen-width) {
+	body {
+		background-color: $lightGray;
+		// background: $lightGray url('/images/bg-texture-00.svg');
+	}
+
 	body > div {
 		width: 960px;
 		margin: 0 auto;

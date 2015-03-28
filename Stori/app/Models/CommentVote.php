@@ -27,7 +27,6 @@ class CommentVote extends Model {
 		} else {
 			return NULL;
 		}
-
 		return $vote;
 	}
 

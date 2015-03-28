@@ -321,10 +321,10 @@ td, th {
   padding: 0; }
 
 body {
+  background-color: #eee;
   font-family: 'Quicksand', sans-serif;
   letter-spacing: -1px;
-  color: #333;
-  background: #c2c2c2 url('/images/bg-texture-00.svg'); }
+  color: #333; }
 
 a {
   text-decoration: none;
@@ -357,22 +357,26 @@ footer {
     text-align: center; }
     .error > div {
       width: 80%;
-      height: 50px;
+      height: 60px;
       padding: 5px 10px 0 10px;
       margin: 0 auto 10px auto;
       border-radius: 10px;
+      font-size: .6em;
       background-color: red; }
     .error .fa-exclamation.left {
       float: left;
-      font-size: 3em; }
+      font-size: 3.5em; }
     .error .fa-exclamation.right {
       float: right;
-      font-size: 3em; }
+      font-size: 3.5em; }
   .errors {
     display: block;
-    color: red; } }
+    color: red;
+    font-size: .6em; } }
 
 @media screen and (min-device-width: 500px) {
+  body {
+    background-color: #c2c2c2; }
   body > div {
     width: 960px;
     margin: 0 auto;
@@ -402,7 +406,7 @@ aside {
   aside {
     display: block;
     position: fixed;
-    right: calc((100% - 965px) / 2 - 5px);
+    right: calc((85% - 995px) / 2 - 5px);
     top: 210px;
     width: 120px;
     height: 295px;
@@ -469,13 +473,16 @@ aside {
     background-color: #9B9B9B;
     height: 35px;
     width: 100px;
-    font-size: 24pt; } }
+    font-size: 24pt; }
+    .logo span {
+      color: #006080;
+      font-family: 'Dancing Script', cursive; } }
 
 @media screen and (min-device-width: 500px) {
   .phone_menu {
     display: none; }
   .hero {
-    background: #c2c2c2 url('/images/bg-texture-00.svg');
+    background-color: #c2c2c2;
     position: relative;
     height: 200px; }
   nav {
@@ -506,10 +513,12 @@ aside {
     display: inline-block;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
+    .logo span {
+      color: #006080;
+      font-family: 'Dancing Script', cursive; }
   .title {
     position: absolute;
-    left: 50px;
-    bottom: 0px;
+    bottom: 15px;
     background-color: #9B9B9B;
     padding: 5px 15px;
     border-radius: 10px;
@@ -522,12 +531,11 @@ aside {
     width: 100px;
     height: 30px;
     position: absolute;
-    left: 40px;
-    bottom: -10px;
+    left: 0;
+    bottom: 0;
     z-index: 10000;
     outline: none;
     font-size: 1.5em;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.6);
     border-radius: 5px; }
   .info_menu > div {
     font-size: .65em;
@@ -554,11 +562,10 @@ aside {
     width: 120px;
     height: 30px;
     position: absolute;
-    right: 40px;
-    bottom: -10px;
+    right: 0px;
+    bottom: 0;
     outline: none;
     font-size: 1.4em;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     text-overflow: ellipsis;
     white-space: nowrap; }
@@ -625,11 +632,11 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .featureblock {
-    background: #c2c2c2 url('/images/bg-texture-00.svg');
+    background-color: #c2c2c2;
     min-height: 1000px; }
   .featureblock > div {
-    margin: 0 auto;
-    width: 700px;
+    margin: 0 5px;
+    width: 960px;
     position: relative; }
   .featureblock > div::after {
     content: '';
@@ -663,33 +670,37 @@ aside {
     margin: auto 5px; }
   .stats {
     text-align: center;
-    background-color: #9B9B9B;
+    background-color: #006080;
     float: right;
-    width: 285px;
+    width: 395px;
     margin: 10px 0;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-radius: 15px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
     .stats h2 {
       margin-bottom: .6em; }
+    .stats div {
+      font-size: 1.3em; }
   .stats div {
     padding: 5px; }
   .stats strong {
     text-decoration: underline; }
   .feature_story {
-    background-color: #8C8C8C;
-    font-size: 1.2em;
+    background-color: #006080;
+    font-size: 1.3em;
     height: 300px;
     padding: 10px;
     display: inline-block;
     overflow: hidden;
     text-align: center;
-    width: 680px;
+    width: 940px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; } }
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
+    .feature_story p {
+      margin: 0 auto; } }
 
 @media screen and (max-device-width: 500px) {
   .feature_comments {
@@ -735,18 +746,14 @@ aside {
     overflow: scroll;
     padding-left: 5px;
     padding-right: 5px;
-    width: 390px;
+    width: 540px;
     border-radius: 15px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
-  .seed {
-    font-size: 1.1em;
-    font-style: italic;
-    margin-bottom: 5px; }
   .comment {
     background-color: #9B9B9B;
-    width: 380px;
-    margin: 10px auto 0 auto;
+    width: 520px;
+    margin: 15px auto 0 auto;
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 0;
     border-radius: 10px;
@@ -797,7 +804,7 @@ aside {
     text-align: center; }
   .feature_add_comment textarea {
     width: 100%;
-    height: 4em;
+    height: 5em;
     resize: none; }
   .feature_add_comment button {
     margin: 10px auto;
@@ -809,16 +816,16 @@ aside {
     float: right;
     position: relative; }
   .feature_add_comment textarea {
-    margin: 10px 0;
-    width: 280px;
-    height: 4em; }
+    margin: 10px auto;
+    width: 385px;
+    height: 6em; }
   .feature_add_comment button {
     position: absolute;
     right: 0;
     bottom: -5px;
     height: 30px;
     border-radius: 10px;
-    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.4); }
+    background-color: #9B9B9B; }
   .plz_login {
     text-align: center;
     font-size: 13pt; }
@@ -827,7 +834,7 @@ aside {
 
 @media screen and (max-device-width: 500px) {
   .block_container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     background-color: #c2c2c2;
     padding-bottom: 10px;
@@ -836,17 +843,17 @@ aside {
     border-radius: 10px; }
   .label {
     background-color: #00ACE6;
-    transform: translateX(-10px);
     font-size: 18pt; }
   .block_container input {
-    margin: 10px; }
+    margin: 10px;
+    width: 80%; }
   .block_container button {
     margin: 10px;
     width: 200px;
-    height: 30px;
+    height: 50px;
     border-radius: 10px;
     background-color: #c2c2c2;
-    font-size: 1.5em;
+    font-size: 1.4rem;
     box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.4); }
   .block_container ul, ol {
     font-size: 18pt; } }
@@ -901,11 +908,11 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .story {
-    background-color: #9B9B9B;
-    font-size: 1.3em;
+    background-color: #006080;
+    font-size: 1.5em;
     line-height: 120%;
     height: 490px;
-    width: 680px;
+    width: 940px;
     padding: 10px;
     display: inline-block;
     overflow-y: auto;
@@ -916,6 +923,15 @@ aside {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset;
     padding-bottom: 100px;
     z-index: 100; }
+    .story div {
+      padding-left: 10px;
+      padding-right: 10px; }
+    .story p {
+      margin: 5px auto; }
+  .seed {
+    font-size: 1.25em;
+    font-style: italic;
+    margin-bottom: 15px; }
   .lineNumber {
     font-size: .6em;
     float: left; }
@@ -926,7 +942,7 @@ aside {
     float: left;
     background-color: #9B9B9B;
     position: absolute;
-    left: -140px;
+    left: -145px;
     top: 150px;
     min-height: 200px;
     border-radius: 10px;
@@ -945,9 +961,7 @@ aside {
     transform: translateX(-15px);
     margin: 10px;
     padding: 5px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); }
-  .seed {
-    border-bottom: 2px solid #888; } }
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); } }
 
 @media screen and (max-device-width: 500px) {
   footer {
@@ -967,7 +981,12 @@ aside {
 @media screen and (min-device-width: 500px) {
   footer {
     margin: 0;
-    background-color: #ddd; }
+    background-color: #ccc; }
+    footer .logo {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; }
   .footerOptions {
     background-color: #9B9B9B;
     width: 100px;
@@ -976,5 +995,6 @@ aside {
     margin-left: 10px;
     margin-right: 10px;
     vertical-align: bottom;
-    box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.4);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     font-size: 1.4em; } }

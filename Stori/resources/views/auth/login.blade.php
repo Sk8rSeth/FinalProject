@@ -14,11 +14,13 @@ Login
 			<div class="er">Your Login Attempt Sucked.</div>
 			</div>
 		</div>
+
 	<?php
 		foreach($errors->keys() as $key) {
 			$login_errors[$key] = $errors->get($key)[0];
 		}
-	?>	
+	?>
+		
 	@endif
 	<form action="/auth/login" method="POST">
 	<input type="hidden" class="token" name="_token" value="{{ csrf_token() }}">

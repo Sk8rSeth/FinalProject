@@ -1,4 +1,5 @@
 <?php $login_errors = []; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
 	<title>Stori</title>
 	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
-	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Quicksand|Dancing+Script:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{{ URL('css/styles.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('fonts/font-awesome/css/font-awesome.min.css') }}">
 </head>
@@ -80,7 +81,7 @@
 				</div>
 				@endif
 				<a href="/story"><div class="options browse">Browse Stories</div></a>
-				<div class="logo"><a href="/">Stori</a></div>
+				<div class="logo"><a href="/">Stor<span>i</span></a></div>
 				<a href="/archive"><div class="options archive">Archives</div></a>
 			</nav>
 			<h2 class="title">

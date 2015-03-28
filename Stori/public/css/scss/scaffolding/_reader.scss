@@ -12,32 +12,43 @@
 	}
 }
 
-
 @media screen and (min-device-width: $small-screen-width) {
 	.story {
-		background-color: $gray;
-		// background-color: #8C8C8C;
-		// color: #ddd;
-		// text-align: left;
+		background-color: $darkBlue;
+		// background-color: $gray;
 
 		//lines
-		font-size: 1.3em;
+		font-size: 1.5em;
 		line-height: 120%;
 
 		height: 490px;
-		width: 680px;
+		width: 940px;
 		padding: 10px;
 		display: inline-block;
 		overflow-y: auto;
 		text-align: center;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
-		// border-top-left-radius: 5px;
-		// border-top-right-radius: 5px;
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 		padding-bottom: 100px;
 		z-index: 100;
+
+		div {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		p {
+			margin: 5px auto;
+		}
+	}
+
+
+	.seed {
+		font-size: 1.25em;
+		font-style: italic;
+		margin-bottom: 15px;
 	}
 
 
@@ -55,7 +66,7 @@
 		float: left;
 		background-color: $gray;
 		position: absolute;
-		left: -140px;
+		left: -145px;
 		top: 150px;
 		min-height: 200px;
 		border-radius: 10px;
@@ -81,9 +92,5 @@
 		margin: 10px;
 		padding: 5px;
 		box-shadow: 2px 2px 2px 1px rgba(0,0,0,.4);
-	}
-
-	.seed {
-		border-bottom: 2px solid #888;
 	}
 }

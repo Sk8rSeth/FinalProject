@@ -188,6 +188,7 @@ class StoryController extends Controller {
 			'new_score' => $new_score,
 			'story_id' => $story_id
 		];
+		
 
 		$sql = "UPDATE story 
 				SET score = :new_score 

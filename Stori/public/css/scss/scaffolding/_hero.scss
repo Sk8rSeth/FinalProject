@@ -58,6 +58,11 @@
 		height: 35px;
 		width: 100px;
 		font-size: 24pt;
+
+		span{
+			color: $darkBlue;
+			font-family: 'Dancing Script', cursive;
+		}
 	}
 }
 
@@ -67,8 +72,8 @@
 	}
 
 	.hero {
-		// background-color: $bg;
-		background: $lightGray url('/images/bg-texture-00.svg');
+		background-color: $lightGray;
+		// background: $lightGray url('/images/bg-texture-00.svg');
 		position: relative;
 		height: 200px;
 	}
@@ -110,13 +115,18 @@
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 		// box-shadow: 2px 0px 5px rgba(0,0,0,0.4), -2px 0px 5px rgba(0,0,0,0.4);
+		
+		span {
+			color: $darkBlue;
+			font-family: 'Dancing Script', cursive;
+		}
 	}
 
 
 	.title {
 		position: absolute;
-		left: 50px;
-		bottom: 0px;
+		// left: 50px;
+		bottom: 15px;
 		background-color: $gray;
 		padding: 5px 15px;
 		border-radius: 10px;
@@ -132,12 +142,13 @@
 		width: 100px;
 		height: 30px;
 		position: absolute;
-		left: 40px;
-		bottom: -10px;
+		left: 0;
+		bottom: 0;
+		// bottom: -10px;
 		z-index: 10000;
 		outline: none;
 		font-size: 1.5em;
-		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
+		// box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
 		border-radius: 5px;
 	}
 
@@ -172,11 +183,12 @@
 		width: 120px;
 		height: 30px;
 		position: absolute;
-		right: 40px;
-		bottom: -10px;
+		right: 0px;
+		bottom: 0;
+		// bottom: -10px;
 		outline: none;
 		font-size: 1.4em;
-		box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
+		// box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
 		border-radius: 5px;
 		// overflow: hidden;
 		text-overflow: ellipsis;
