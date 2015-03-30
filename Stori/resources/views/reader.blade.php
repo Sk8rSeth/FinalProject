@@ -66,9 +66,13 @@ if (count($ongoing_comments) < 1) {
 			}
 			$CommentVote = CommentVote::getVote(Auth::user()->user_id, $comm->comment_id);
 			if (is_null($CommentVote)) {
+				$upComm = '';
+				$downComm = '';
 			} elseif ($CommentVote == 'up') {
+				$downComm = '';
 				$upComm = 'selected';
 			} elseif ($CommentVote == 'down') {
+				$upComm = '';
 				$downComm = 'selected';
 			}
 		} 

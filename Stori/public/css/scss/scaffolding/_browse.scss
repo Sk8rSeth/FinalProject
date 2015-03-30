@@ -48,6 +48,17 @@
 		border-bottom: 1px solid rgba(194,194,194,0.4);
 		box-shadow: 0 1px 5px rgba(0,0,0,0.6) inset, 0 0 20px 5px rgba(0,0,0,0.6) inset;
 
+		strong {
+			text-decoration: underline;
+			font-size: 1.1em;
+			padding-left: 20px;
+		}
+
+		.cp, .user_stats  {
+			text-align: center;
+			font-size: 1.4em;
+		}
+
 	}
 
 	.block_container.browse {

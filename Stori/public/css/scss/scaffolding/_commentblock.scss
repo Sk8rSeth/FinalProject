@@ -4,6 +4,7 @@
 		margin: 5px auto;
 		padding: 5px 0;
 		font-size: .8em;
+		border-radius: 5px;
 	}
 
 	.seed {
@@ -17,6 +18,7 @@
 		background-color: $gray;
 		margin: 5px;
 		padding: 5px;
+		border-radius: 5px;
 
 		.comment_description {
 			min-height: 30px;

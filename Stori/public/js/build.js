@@ -13511,9 +13511,9 @@ $(document).ready(function() {
 					'story_id': thisthis.parent('.story_score').attr('story-id')
 				}
 				$.get('/storyUpvote', sendData, function (data){
-					console.log(data.new_score);
+					console.log(data);
 					$('.story_score').find('span').text(data.new_score);
-					if (data.vote == 'down') {
+					if (data.vote == 'down' || data.vote === null) {
 						$('.story_score .fa-sort-asc').addClass('selected');
 						$('.story_score .fa-sort-desc').removeClass('selected');
 					}
@@ -13528,10 +13528,11 @@ $(document).ready(function() {
 				}
 				$.get('/commentUpvote', sendData, function (data){
 					console.log(data);
-					var test = thisthis.parent('.score').find('.comment_score').text(data.new_score);
-					if (data.vote == 'down') {
-						thisthis.parent('.score').find('.fa-sort-asc').addClass('selected');
-						thisthis.parent('.score').find('.fa-sort-desc').removeClass('selected');
+					thisthis.parents('.score').find('.comment_score').text(data.new_score);
+					console.log(thisthis.parents('.score').find('.comment_score').text());
+					if (data.vote == 'down' || data.vote === null) {
+						thisthis.parents('.score').find('.fa-sort-asc').addClass('selected');
+						thisthis.parents('.score').find('.fa-sort-desc').removeClass('selected');
 					}
 				});
 				console.log('i upvoted a comment');
@@ -13560,7 +13561,7 @@ $(document).ready(function() {
 				$.get('/storyDownvote', sendData, function (data){
 					console.log(data);
 					$('.story_score').find('span').text(data.new_score);
-					if (data.vote == 'up') {
+					if (data.vote == 'up' || data.vote === null) {
 						$('.story_score .fa-sort-desc').addClass('selected');
 						$('.story_score .fa-sort-asc').removeClass('selected');
 					}
@@ -13575,10 +13576,12 @@ $(document).ready(function() {
 				}
 				$.get('/commentDownvote', sendData, function (data){
 					console.log(data);
-					var test = thisthis.parent('.score').find('.comment_score').text(data.new_score);
-					if (data.vote == 'up') {
-						thisthis.parent('.score').find('.fa-sort-desc').addClass('selected');
-						thisthis.parent('.score').find('.fa-sort-asc').removeClass('selected');
+					thisthis.parents('.score').find('.comment_score').text(data.new_score);
+					// console.log(thisthis.parents('.score').find('.comment_score').text());
+
+					if (data.vote == 'up' || data.vote === null) {
+						thisthis.parents('.score').find('.fa-sort-desc').addClass('selected');
+						thisthis.parents('.score').find('.fa-sort-asc').removeClass('selected');
 					}
 				});
 				console.log('i Downvoted a comment');

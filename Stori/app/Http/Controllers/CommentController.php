@@ -98,6 +98,7 @@ class CommentController extends Controller {
 
 		$new_score = $comment->score - 1;
 
+
 		$vals = [
 			'new_score' => $new_score,
 			'comment_id' => $comment_id
@@ -109,7 +110,7 @@ class CommentController extends Controller {
 
 		DB::update($sql, $vals);
  		
-		return $new_score;
+		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
 	public function delete() {

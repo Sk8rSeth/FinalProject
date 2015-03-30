@@ -100,6 +100,12 @@ class StoryController extends Controller {
 	}
 
 	public function getRanked (){
+		//set vote selected variables
+		$upSelected = '';
+		$downSelected = '';
+		$upComm = '';
+		$downComm = '';
+
 		$story = Story::getRanked();
 		$seed = new Seed($story->seed_id);
 		$user = new User($seed->user_id);
@@ -128,7 +134,9 @@ class StoryController extends Controller {
 								'comments' => $comments,
 								'ongoing_comments' => $ongoing_comments,
 								'upSelected' => $upSelected,
-								'downSelected' => $downSelected
+								'downSelected' => $downSelected,
+								'upComm' => $upComm,
+								'downComm' => $downComm
 								]);
 	}
 

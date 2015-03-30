@@ -40,6 +40,7 @@ The Current Highest Ranked Story!
 
 	@section('comments')
 	<?php
+	use App\Models\CommentVote;
 	if (count($ongoing_comments) < 1) {
 		echo '<div class="noComments">There Are No Comments For This Story Yet Today</div>';
 	} else {
@@ -55,12 +56,24 @@ The Current Highest Ranked Story!
 							<i title="Delete Comment" class="fa fa-times"></i>
 							</div>';
 				}
+				$CommentVote = CommentVote::getVote(Auth::user()->user_id, $comm->comment_id);
+				if (is_null($CommentVote)) {
+					$upComm = '';
+					$downComm = '';
+				} elseif ($CommentVote == 'up') {
+					$downComm = '';
+					$upComm = 'selected';
+				} elseif ($CommentVote == 'down') {
+					$upComm = '';
+					$downComm = 'selected';
+				}
 			} 
-			$comment = '<div class="comment" comment-id="' . $comm->comment_id . '">
-				<div class="score"><div class="fa fa-sort-asc" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc" user-id="' . $cust_id . '"></div></div>
+			$comment = '<div class="comment reader" comment-id="' . $comm->comment_id . '">
+				<div class="score"><div class="fa fa-sort-asc ' .$upComm .'" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc '.$downComm.'" user-id="' . $cust_id . '"></div></div>
 				<a href="/profile/'.$comm->user_id.'"><div class="username">' . $comm->username . '-</a> <strong>' . $comm->user_score . $delete . '</strong></div>
-				<div class="comment_description">'.$comm->comment_body.'</div>
+				<div class="comment_description">' . $comm->comment_body . '</div>
 			</div>';
+
 			echo $comment;
 		} 
 	}?>

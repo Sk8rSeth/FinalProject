@@ -607,14 +607,16 @@ aside {
     background-color: #00ACE6;
     min-width: 50px;
     font-size: 15pt;
-    padding: 0 5px; }
+    padding: 0 5px;
+    border-radius: 5px; }
   .full_story {
     display: none; }
   .feature_story {
     background-color: #c2c2c2;
     padding: 5px;
     height: 205px;
-    font-size: .83rem; }
+    font-size: .83rem;
+    border-radius: 5px; }
     .feature_story p {
       height: 190px;
       overflow: hidden;
@@ -626,7 +628,8 @@ aside {
     float: right;
     background-color: #00ACE6;
     font-size: 14pt;
-    padding: 0 2px; }
+    padding: 0 2px;
+    border-radius: 5px; }
     .story_score span {
       margin: 0 5px; } }
 
@@ -707,7 +710,8 @@ aside {
     background-color: #006080;
     margin: 5px auto;
     padding: 5px 0;
-    font-size: .8em; }
+    font-size: .8em;
+    border-radius: 5px; }
   .seed {
     font-size: 1.1em;
     font-style: italic;
@@ -716,7 +720,8 @@ aside {
   .comment {
     background-color: #9B9B9B;
     margin: 5px;
-    padding: 5px; }
+    padding: 5px;
+    border-radius: 5px; }
     .comment .comment_description {
       min-height: 30px;
       margin-left: 40px;
@@ -869,6 +874,13 @@ aside {
     border-radius: 15px;
     border-bottom: 1px solid rgba(194, 194, 194, 0.4);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset; }
+    .block_container strong {
+      text-decoration: underline;
+      font-size: 1.1em;
+      padding-left: 20px; }
+    .block_container .cp, .block_container .user_stats {
+      text-align: center;
+      font-size: 1.4em; }
   .block_container.browse {
     width: 660px;
     margin: 0 auto; }

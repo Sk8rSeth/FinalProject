@@ -65,7 +65,7 @@
 				@else
 				<div class="login"><i class="fa fa-user"></i> {{Auth::user()->username}}
 					<div class="displayNone">
-						<a href="/profile"><div class="login_label">Profile</div></a>
+						<a href="/profile/{{Auth::user()->user_id}}"><div class="login_label">Profile</div></a>
 						<div>view your profile</div>
 						<a href="/auth/logout"><div class="login_label">Logout</div></a>
 						<div>logout forever...</div>

@@ -3,7 +3,7 @@ $cp = '';
 if (!Auth::guest()) {
 	$user_id = Auth::user()->user_id;
 	if ($user_id == $user->user_id) {
-		$cp = '<div class="label">Controls</div><div><a href="#">Edit Username </a> | <a href="#"> Edit Email </a> | <a href="#"> Reset Password</a>';
+		$cp = '<div class="label">Controls</div><div class="cp"><a href="#">Edit Username </a> | <a href="#"> Edit Email </a> | <a href="#"> Reset Password</a></div>';
 	}
 }
 
@@ -11,7 +11,7 @@ if (!Auth::guest()) {
 @extends('nonStory')
 
 @section('title')
-{{$user->username}}'s Profile
+{{$user->username}}
 @endsection
 
 @section('main_content')
@@ -19,9 +19,12 @@ if (!Auth::guest()) {
 {!!$cp!!}
 
 <div class="label">Stats</div>
-<div><strong># of winners:</strong> {User->score}</div>
-<div><strong>Member Since:</strong> {user->created_at}</div>
-<div><strong>Some other relevent Stat:</strong> and data</div>
+<div class="user_stats">
+	<div><strong># of Winners:</strong> {User->score}</div>
+	<div><strong>Member Since:</strong> {user->created_at}</div>
+	<div><strong>Some other relevent Stat:</strong> and data</div>
+</div>
+
 <div class="label">Winners</div>
 
 <div class="comment">
