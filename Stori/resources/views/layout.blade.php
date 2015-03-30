@@ -82,10 +82,10 @@
 			</h2>
 			<aside>
 				<a href="/story"><div class="stories">Stories - </div></a>
+				<a href="/archive"><div class="feature2">Archives - </div></a>
 				<a href="/seeds"><div class="seeds">Seeds - </div></a>
-				<a href="/random"><div class="randomStory">Random - </div></a>
-				<a href="/"><div class="feature2">Feature2 - </div></a>
-				<a href="/"><div class="feature3">Feature3 - </div></a>
+				<a href="/randomOngoing"><div class="randomStory">Ongoing(R)- </div></a>
+				<a href="/randomArchive"><div class="feature3">Archive(R)- </div></a>
 			</aside>
 		</div>
 		<main>
@@ -116,7 +116,7 @@
 		</main>
 		<footer>
 			<a href="/aboutUs"><div class="footerOptions">About Us</div></a>
-			<div class="logo"><a href="/">Stori</a></div>
+				<div class="logo"><a href="/">Stor<span>i</span></a></div>
 			<a href="/faq"><div class="footerOptions">F.A.Q.</div></a>
 		</footer>
 	</div>

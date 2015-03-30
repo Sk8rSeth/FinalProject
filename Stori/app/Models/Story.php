@@ -70,11 +70,7 @@ class Story extends Model {
     public static function fetchArchived() {
         $sql = "SELECT * FROM story WHERE is_alive = 0";
         $stories = DB::select($sql);
-        $story_id = [];
-        foreach ($stories as $value) {
-            $story_id[] = $value->story_id;
-        }
-        return $story_id;
+        return $stories;
     }
 
     public static function getEOD() {

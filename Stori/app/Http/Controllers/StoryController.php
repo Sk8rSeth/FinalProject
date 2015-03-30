@@ -216,14 +216,29 @@ class StoryController extends Controller {
 
 	public function randomOngoing() {
 		$stories = Story::fetchOngoing();
-
-
-		return redirect('/Story/' . rand(1,$story));
+		if (count($stories) > 0) {
+			$r = [];
+			foreach ($stories as $story) {
+				$r[] = $story->story_id;
+			}
+			$s = array_rand($r ,1);
+			return redirect('/story/' . $r[$s]);
+		} else {
+			return redirect('/');
+		}
 	}
 
 	public function randomArchived() {
 		$stories = Story::fetchArchived();
-
-		return redirect('/Archive/' . rand(1,$story));
+		if (count($stories) > 0) {
+			$r = [];
+			foreach ($stories as $story) {
+				$r[] = $story->story_id;
+			}
+			$s = array_rand($r , 1);
+			return redirect('/archive/' . $r[$s]);
+		} else {
+			return redirect('/');
+		}
 	}
 }

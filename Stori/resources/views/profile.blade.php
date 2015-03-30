@@ -20,8 +20,8 @@ if (!Auth::guest()) {
 
 <div class="label">Stats</div>
 <div class="user_stats">
-	<div><strong># of Winners:</strong> {User->score}</div>
-	<div><strong>Member Since:</strong> {user->created_at}</div>
+	<div><strong># of Winners:</strong> {{$user->score}}</div>
+	<div><strong>Member Since:</strong> {{ substr($user->created_at,0,10)}}</div>
 	<div><strong>Some other relevent Stat:</strong> and data</div>
 </div>
 

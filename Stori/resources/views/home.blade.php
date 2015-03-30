@@ -84,8 +84,8 @@ The Current Highest Ranked Story!
 			<h2>- Stats For This Story -</h2>
 			<div><strong># of Commits:</strong> {{$story->number_comments }}</div>
 			<div><strong>Start Date:</strong> {{substr($seed->created_at,0,10)}}</div>
-			<div><strong>Word Count:</strong> {{ strlen($story->story_body) }}</div>
-			<div><strong>Seed By:</strong> {{$user->username}}</div>
+			<div><strong>Word Count:</strong> {{ str_word_count($story->story_body) }}</div>
+			<div><strong>Seed By:</strong> <a href="/profile/{{$user->user_id}}"> {{$user->username}}</a></div>
 	@endsection
 	
 	@section('add_comment')

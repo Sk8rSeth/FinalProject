@@ -94,7 +94,7 @@ footer {
 			padding: 5px 10px 0 10px;
 			margin: 0 auto 10px auto;
 			border-radius: 10px;
-			background-color: red;
+			background-color: #c00;
 		}
 
 		.fa-exclamation.left {
@@ -108,6 +108,7 @@ footer {
 	}
 
 	.errors {
-		color: red;
+		color: #8D1919;
+		font-size: 1.2em;
 	}
 }
