@@ -73,7 +73,7 @@
 				@else
 				<div class="login"><i class="fa fa-user"></i> {{Auth::user()->username}}
 					<div class="displayNone">
-						<a href="/profile"><div class="login_label">Profile</div></a>
+						<a href="/profile/{{Auth::user()->user_id}}"><div class="login_label">Profile</div></a>
 						<div>view your profile</div>
 						<a href="/auth/logout"><div class="login_label">Logout</div></a>
 						<div>or logout forever...</div>
@@ -91,14 +91,14 @@
 			<aside>
 				<a href="/story"><div class="stories">Stories - </div></a>
 				<a href="/seeds"><div class="seeds">Seeds - </div></a>
-				<a href="/"><div class="feature1">Feature1 - </div></a>
+				<a href="/random"><div class="feature1">Random - </div></a>
 				<a href="/"><div class="feature2">Feature2 - </div></a>
 				<a href="/"><div class="feature3">Feature3 - </div></a>
 			</aside>
 		</div>
 		<main>
 			<div class="featureblock">
-				<div class="block_container">
+				<div class="block_container browse">
 					@section('main_content')
 
 					@show

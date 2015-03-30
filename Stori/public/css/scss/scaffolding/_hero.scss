@@ -73,7 +73,6 @@
 
 	.hero {
 		background-color: $lightGray;
-		// background: $lightGray url('/images/bg-texture-00.svg');
 		position: relative;
 		height: 200px;
 	}
@@ -85,7 +84,6 @@
 		left: 0;
 		right: 0;
 		text-align: center;
-		// box-shadow: 0 9px 9px -7px rgba(0,0,0,0.4);
 	}
 
 	.options {
@@ -98,7 +96,6 @@
 		vertical-align: top;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
-		// box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
 	}
 
 	.archive {
@@ -114,7 +111,6 @@
 		display: inline-block;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
-		// box-shadow: 2px 0px 5px rgba(0,0,0,0.4), -2px 0px 5px rgba(0,0,0,0.4);
 		
 		span {
 			color: $darkBlue;
@@ -185,12 +181,9 @@
 		position: absolute;
 		right: 0px;
 		bottom: 0;
-		// bottom: -10px;
 		outline: none;
 		font-size: 1.4em;
-		// box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.6);
 		border-radius: 5px;
-		// overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}

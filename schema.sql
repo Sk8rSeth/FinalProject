@@ -95,6 +95,8 @@ INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Finn', 'TheHuman', 'Adventurer', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 'finn@ooo.com');
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Sarah', 'Kerrigan', 'QueenOfBlades', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 's@k.com');
+INSERT INTO user (first_name, last_name, username, password, email)
+    VALUES ('Chris', 'Norris', 'Mordecai15', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 'c@n.com');
 
 -- genres
 INSERT INTO genre (genre_description) VALUES ('SciFi');

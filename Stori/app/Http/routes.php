@@ -31,9 +31,7 @@ Route::get('/allCommentsByStory', 'CommentController@getAllByStory');
 Route::get('/getusernames', 'StoryController@getUsernames');
 
 //users
-Route::get('/profile', function(){
-	return view('profile');
-});
+Route::get('/profile/{user_id}', 'UserController@getProfile');
 
 //random
 Route::get('/randomOngoing', 'StoryController@randomOngoing');

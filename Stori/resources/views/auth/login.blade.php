@@ -39,6 +39,12 @@ Login
 					{{$login_errors['password']}}
 				@endif
 			</span>
+		<a href="/signup">
+			<div>Signup</div>
+		</a>
+		<a href="/auth/password">
+			<div>Forget Your Password...?</div>
+		</a>
 		<button>Submit</button>
 	</form>
 @endsection

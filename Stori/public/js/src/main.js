@@ -111,6 +111,9 @@ $(document).ready(function() {
 		$.get('/submitComment', sendData, function (data){
 			console.log(data);
 			var output = renderComment(data);
+			if ($('.noComments').length) {
+				$('.noComments').remove();
+			};
 			$('.feature_comments').append(output);
 			$('.feature_add_comment textarea').val('');
 		});
@@ -126,6 +129,12 @@ $(document).ready(function() {
 		$.get('/deleteComment', sendData, function (data) {
 			thisthis.parents('.comment').remove();
 			console.log(data);
+			if ($('.comment').length) {
+				console.log('nope');
+			} else {
+				var noComments = '<div class="noComments">There Are No Comments For This Story Yet Today</div>';
+				$('.feature_comments').append(noComments);
+			}
 		});
 	})
 
@@ -235,7 +244,8 @@ $(document).ready(function() {
 	if ($(window).width() > 499) {
 		$('.reader').hover(function(){
 			var comment_text = $(this).find('.comment_description').text();
-			$('.story').append('<div class="hover_added"><span class=lineNumber>XX </span> ' + comment_text + '</div>')
+			$('.story').append('<div class="hover_added"><span class=lineNumber>XX </span> ' + comment_text + '</div>');
+			$('.story').animate({ scrollTop: $('.story')[0].scrollHeight}, 1000);
 		}, function() {
 			$('.hover_added').remove();
 		}

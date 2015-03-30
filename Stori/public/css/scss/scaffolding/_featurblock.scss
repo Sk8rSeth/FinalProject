@@ -2,6 +2,7 @@
 	.featureblock {
 		margin: 70px auto 0 auto;
 		width: 80%;
+
 	}
 
 	.story_title {
@@ -50,7 +51,6 @@
 @media screen and (min-device-width: $small-screen-width) {
 	.featureblock {
 		background-color: $lightGray;
-		// background: $lightGray url('/images/bg-texture-00.svg');
 		min-height: 1000px;
 	}
 
@@ -81,9 +81,6 @@
 		font-size: 2em;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		// box-shadow: 2px 2px 5px 1px rgba(0,0,0,.4);
-		// border-bottom-right-radius: 5px;
-		// border-bottom-left-radius: 5px;
 	}
 
 	.story_score {
