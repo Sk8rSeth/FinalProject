@@ -15,11 +15,13 @@
 	</ul>
 	<div class="label">Top Five</div>
 	<ul>
-		<li>1title1</li>
-		<li>2title2</li>
-		<li>3title3</li>
-		<li>4title4</li>
-		<li>5title5</li>
+		@if (count($allTop5) > 0 )
+			@foreach ($top5 as $each)
+				<li>{!!$each!!}</li>
+			@endforeach
+		@else
+			There Are No Stories In The Archives Yet
+		@endif
 	</ul>
 	<div class="label">Other</div>
 	<ul>

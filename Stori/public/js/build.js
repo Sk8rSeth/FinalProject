@@ -13538,7 +13538,20 @@ $(document).ready(function() {
 				console.log('i upvoted a comment');
 
 			// ===== seed
-			} else if (thisthis.attr('class') == 'seed_score') {
+			} else if (thisthis.parent().attr('class') == 'story_score seed_score') {
+				var sendData = {
+					'user_id': thisthis.attr('user-id'),
+					'seed_id': thisthis.parents('.seed_score').attr('seed-id')
+				}
+				$.get('/seedUpvote', sendData, function (data){
+					console.log(data);
+					thisthis.parents('.seed_score').find('span').text(data.new_score);
+					console.log(thisthis.parents('.seed_score').find('span').text());
+					if (data.vote == 'down' || data.vote === null) {
+						thisthis.parents('.seed_score').find('.fa-sort-asc').addClass('selected');
+						thisthis.parents('.seed_score').find('.fa-sort-desc').removeClass('selected');
+					}
+				});
 				console.log('seed');
 			}
 		}

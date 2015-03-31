@@ -23,6 +23,7 @@ Route::get('/archive', 'ArchiveController@getAll');
 //seeds
 Route::get('/seeds', 'SeedController@getAll');
 Route::get('/newSeed/', function(){return view('newSeed');});
+Route::post('/newSeed/add', 'SeedController@addNew');
 Route::get('/seeds/{seed_id}', 'SeedController@getSeed');
 
 
@@ -87,6 +88,8 @@ Route::get('/aboutUs', function(){
 Route::get('/faq', function(){
 	return view('faq');
 });
-
+Route::post('/test', function(){
+	return redirect('/');
+});
 
 Route::get('/eod', 'EODController@EOD');

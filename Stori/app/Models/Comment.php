@@ -10,7 +10,10 @@ class Comment extends Model {
 	protected static $table = 'comment';
 	protected static $key = 'comment_id';
 
-
+	//====================================================
+	// gets all ongoing comments for a single story 
+	// returns an array of comment objects
+	//====================================================
 	public static function fetchOngoing($story_id) {
 		$vars = [
 			'story_id' => $story_id
@@ -29,6 +32,10 @@ class Comment extends Model {
 		return($comments);
 	}
 
+	//====================================================
+	// deletes comment from DB 
+	// returns nothing
+	//====================================================
 	public static function deleteComment($comment_id) {
 		$vars =  [':comment_id' => $comment_id];
 		$sql = "DELETE FROM comment
@@ -37,6 +44,13 @@ class Comment extends Model {
 		DB::delete($sql, $vars);
 	}
 
+	//====================================================
+	// only EOD controller calls WITHIN FOREACH
+	// gets all ongoing comments by story that havent been assessed yet
+	// updates comment table in DB to set all comments to assessed
+	// adds 'top comment' as single highest rated comment for that story
+	// returns top comment and story id
+	//====================================================
 	public static function getEOD($story_id) {
 		$sql = "SELECT * FROM comment 
 				WHERE story_id = :story_id
@@ -65,6 +79,10 @@ class Comment extends Model {
 		}
 	}
 
+	//====================================================
+	// takes top comment and adds it to story
+	// returns nothing
+	//====================================================
 	public static function updateEOD($comment_id) {
 		$sql = "UPDATE comment
 				SET in_story = 1

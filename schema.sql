@@ -11,7 +11,8 @@ CREATE TABLE user (
     score INT DEFAULT 1,
     created_at TIMESTAMP,
     updated_at TIMESTAMP,
-    remember_token varchar(255)
+    remember_token varchar(255),
+    password_resets varchar(255)
 );
 CREATE TABLE story (
     story_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -96,7 +97,7 @@ INSERT INTO user (first_name, last_name, username, password, email)
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Sarah', 'Kerrigan', 'QueenOfBlades', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 's@k.com');
 INSERT INTO user (first_name, last_name, username, password, email)
-    VALUES ('Chris', 'Norris', 'Mordecai15', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 'c@n.com');
+    VALUES ('Chris', 'Norris', 'Killastrata15', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 'c@n.com');
 
 -- genres
 INSERT INTO genre (genre_description) VALUES ('SciFi');
@@ -110,6 +111,7 @@ INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (1, 1,
 INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (2, 1, 1, "Salvage", 'She stepped wearily through the airlock and slammed the wall switch.');
 INSERT INTO seed (user_id, genre_id, title, seed_body) VALUES (1, 4, "Just A Light", '"Break a leg," she said with a wry smile. "You’re going to do great."');
 INSERT INTO seed (user_id, genre_id, title, seed_body) VALUES (2, 2, "Him", 'I bring him flowers every day, I hope that he will want to play! He never moves, he’s always there.');
+INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (9, 2, 1, "Sentient Shadows", 'His car was stopped in the tracks.  The shadowy figures kept approaching him, with their ominous gadgets and red eyes.');
 
 
 -- comments
@@ -152,6 +154,14 @@ INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4,2, 1, 1, 'He went on for several minutes, until the transmission image began to crackle and waver,');
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6,2, 1, 1, 'finally freezing on his childlike half-smile, the last image she would ever see of him. The date stamp read one year ago today."');
 
+
+-- story 3
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6, 3, 1, 1, 'For some reason, his doors wouldn’t open.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1, 3, 1, 1, 'The train got closer as the tall shadowy figures stood their distance from the tracks.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4, 3, 1, 1, 'He panics, trying to get out, but the light flashes closer and closer, lighting up the entire vehicle.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 3, 1, 1, 'He closes his eyes and prays for a quick and painless death.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (8, 3, 1, 1, 'But, all of the sudden!');
+
 -- stories  
 INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
     VALUES (1, 1, 11,
@@ -170,3 +180,7 @@ INSERT INTO story (seed_id, genre_id, number_comments, story_body)
         Normally she’d turn on some music while she worked to stave off the unending silence of the bunker, vintage audio files that she’d pulled from previous salvages. 1980’s pop rock was her favorite, Bowie and Journey and Depeche Mode. But not today. She punched up a file on her viewscreen, and the monitor filled with the image of a handsome young man in a lab coat.
         “Hi baby,” he said with a grin, clear blue eyes sparkling despite the pixelated image. “Sorry, I think I have a bad connection-but you won’t believe it, babe. I figured it out. I found the answer. I can’t believe we’ve been missing it this whole time, when it was right in front of us. I spoke with the council, and they’re flying me out in about six hours to meet with the President. This could all be over by tomorrow.”
         He continued to explain the details of his findings, and she smiled in spite of herself as she watched him gesturing excitedly, only pausing momentarily to sweep his long hair back out of his eyes. He went on for several minutes, until the transmission image began to crackle and waver, finally freezing on his childlike half-smile, the last image she would ever see of him. The date stamp read one year ago today.");
+INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
+    VALUES (5, 2, 5, 
+        "His car was stopped in the tracks.  The shadowy figures kept approaching him, with their ominous gadgets and red eyes. For some reason, his doors wouldn't open. The train got closer as the tall shadowy figures stood their distance from the tracks. 
+        He panics, trying to get out, but the light flashes closer and closer, lighting up the entire vehicle. He closes his eyes and prays for a quick and painless death. But, all of the sudden!");

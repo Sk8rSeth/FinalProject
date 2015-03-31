@@ -14,6 +14,11 @@ use Auth;
 
 class EODController extends Controller {
 
+
+	//====================================================
+	// handles everything for the update and submission and creation
+	// that happens at the end of each day
+	//====================================================
 	public static function EOD() {
 		$stories = Story::getEOD();
 		$comments = [];

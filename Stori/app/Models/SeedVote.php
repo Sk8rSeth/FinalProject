@@ -4,21 +4,21 @@ use DB;
 use App\Library\SQL;
 use App\Models\Model;
 
-class CommentVote extends Model {
-	protected static $table = 'comment_vote';
-	protected static $key = 'comment_id';
+class SeedVote extends Model {
+	protected static $table = 'seed_vote';
+	protected static $key = 'seed_id';
 
 	//====================================================
-	// looks to see if a user has voted on this comment
+	// 
 	//====================================================
-	public static function getVote($user_id, $comment_id) {
+	public static function getVote($user_id, $seed_id) {
 		$sql = "SELECT vote FROM " . static::$table . 
-				" WHERE comment_id = :comment_id 
+				" WHERE seed_id = :seed_id 
 				AND user_id = :user_id";
 
 		$vals = [
 			"user_id" => $user_id,
-			"comment_id" => $comment_id
+			"seed_id" => $seed_id
 		];
 
 		$vote = '';
@@ -27,41 +27,43 @@ class CommentVote extends Model {
 			foreach ($request as $key => $value) {
 				$vote = $value->vote;
 			}
+
 		} else {
 			return NULL;
 		}
+
 		return $vote;
 	}
 
 	//====================================================
-	// if no vote exists, adds an entry into the DB
+	// 
 	//====================================================
-	public static function addVote($user_id, $comment_id, $vote) {
-		$sql = "INSERT INTO comment_vote VALUES (:user_id, :comment_id, :vote)";
+	public static function addVote($user_id, $seed_id, $vote) {
+		$sql = "INSERT INTO seed_vote VALUES (:user_id, :seed_id, :vote)";
 		$vals = [
-			"comment_id" => $comment_id,
+			"seed_id" => $seed_id,
 			"user_id" => $user_id,
 			"vote" => $vote
 		];
 		DB::insert($sql, $vals);
-		return $vote;
+		return 'added Vote to table';
 	}
 
 	//====================================================
-	// if DB entry exists, updates it up or down
+	// 
 	//====================================================
-	public static function updateVote($user_id, $comment_id, $vote) {
-		$sql = "UPDATE comment_vote
-				SET vote = :vote 
+	public static function updateVote($user_id, $seed_id, $vote) {
+		$sql = "UPDATE seed_vote
+				SET vote = :vote
 				WHERE user_id = :user_id 
-				AND comment_id = :comment_id";
+				AND seed_id = :seed_id";
 
 		$vals = [
-			"comment_id" => $comment_id,
+			"seed_id" => $seed_id,
 			"user_id" => $user_id,
 			"vote" => $vote
 		];
-
+		
 		DB::update($sql, $vals);
 		return $vote;
 	}

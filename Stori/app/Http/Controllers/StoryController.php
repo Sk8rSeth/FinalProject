@@ -14,7 +14,11 @@ use Auth;
 
 class StoryController extends Controller {
 
+	//====================================================
+	// Gets all stories for the Browse page
+	//====================================================
 	public function getAll() {
+		//get the top 5 ranked stories
 		$top5 = Story::getTop5All();
 		$top = [];
 		foreach ($top5->getArray() as $each) {
@@ -22,7 +26,8 @@ class StoryController extends Controller {
 			$top[] = '<a href="/story/' . $each->story_id . '">' . $e->title . '</a>';
 		}
 
-		$allStories = Story::all();
+		//get all the stories that are still ongoing
+		$allStories = Story::all(['is_alive'=>1]);
 		$viewAll = [];
 		foreach ($allStories->getArray() as $story) {
 			$t = new Seed($story->seed_id);
@@ -32,6 +37,10 @@ class StoryController extends Controller {
 		return view('story_list', ['allTop5' => $top, 'all' => $viewAll]);
 	}
 
+	//====================================================
+	// Gets all data for a single story, for the 'reader' display
+	// includes almost every aspect of DB and MVC control
+	//====================================================
 	public function read($story_id) {
 		//set vote selected variables
 		$upSelected = '';
@@ -57,13 +66,13 @@ class StoryController extends Controller {
 			$vote = StoryVote::getVote(Auth::user()->user_id, $story_id);
 			if ($vote == 'up') {
 				$upSelected = 'selected';
-			} else {
+			} else if (is_null($vote)) {
+				$upSelected = '';
+				$downSelected = '';
+			}else {
 				$downSelected = 'selected';
 			}
 		}
-
-
-
 		return view('reader', ['story' => $story,
 								'seed' => $seed, 
 								'genre' => $genre, 
@@ -78,6 +87,9 @@ class StoryController extends Controller {
 							);
 	}
 
+	//====================================================
+	// creates the list of stories and top5 for each genre
+	//====================================================
 	public function storyOfGenre($genre_id) {
 		$g = new Genre($genre_id);
 		$genre = $g->genre_description;
@@ -99,6 +111,11 @@ class StoryController extends Controller {
 		
 	}
 
+
+	//====================================================
+	// for use on the front page
+	// gets a single story thats the highest ranking of all ongoing
+	//====================================================
 	public function getRanked (){
 		//set vote selected variables
 		$upSelected = '';
@@ -140,6 +157,9 @@ class StoryController extends Controller {
 								]);
 	}
 
+	//====================================================
+	// handles Upvoting a story and setting thevote in the DB
+	//====================================================
 	public function upvote() {
 		$user_id = Request::input('user_id');
 		$story_id = Request::input('story_id');
@@ -173,6 +193,9 @@ class StoryController extends Controller {
 		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
+	//====================================================
+	// handles Downvoting
+	//====================================================
 	public function downvote() {
 		$user_id = Request::input('user_id');
 		$story_id = Request::input('story_id');
@@ -207,6 +230,10 @@ class StoryController extends Controller {
 		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
+	//====================================================
+	// simply gets all usernames that have aprticipated on a single story
+	// used mainly for when hovering over comments in reader
+	//====================================================
 	public function getUsernames() {
 		$story_id = Request::input('story_id');
 		$usernamesall = User::getUsernames($story_id);
@@ -214,6 +241,9 @@ class StoryController extends Controller {
 		return $usernamesall;
 	}
 
+	//====================================================
+	// gets all ongoing stories, and redirects to random link
+	//====================================================
 	public function randomOngoing() {
 		$stories = Story::fetchOngoing();
 		if (count($stories) > 0) {
@@ -228,6 +258,9 @@ class StoryController extends Controller {
 		}
 	}
 
+	//====================================================
+	// gets all archived stories, and redirects to random link
+	//====================================================
 	public function randomArchived() {
 		$stories = Story::fetchArchived();
 		if (count($stories) > 0) {

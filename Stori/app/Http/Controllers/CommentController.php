@@ -11,6 +11,10 @@ use DB;
 
 class CommentController extends Controller {
 
+	//====================================================
+	// gets all comments by story_id, in order to construct
+	// story with all comments for reader
+	//====================================================
 	public function getAllByStory() {
 		$story_id = Request::input('story_id');
 		$comments = Comment::fetchOngoing($story_id);
@@ -18,6 +22,9 @@ class CommentController extends Controller {
 		return ['comments' => $comments];
 	}
 
+	//====================================================
+	// gets the authors username of a specific comment
+	//====================================================
 	public function getCommentById() {
 		$comment_id = Request::input('comment_id');
 		$comment = new Comment($comment_id);
@@ -27,6 +34,9 @@ class CommentController extends Controller {
 		return $user->username;
 	} 
 
+	//====================================================
+	// adds new comment to DB on submission
+	//====================================================
 	public function addNew() {
 		$user_id = Request::input('user_id');
 
@@ -46,7 +56,9 @@ class CommentController extends Controller {
 		return['comment' => $comment->getData(), 'username' => $username, 'user_score' => $user_score];
 	}
 
-	
+	//====================================================
+	// handles upvoting comments
+	//====================================================	
 	public function upvote() {
 		$user_id = Request::input('user_id');
 		$comment_id = Request::input('comment_id');
@@ -80,6 +92,9 @@ class CommentController extends Controller {
 		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
+	//====================================================
+	// handles downvoting comments
+	//====================================================
 	public function downvote() {
 		$user_id = Request::input('user_id');
 		$comment_id = Request::input('comment_id');
@@ -113,6 +128,9 @@ class CommentController extends Controller {
 		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 
+	//====================================================
+	// deletes a comment from the DB, dead dead
+	//====================================================
 	public function delete() {
 		$comment_id = Request::input('comment_id');
 		Comment::deleteComment($comment_id);

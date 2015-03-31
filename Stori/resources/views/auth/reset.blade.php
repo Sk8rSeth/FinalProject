@@ -1,4 +1,4 @@
-@extends('app')
+{{-- @extends('app')
 
 @section('content')
 <div class="container-fluid">
@@ -56,4 +56,57 @@
 		</div>
 	</div>
 </div>
+@endsection
+ --}}
+@extends('nonStory')
+
+@section('title')
+Reset Your Password
+@endsection
+
+@section('main_content')
+	@if(count($errors) > 0)
+		<div class="error">
+			<div>
+			<i class="fa fa-exclamation left"></i>
+			<i class="fa fa-exclamation right"></i>
+			<span class="er">Oh Snap!</span>
+			<div class="er">Your Login Attempt Sucked.</div>
+			</div>
+		</div>
+
+	<?php
+		foreach($errors->keys() as $key) {
+			$login_errors[$key] = $errors->get($key)[0];
+		}
+	?>
+		
+	@endif
+	<form action="/password/reset" method="POST">
+	<input type="hidden" class="token" name="_token" value="{{ csrf_token() }}">
+	<input type="hidden" name="token" value="{{ $token }}">
+
+		<div class="label">Email</div>
+		<input type="text" name="email" value="{{ old('username') }}">
+			<span class="errors">
+				@if(isset($login_errors['email']))
+					{{$login_errors['email']}}
+				@endif
+			</span>
+		<div class="label">Password</div>
+		<input type="password" name="password" value="{{ old('username') }}">
+			<span class="errors">
+				@if(isset($login_errors['email']))
+					{{$login_errors['email']}}
+				@endif
+			</span>		
+		<div class="label">Confirm Password</div>
+		<input type="password" name="password_confirmation" value="{{ old('username') }}">
+			<span class="errors">
+				@if(isset($login_errors['email']))
+					{{$login_errors['email']}}
+				@endif
+			</span>
+		<button>Submit</button>
+	</form>
 @endsection

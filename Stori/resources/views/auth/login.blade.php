@@ -42,7 +42,7 @@ Login
 		<a href="/signup">
 			<div>Signup</div>
 		</a>
-		<a href="/auth/password">
+		<a href="/reset">
 			<div>Forget Your Password...?</div>
 		</a>
 		<button>Submit</button>
