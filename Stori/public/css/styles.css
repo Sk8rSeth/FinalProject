@@ -345,6 +345,9 @@ li {
   margin: 20px;
   font-size: 2.5em; }
 
+textarea {
+  resize: none; }
+
 footer {
   text-align: center; }
 
@@ -522,7 +525,8 @@ aside {
       line-height: 0px; }
   .title {
     position: absolute;
-    bottom: 15px;
+    font-size: 2em;
+    bottom: 0;
     background-color: #9B9B9B;
     padding: 5px 15px;
     border-radius: 10px;
@@ -841,6 +845,39 @@ aside {
     .plz_login a {
       text-decoration: underline; } }
 
+@media screen and (min-device-width: 500px) {
+  .seed_story {
+    background-color: #0080AA;
+    font-size: 1.5em;
+    line-height: 120%;
+    height: 0px;
+    width: 940px;
+    padding: 10px;
+    display: inline-block;
+    overflow-y: auto;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom: 1px solid rgba(194, 194, 194, 0.4);
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.6) inset, 0 0 20px 5px rgba(0, 0, 0, 0.6) inset;
+    padding-bottom: 100px;
+    z-index: 100; }
+    .seed_story div {
+      padding-left: 10px;
+      padding-right: 10px; }
+    .seed_story p {
+      margin: 5px auto; }
+  .block_container textarea {
+    margin-left: 100px;
+    width: 25em;
+    height: 5em;
+    resize: none; }
+  .block_container select {
+    margin-left: 100px;
+    width: 200px;
+    font-size: 2em;
+    background-color: #9B9B9B; } }
+
 @media screen and (max-device-width: 500px) {
   .block_container {
     width: 90%;
@@ -918,9 +955,9 @@ aside {
   .block_container ul, ol {
     font-size: 18pt;
     margin-left: 50px; }
-  form a {
+  .block_container form a {
     text-align: center; }
-    form a div {
+    .block_container form a div {
       margin-top: 10px; } }
 
 @media screen and (max-device-width: 500px) {

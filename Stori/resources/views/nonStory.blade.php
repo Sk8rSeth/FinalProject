@@ -92,8 +92,8 @@
 				<a href="/story"><div class="stories">Stories - </div></a>
 				<a href="/archive"><div class="feature2">Archives - </div></a>
 				<a href="/seeds"><div class="seeds">Seeds - </div></a>
-				<a href="/randomOngoing"><div class="feature1">Ongoing(R)- </div></a>
-				<a href="/randomArchive"><div class="feature3">Archive(R)- </div></a>
+				<a href="/newSeed"><div class="feature1">New Seed- </div></a>
+				<a href="/randomOngoing"><div class="feature3">Random - </div></a>
 			</aside>
 		</div>
 		<main>

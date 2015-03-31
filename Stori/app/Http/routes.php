@@ -22,6 +22,9 @@ Route::get('/archive', 'ArchiveController@getAll');
 
 //seeds
 Route::get('/seeds', 'SeedController@getAll');
+Route::get('/newSeed/', function(){return view('newSeed');});
+Route::get('/seeds/{seed_id}', 'SeedController@getSeed');
+
 
 //commenting
 Route::get('/submitComment', 'commentController@addNew');
@@ -68,6 +71,9 @@ Route::get('/login', function(){
 	return view('auth.login');
 });
 
+Route::get('/reset', function() {
+	return view('auth.password');
+});
 
 // Auth
 Route::controllers([
