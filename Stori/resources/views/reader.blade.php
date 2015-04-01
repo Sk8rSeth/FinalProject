@@ -56,12 +56,17 @@ if (count($ongoing_comments) < 1) {
 		if(Auth::guest()) {
 			$cust_id = '';
 			$delete = '';
+			$edit = '';
 		} else {
 			$cust_id = Auth::user()->user_id;
 			$delete = '';
+			$edit = '';
 			if($cust_id == $comm->user_id) {
 				$delete = '<div class="delete">
 						<i title="Delete Comment" class="fa fa-times"></i>
+						</div>';
+				$edit = '<div class="edit">
+						<i title="Edit Comment" class="fa fa-pencil-square-o"></i>
 						</div>';
 			}
 			$CommentVote = CommentVote::getVote(Auth::user()->user_id, $comm->comment_id);
@@ -78,7 +83,7 @@ if (count($ongoing_comments) < 1) {
 		} 
 		$comment = '<div class="comment reader" comment-id="' . $comm->comment_id . '">
 			<div class="score"><div class="fa fa-sort-asc ' .$upComm .'" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc '.$downComm.'" user-id="' . $cust_id . '"></div></div>
-			<a href="/profile/'.$comm->user_id.'"><div class="username">' . $comm->username . '-</a> <strong>' . $comm->user_score . $delete . '</strong></div>
+			<a href="/profile/'.$comm->user_id.'"><div class="username">' . $comm->username . '-</a> <strong>' . $comm->user_score . $delete . $edit . '</strong></div>
 			<div class="comment_description">' . $comm->comment_body . '</div>
 		</div>';
 
@@ -89,10 +94,10 @@ if (count($ongoing_comments) < 1) {
 
 @section('story_stats')
 		<h2>- Stats For This Story -</h2>
-		<div><strong># of Commits:</strong> {{ $story->number_comments }}</div>
-		<div><strong>Start Date:</strong> {{substr($seed->created_at,0,10)}}</div>
-		<div><strong>Word Count:</strong> {{ str_word_count($story->story_body) }}</div>
 		<div><strong>Seed By:</strong> <a href="/profile/{{$user->user_id}}">{{$user->username}}</a></div>
+		<div><strong>Start Date:</strong> {{substr($seed->created_at,0,10)}}</div>
+		<div><strong># of Commits:</strong> {{ $story->number_comments }}</div>
+		<div><strong>Word Count:</strong> {{ str_word_count($story->story_body) }}</div>
 @endsection
 
 @section('add_comment')

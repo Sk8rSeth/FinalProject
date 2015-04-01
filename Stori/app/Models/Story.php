@@ -11,7 +11,7 @@ class Story extends Model {
 
 
 	public static function getRanked() {
-		//logic to determine highest rated story
+		// determine highest rated story
 		$sql = "SELECT story_id, score 
 				FROM story
 				ORDER BY score desc
@@ -78,6 +78,7 @@ class Story extends Model {
         }
         return $collection;
     }
+
     public static function getTop5GenreArchive($genre_id) {
         // SQL
         $sql = "

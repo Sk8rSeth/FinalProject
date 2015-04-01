@@ -95,7 +95,7 @@ INSERT INTO user (first_name, last_name, username, password, email)
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Finn', 'TheHuman', 'Adventurer', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 'finn@ooo.com');
 INSERT INTO user (first_name, last_name, username, password, email)
-    VALUES ('Sarah', 'Kerrigan', 'QueenOfBlades', '$2y$10$/.N0EP1vKzW1WxXMvyqutOHnlmGiopecaI4NE/0xbJpKHnaw8BvGS', 's@k.com');
+    VALUES ('Sarah', 'Kerrigan', 'QueenOfBlades', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 's@k.com');
 INSERT INTO user (first_name, last_name, username, password, email)
     VALUES ('Chris', 'Norris', 'Killastrata15', '$2y$10$QXyUtwDOrinRLsEu3fUn9.3HNjQb72PgBDwLhC4MNWrQ4oI04I2XG', 'c@n.com');
 
@@ -112,6 +112,9 @@ INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (2, 1,
 INSERT INTO seed (user_id, genre_id, title, seed_body) VALUES (1, 4, "Just A Light", '"Break a leg," she said with a wry smile. "You’re going to do great."');
 INSERT INTO seed (user_id, genre_id, title, seed_body) VALUES (2, 2, "Him", 'I bring him flowers every day, I hope that he will want to play! He never moves, he’s always there.');
 INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (9, 2, 1, "Sentient Shadows", 'His car was stopped in the tracks.  The shadowy figures kept approaching him, with their ominous gadgets and red eyes.');
+INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (9, 4, 1, "Mystery Triangle", 'As I board the plane, I\'m able to get a seat and immediately get relaxed.');
+INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (9, 1, 1, "José and Chico's Strange Journey", 'It was a quiet Sunday afternoon in the hood. Two Latinos, named Chico and  José, sat parked in an El Camino,');
+INSERT INTO seed (user_id, genre_id, times_used, title, seed_body) VALUES (9, 1, 1, "Steve", 'A giant blueberry muffin was destroying the city. "I am the mighty Steve! Tremble before my power!",');
 
 
 -- comments
@@ -154,13 +157,28 @@ INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4,2, 1, 1, 'He went on for several minutes, until the transmission image began to crackle and waver,');
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6,2, 1, 1, 'finally freezing on his childlike half-smile, the last image she would ever see of him. The date stamp read one year ago today."');
 
-
 -- story 3
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6, 3, 1, 1, 'For some reason, his doors wouldn’t open.');
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1, 3, 1, 1, 'The train got closer as the tall shadowy figures stood their distance from the tracks.');
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4, 3, 1, 1, 'He panics, trying to get out, but the light flashes closer and closer, lighting up the entire vehicle.');
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 3, 1, 1, 'He closes his eyes and prays for a quick and painless death.');
 INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (8, 3, 1, 1, 'But, all of the sudden!');
+
+-- story 4
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (2, 4, 1, 1, 'Twenty minutes in, out of an eight hour flight overseas, I managed to close my eyes and doze off.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1, 4, 1, 1, 'What feels like only seconds later, I open my eyes to see that I\'m falling from 33,000 feet in the air at about 230 feet per second.');
+
+-- story 5
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (3, 5, 1, 1, 'and were blasting music while sipping on some 40\'s.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6, 5, 1, 1, 'As they were jamming, Chico looked to his left out the window to see a silhouette of a man on a horse.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (4, 5, 1, 1, 'On edge and a little confused, Chico got out the vehicle, hand on his gun and approached the mysterious man on the horse.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (9, 5, 1, 1, 'José was still in his own world jamming to the music. Chico was able to get close enough to see that the silhouette was a man on a horse.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (6, 5, 1, 1, 'The man had shining medieval armor, and long flowing brown hair, even though the air flow was as still as a pole.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (8, 5, 1, 1, 'Chico asked, "who or what are you bro?". To Chico\'s complete shock, the armored man said');
+
+--  story 6
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (8, 6, 1, 1, 'Screamed the five-story muffin as he shot golfball-sized blueberries at mach1 speeds.');
+INSERT INTO comment (user_id, story_id, assessed, in_story, comment_body) VALUES (1, 6, 1, 1, 'The professor looked up at his creation in dismay. "What have I done?!", he cried. He had to think on his feet.');
 
 -- stories  
 INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
@@ -184,3 +202,16 @@ INSERT INTO story (seed_id, genre_id, number_comments, story_body)
     VALUES (5, 2, 5, 
         "His car was stopped in the tracks.  The shadowy figures kept approaching him, with their ominous gadgets and red eyes. For some reason, his doors wouldn't open. The train got closer as the tall shadowy figures stood their distance from the tracks. 
         He panics, trying to get out, but the light flashes closer and closer, lighting up the entire vehicle. He closes his eyes and prays for a quick and painless death. But, all of the sudden!");
+INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
+    VALUES (6, 4, 2, 
+        "As I board the plane, I'm able to get a seat and immediately get relaxed. Twenty minutes in, out of an eight hour flight overseas, I managed to close my eyes and doze off. 
+        What feels like only seconds later, I open my eyes to see that I'm falling from 33,000 feet in the air at about 230 feet per second.");
+
+INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
+    VALUES (7, 1, 6, 
+        'It was a quiet Sunday afternoon in the hood. Two Latinos, named Chico and  José, sat parked in an El Camino and were blasting music while sipping on some 40\'s. As they were jamming, Chico looked to his left out the window to see a silhouette of a man on a horse. On edge and a little confused, Chico got out the vehicle, hand on his gun and approached the mysterious man on the horse.
+        José was still in his own world jamming to the music. Chico was able to get close enough to see that the silhouette was a man on a horse. The man had shining medieval armor, and long flowing brown hair, even though the air flow was as still as a pole. Chico asked, "who or what are you bro?". To Chico\'s complete shock, the armored man said');
+
+INSERT INTO story (seed_id, genre_id, number_comments, story_body) 
+    VALUES (8, 1, 2, 
+        'A giant blueberry muffin was destroying the city. "I am the mighty Steve! Tremble before my power!", screamed the five-story muffin as he shot golfball-sized blueberries at mach1 speeds. The professor looked up at his creation in dismay. "What have I done?!", he cried. He had to think on his feet.');

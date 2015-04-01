@@ -58,7 +58,7 @@ class StoryController extends Controller {
 		//comments to build the story
 		$comments = Comment::all(['story_id' => $story_id, 'in_story' => 1]);
 
-		//ongoing comments for the day
+		//ongoing comments for each day
 		$ongoing_comments = Comment::fetchOngoing($story->story_id);
 
 		//check vote for story

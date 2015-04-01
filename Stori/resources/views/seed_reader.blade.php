@@ -1,10 +1,11 @@
-@extends('layout');
+@extends('layout')
 
 @section('title')
 {{$seed->title}}
 @endsection
 
 @section('story_header')
+	<div class="story_title">{{ $genre }}</div>
 	<div class="story_score seed_score" seed-id="{{$seed->seed_id}}"><i class="fa fa-sort-asc {{$upSelected}}" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i><span>{{ $seed->score }}</span><i class="fa fa-sort-desc {{$downSelected}}" user-id="<?php if(Auth::guest()) {echo "";}else{echo Auth::user()->user_id;}?>"></i></div>
 	<div class="seed_story">
 		<p>
@@ -31,10 +32,12 @@
 </p>
 @endsection
 
+
+
 @section('story_stats')
 		<h2>- Info For This Seed -</h2>
-		<div><strong>Genre: </strong>{{$genre}}</div>
-		<div><strong>Submitted Date:</strong> {{substr($seed->created_at,0,10)}}</div>
-		<div><strong>Word Count:</strong> {{ str_word_count($seed->seed_body) }}</div>
 		<div><strong>Started By:</strong> <a href="/profile/{{$seed->user_id}}">{{$user->username}}</a></div>
+		<div><strong>Submitted Date:</strong> {{substr($seed->created_at,0,10)}}</div>
+		<div><strong>Genre: </strong>{{$genre}}</div>
+		<div><strong>Word Count:</strong> {{ str_word_count($seed->seed_body) }}</div>
 @endsection

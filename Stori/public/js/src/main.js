@@ -150,7 +150,8 @@ $(document).ready(function() {
 		if (thisthis.attr('user-id') == ''){
 			alert('Please Login To Vote');
 		} else {
-			//what did i click on?
+			//what was clicked on?
+
 			// ===== story
 			if (thisthis.parent().attr('class') == 'story_score') {
 				var sendData = {
@@ -165,7 +166,6 @@ $(document).ready(function() {
 						$('.story_score .fa-sort-desc').removeClass('selected');
 					}
 				});
-				console.log('i upvoted a story');
 
 			// ===== comment
 			} else if (thisthis.parent().attr('class') == 'score') {
@@ -182,7 +182,6 @@ $(document).ready(function() {
 						thisthis.parents('.score').find('.fa-sort-desc').removeClass('selected');
 					}
 				});
-				console.log('i upvoted a comment');
 
 			// ===== seed
 			} else if (thisthis.parent().attr('class') == 'story_score seed_score') {
@@ -199,7 +198,6 @@ $(document).ready(function() {
 						thisthis.parents('.seed_score').find('.fa-sort-desc').removeClass('selected');
 					}
 				});
-				console.log('seed');
 			}
 		}
 	});
@@ -212,6 +210,7 @@ $(document).ready(function() {
 			alert('Please Login To Vote');
 		} else {
 			//what did i click on?
+
 			// ===== story
 			if (thisthis.parent().attr('class') == 'story_score') {
 				var sendData = {
@@ -226,7 +225,6 @@ $(document).ready(function() {
 						$('.story_score .fa-sort-asc').removeClass('selected');
 					}
 				});
-				console.log('i Downvoted a story');
 
 			// ===== comment
 			} else if (thisthis.parent().attr('class') == 'score') {
@@ -244,11 +242,22 @@ $(document).ready(function() {
 						thisthis.parents('.score').find('.fa-sort-asc').removeClass('selected');
 					}
 				});
-				console.log('i Downvoted a comment');
 
 			// ===== seed
-			} else if (thisthis.attr('class') == 'seed_score') {
-				console.log('seed');
+			} else if (thisthis.parent().attr('class') == 'story_score seed_score') {
+				var sendData = {
+					'user_id': thisthis.attr('user-id'),
+					'seed_id': thisthis.parents('.seed_score').attr('seed-id')
+				}
+				$.get('/seedDownvote', sendData, function (data){
+					console.log(data);
+					thisthis.parents('.seed_score').find('span').text(data.new_score);
+					console.log(thisthis.parents('.seed_score').find('span').text());
+					if (data.vote == 'up' || data.vote === null) {
+						thisthis.parents('.seed_score').find('.fa-sort-desc').addClass('selected');
+						thisthis.parents('.seed_score').find('.fa-sort-asc').removeClass('selected');
+					}
+				});
 			}
 		}
 	});
