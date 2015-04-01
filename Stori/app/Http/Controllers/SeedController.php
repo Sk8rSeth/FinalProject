@@ -99,11 +99,23 @@ class SeedController extends Controller {
 			}
 		}
 
+		$votes = SeedVote::voteHistory($seed_id);
+		$voteHistory = [];
+		foreach ($votes as $idx => $vote) {
+			$voting_user = new User($vote->user_id);
+			$voteHistory[] = ['username'=>$voting_user->username,
+							'user_id'=>$voting_user->user_id,
+							'user_score'=>$voting_user->score,
+							'vote'=>$vote->vote	
+							];
+		}
+
 		return view('seed_reader',['seed'=>$seed, 
 								'upSelected'=>$upSelected, 
 								'downSelected'=>$downSelected,
 								'genre'=>$genre,
-								'user'=>$user]);
+								'user'=>$user,
+								'voteHistory'=>$voteHistory]);
 	}
 
 	//====================================================

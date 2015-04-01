@@ -67,4 +67,18 @@ class SeedVote extends Model {
 		DB::update($sql, $vals);
 		return $vote;
 	}
+
+	//====================================================
+	// 
+	//====================================================
+	public static function voteHistory($seed_id) {
+		$sql = "SELECT * FROM seed_vote 
+				WHERE seed_id = :seed_id";
+		$vals = [
+				'seed_id' => $seed_id
+				];
+		$votes = DB::select($sql,$vals);
+
+		return $votes;
+	}
 }

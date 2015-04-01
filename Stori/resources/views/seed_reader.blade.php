@@ -32,7 +32,32 @@
 </p>
 @endsection
 
+@section('comments')
+<?php
+	
+	if (count($voteHistory) < 1) {
+		echo '<div class="noComments">No One Has Voted On This Seed Yet</div>';
+	} else {
+		foreach ($voteHistory as $vote) {
+			if ($vote['vote'] == 'up') {
+				$arrow = '<i class="fa fa-sort-asc"></i>';
+				$text = 'Upvoted This Seed!';
+			} else {
+				$arrow = '<i class="fa fa-sort-desc"></i>';
+				$text = 'Downvoted This Seed!';
+			}
+		
+		$comment = '<div class="comment reader">
+			<div class="score seedvote">' . $arrow . '</div>
+			<a href="/profile/'. $vote['user_id'] . '"><div class="username">' . $vote['username'] . '-</a> <strong>' . $vote['user_score'] . '</strong></div>
+			<div class="comment_description">' . $text . '</div>
+		</div>';
 
+		echo $comment;
+	} 
+}
+?>
+@endsection
 
 @section('story_stats')
 		<h2>- Info For This Seed -</h2>
