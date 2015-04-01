@@ -83,8 +83,7 @@ class StoryController extends Controller {
 								'downSelected' => $downSelected,
 								'upComm' => $upComm,
 								'downComm' => $downComm
-								]
-							);
+								]);
 	}
 
 	//====================================================

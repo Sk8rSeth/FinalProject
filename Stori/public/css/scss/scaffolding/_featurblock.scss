@@ -97,9 +97,6 @@
 		font-size: 28pt;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		// box-shadow: 2px 2px 5px 1px rgba(0,0,0,.4);
-		// border-bottom-right-radius: 5px;
-		// border-bottom-left-radius: 5px;
 	}
 
 	.story_score span {
@@ -109,7 +106,7 @@
 	.stats {
 		text-align: center;
 		background-color: $darkBlue;
-		// background-color: $gray;
+		color: $lightReader;
 		float: right;
 		width: 395px;
 		margin: 10px 0;
@@ -127,7 +124,7 @@
 		}
 
 		a {
-			border-bottom: 1px solid #333;
+			border-bottom: 1px solid $lightReader;
 		}
 		
 	}
@@ -143,9 +140,8 @@
 
 	.feature_story {
 		background-color: $darkBlue;
-		// background-color: #8C8C8C;
-		// color: #ddd;
 		font-size: 1.3em;
+		color: $lightReader;
 		height: 300px;
 		padding: 10px 20px;
 		display: inline-block;
