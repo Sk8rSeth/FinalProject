@@ -862,11 +862,11 @@ aside {
     background-color: #0080AA;
     font-size: 1.5em;
     line-height: 120%;
-    height: 0px;
+    min-height: 0px;
+    max-height: 1rem;
     width: 940px;
     padding: 10px;
     display: inline-block;
-    overflow-y: auto;
     text-align: center;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;

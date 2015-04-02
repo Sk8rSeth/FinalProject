@@ -14,6 +14,7 @@ CREATE TABLE user (
     remember_token varchar(255),
     password_resets varchar(255)
 );
+
 CREATE TABLE story (
     story_id INT AUTO_INCREMENT PRIMARY KEY,
     seed_id INT NOT NULL,
