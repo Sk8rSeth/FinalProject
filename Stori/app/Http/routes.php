@@ -67,7 +67,6 @@ Route::get('/signup', function(){
 	return view('signup');
 });
 
-
 Route::get('/login', function(){
 	return view('auth.login');
 });
@@ -85,11 +84,9 @@ Route::controllers([
 Route::get('/aboutUs', function(){
 	return view('aboutUs');
 });
+
 Route::get('/faq', function(){
 	return view('faq');
-});
-Route::post('/test', function(){
-	return redirect('/');
 });
 
 Route::get('/eod', 'EODController@EOD');
