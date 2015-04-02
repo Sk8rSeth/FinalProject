@@ -864,6 +864,7 @@ aside {
 @media screen and (min-device-width: 500px) {
   .seed_story {
     background-color: #007399;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1.5em;
     line-height: 120%;
     height: 0px;

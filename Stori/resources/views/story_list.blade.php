@@ -8,10 +8,10 @@ All The Stories!!
 	<div class="label">Genres</div>
 	<ul>
 		<a href="/currentgenre/1"><li>Scifi</li></a>
-		<a href="/currentgenre/2"><li>Horror</li></a>
+		<a href="/currentgenre/2"><li>Mystery</li></a>
 		<a href="/currentgenre/3"><li>Fantasy</li></a>
-		<a href="/currentgenre/4"><li>Drama</li></a>
-		<a href="/currentgenre/5"><li>Mystery</li></a>
+		<a href="/currentgenre/4"><li>Horror</li></a>
+		<a href="/currentgenre/5"><li>Drama</li></a>
 	</ul>
 	<div class="label">Top 5 Ongoing</div>
 	<ol>

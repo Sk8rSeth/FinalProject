@@ -39,7 +39,7 @@ SEEDS!!!! [by title]
 	<ul class="horror seed_genres">
 		@if (count($horror) > 0)
 			@foreach ($horror as $h)
-				<a href="/seeds/{{$h['seed_id']}}"><li>{{$h['score'] .' -- '.  $h['title'] }}</li>
+				<a href="/seeds/{{$h['seed_id']}}"><li>{{$h['score'] .' -- '.  $h['title'] }}</li></a>
 			@endforeach
 		@else
 			There Are No Seeds For This Genre Yet.
@@ -49,7 +49,7 @@ SEEDS!!!! [by title]
 	<ul class="drama seed_genres">
 		@if (count($drama) > 0)
 			@foreach ($drama as $d)
-				<a href="/seeds/{{$d['seed_id']}}"><li>{{$d['score'] .' -- ' .$d['title'] }}</li>
+				<a href="/seeds/{{$d['seed_id']}}"><li>{{$d['score'] .' -- ' .$d['title'] }}</li></a>
 			@endforeach
 		@else
 			There Are No Seeds For This Genre Yet.
