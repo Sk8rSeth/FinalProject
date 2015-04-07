@@ -478,7 +478,7 @@ aside {
     width: 100px;
     font-size: 24pt; }
     .logo span {
-      color: #0080AA;
+      color: #007399;
       font-family: 'Dancing Script', cursive;
       line-height: 0px;
       font-size: 1.3em; } }
@@ -519,7 +519,7 @@ aside {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
     .logo span {
-      color: #0080AA;
+      color: #007399;
       font-family: 'Dancing Script', cursive;
       font-size: 1.3em;
       line-height: 0px; }
@@ -681,7 +681,8 @@ aside {
     margin: auto 5px; }
   .stats {
     text-align: center;
-    background-color: #0080AA;
+    background-color: #007399;
+    color: rgba(255, 255, 255, 0.6);
     float: right;
     width: 395px;
     margin: 10px 0;
@@ -694,14 +695,15 @@ aside {
     .stats div {
       font-size: 1.3em; }
     .stats a {
-      border-bottom: 1px solid #333; }
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
   .stats div {
     padding: 5px; }
   .stats strong {
     text-decoration: underline; }
   .feature_story {
-    background-color: #0080AA;
+    background-color: #007399;
     font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.6);
     height: 300px;
     padding: 10px 20px;
     display: inline-block;
@@ -717,7 +719,7 @@ aside {
 
 @media screen and (max-device-width: 500px) {
   .feature_comments {
-    background-color: #0080AA;
+    background-color: #007399;
     margin: 5px auto;
     padding: 5px 0;
     font-size: .8em;
@@ -757,7 +759,7 @@ aside {
   .feature_comments {
     float: left;
     margin: 10px 0;
-    background-color: #0080AA;
+    background-color: #007399;
     height: 400px;
     overflow: scroll;
     padding-left: 5px;
@@ -796,6 +798,8 @@ aside {
     height: 60px;
     text-align: center;
     border-top-left-radius: 10px; }
+    .score .fa {
+      font-size: 1.2em; }
   .score.seedvote {
     font-size: 4em;
     line-height: 0px;
@@ -859,7 +863,8 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .seed_story {
-    background-color: #0080AA;
+    background-color: #007399;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1.5em;
     line-height: 120%;
     min-height: 0px;
@@ -920,7 +925,7 @@ aside {
   .block_container {
     width: 400px;
     margin: 0 auto;
-    background-color: #0080AA;
+    background-color: #007399;
     padding: 5px;
     padding-bottom: 15px;
     position: relative;
@@ -934,6 +939,9 @@ aside {
     .block_container .cp, .block_container .user_stats {
       text-align: center;
       font-size: 1.4em; }
+    .block_container li {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.2em; }
   .block_container.browse {
     width: 660px;
     margin: 0 auto; }
@@ -998,7 +1006,8 @@ aside {
 
 @media screen and (min-device-width: 500px) {
   .story {
-    background-color: #0080AA;
+    background-color: #007399;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1.5em;
     line-height: 120%;
     height: 490px;

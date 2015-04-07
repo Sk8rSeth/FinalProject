@@ -8,8 +8,6 @@ class Story extends Model {
 	protected static $table = 'story';
 	protected static $key = 'story_id';
 
-
-
 	public static function getRanked() {
 		// determine highest rated story
 		$sql = "SELECT story_id, score 
@@ -19,9 +17,9 @@ class Story extends Model {
 		$high_story = DB::select($sql);
 		$hs = $high_story[0];
 		$story = new Story($hs->story_id);
-		
 		return $story;
 	}
+
     public static function getTop5All() {
         // SQL
         $sql = "
@@ -58,7 +56,6 @@ class Story extends Model {
         }
         return $collection;
     }
-
 
     public static function getTop5Genre($genre_id) {
         // SQL

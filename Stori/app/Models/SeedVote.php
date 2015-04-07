@@ -69,7 +69,7 @@ class SeedVote extends Model {
 	}
 
 	//====================================================
-	// 
+	// gets all Votes for a specific seed
 	//====================================================
 	public static function voteHistory($seed_id) {
 		$sql = "SELECT * FROM seed_vote 

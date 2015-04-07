@@ -1,9 +1,6 @@
 <?php
-
 Route::get('/', 'StoryController@getRanked');
 Route::get('home', 'StoryController@getRanked');
-
-
 //==========
 // General Page Loads
 //==========
@@ -41,7 +38,6 @@ Route::get('/profile/{user_id}', 'UserController@getProfile');
 Route::get('/randomOngoing', 'StoryController@randomOngoing');
 Route::get('/randomArchive', 'StoryController@randomArchived');
 
-
 //=========
 // Voting
 //=========
@@ -62,34 +58,23 @@ Route::get('/seedDownvote', 'SeedController@downvote');
 Route::get('/userUpvote', 'UserController@upvote');
 Route::get('/userDownvote', 'UserController@downvote');
 
-
 Route::get('/signup', function(){
 	return view('signup');
 });
-
-
 Route::get('/login', function(){
 	return view('auth.login');
 });
-
 Route::get('/reset', function() {
 	return view('auth.password');
 });
-
 // Auth
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
 Route::get('/aboutUs', function(){
 	return view('aboutUs');
 });
 Route::get('/faq', function(){
 	return view('faq');
 });
-Route::post('/test', function(){
-	return redirect('/');
-});
-
-Route::get('/eod', 'EODController@EOD');

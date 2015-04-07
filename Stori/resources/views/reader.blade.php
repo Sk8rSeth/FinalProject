@@ -82,8 +82,8 @@ if (count($ongoing_comments) < 1) {
 			}
 		} 
 		$comment = '<div class="comment reader" comment-id="' . $comm->comment_id . '">
-			<div class="score"><div class="fa fa-sort-asc ' .$upComm .'" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc '.$downComm.'" user-id="' . $cust_id . '"></div></div>
-			<a href="/profile/'.$comm->user_id.'"><div class="username">' . $comm->username . '-</a> <strong>' . $comm->user_score . $delete . $edit . '</strong></div>
+			<div class="score"><div class="fa fa-sort-asc ' . $upComm .'" user-id="' . $cust_id . '"></div><div class="comment_score">' . $comm->score . '</div><div class="fa fa-sort-desc '.$downComm.'" user-id="' . $cust_id . '"></div></div>
+			<a href="/profile/' . $comm->user_id . '"><div class="username">' . $comm->username . '-</a> <strong>' . $comm->user_score . $delete . $edit . '</strong></div>
 			<div class="comment_description">' . $comm->comment_body . '</div>
 		</div>';
 

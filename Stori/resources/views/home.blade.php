@@ -42,7 +42,7 @@ The Current Highest Ranked Story!
 	<?php
 	use App\Models\CommentVote;
 	if (count($ongoing_comments) < 1) {
-		echo '<div class="noComments">There Are No Comments For This Story Yet Today</div>';
+		echo '<div class="noComments">There Are No Comments For This Story Yet Today.</div>';
 	} else {
 		foreach ($ongoing_comments as $comm) {
 			if(Auth::guest()) {
@@ -65,10 +65,10 @@ The Current Highest Ranked Story!
 				if (is_null($CommentVote)) {
 					$upComm = '';
 					$downComm = '';
-				} elseif ($CommentVote == 'up') {
+				} else if ($CommentVote == 'up') {
 					$downComm = '';
 					$upComm = 'selected';
-				} elseif ($CommentVote == 'down') {
+				} else if ($CommentVote == 'down') {
 					$upComm = '';
 					$downComm = 'selected';
 				}
