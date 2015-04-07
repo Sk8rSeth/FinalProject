@@ -39,20 +39,15 @@ class CommentController extends Controller {
 	//====================================================
 	public function addNew() {
 		$user_id = Request::input('user_id');
-
-
 		$user = new User($user_id);
 		$username = $user->username;
 		$user_score = $user->score;
-
 		$comment = new Comment();
 		$comment->comment_body = Request::input('comment_body');
 		$comment->story_id = Request::input('story_id');
 		$comment->user_id = $user_id;
 		$comment_id = $comment->save();
-
 		$comment = new Comment($comment_id);
-
 		return['comment' => $comment->getData(), 'username' => $username, 'user_score' => $user_score];
 	}
 
@@ -74,21 +69,16 @@ class CommentController extends Controller {
 				return (['new_score' => $new_score, 'vote' => $vote]);
 			}
 		}
-
 		$new_score = $comment->score + 1;
-
-
 		$vals = [
 			'new_score' => $new_score,
 			'comment_id' => $comment_id
 		];
-
 		$sql = "UPDATE comment 
 				SET score = :new_score 
 				WHERE comment_id = :comment_id";
 
 		DB::update($sql, $vals);
- 		
 		return (['new_score' => $new_score, 'vote' => $vote]);
 	}
 

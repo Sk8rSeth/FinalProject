@@ -13,8 +13,7 @@ use Request;
 use Auth;
 
 class EODController extends Controller {
-
-
+	
 	//====================================================
 	// handles everything for the update and submission and creation
 	// that happens at the end of each day

@@ -119,7 +119,6 @@ $(document).ready(function() {
 		});
 	});
 
-
 	//delete comment AJAX
 	$('.delete').on('click', function() {
 		var thisthis = $(this);
@@ -138,7 +137,6 @@ $(document).ready(function() {
 		});
 	})
 
-
 	//=============================================
 	// upvote, downvote
 	//=============================================
@@ -150,8 +148,8 @@ $(document).ready(function() {
 		if (thisthis.attr('user-id') == ''){
 			alert('Please Login To Vote');
 		} else {
-			//what was clicked on?
 
+			//what was clicked on?
 			// ===== story
 			if (thisthis.parent().attr('class') == 'story_score') {
 				var sendData = {
@@ -235,8 +233,6 @@ $(document).ready(function() {
 				$.get('/commentDownvote', sendData, function (data){
 					console.log(data);
 					thisthis.parents('.score').find('.comment_score').text(data.new_score);
-					// console.log(thisthis.parents('.score').find('.comment_score').text());
-
 					if (data.vote == 'up' || data.vote === null) {
 						thisthis.parents('.score').find('.fa-sort-desc').addClass('selected');
 						thisthis.parents('.score').find('.fa-sort-asc').removeClass('selected');
@@ -275,5 +271,9 @@ $(document).ready(function() {
 			$('.hover_added').remove();
 		}
 	)}
+
+	//=================================================
+	//
+	//=================================================
 
 });
