@@ -6,7 +6,7 @@ The Current Highest Ranked Story!
 
 @section('info_menu')
 <div class="info_label">About</div>
-<p>Stori is about creating collaberative short stories wit the community. Be creative, but be mindful that anyone can be reading..</p>
+<p>SubPlot is about creating collaberative short stories wit the community. Be creative, but be mindful that anyone can be reading..</p>
 <div class="info_label">Rules</div>
 <p>
 	<div>- Keep On Topic</div>

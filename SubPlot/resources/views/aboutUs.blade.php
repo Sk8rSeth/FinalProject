@@ -5,8 +5,8 @@ About Us [Me]
 @endsection
 
 @section('main_content')
-<div class="label">About Stori</div>
-<p>Stori is a student project made for the end of the Rockit Bootcamp. Made By Seth Howell</p>
+<div class="label">About SubPlot</div>
+<p>SubPlot is a student project made for the end of the Rockit Bootcamp. Made By Seth Howell</p>
 <div class="label">About Me</div>
 <p>My Name is Seth Howell, and I built tis website from scratch, using PHP [Laravel Framework] javascript, CSS, and MySQL</p>
 <div class="label">Check Me Out</div>

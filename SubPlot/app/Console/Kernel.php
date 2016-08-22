@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'App\Console\Commands\Inspire',
-		'App\Console\Commands\StoriEOD',
+		'App\Console\Commands\SubPlotEOD',
 	];
 
 	/**
@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel {
 	{
 		$schedule->command('inspire')
 				 ->hourly();
-		// $schedule->command('StoriEOD')->dailyAt('02:30');
+		// $schedule->command('SubPlotEOD')->dailyAt('02:30');
 	}
 
 }

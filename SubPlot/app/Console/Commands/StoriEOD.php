@@ -5,7 +5,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use App\Http\Controllers\EODController;
 
-class StoriEOD extends Command {
+class SubPlotEOD extends Command {
 
 	/**
 	 * The console command name.
@@ -19,7 +19,7 @@ class StoriEOD extends Command {
 	 *
 	 * @var string
 	 */
-	protected $description = 'Gather all comments, and commit them to their Stories on Stori.com';
+	protected $description = 'Gather all comments, and commit them to their Stories on SubPlot.com';
 
 	/**
 	 * Create a new command instance.
