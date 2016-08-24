@@ -6,7 +6,7 @@
 # http://code.google.com/p/sequel-pro/
 #
 # Host: 127.0.0.1 (MySQL 5.6.23)
-# Database: Stori
+# Database: SubPlot
 # Generation Time: 2015-04-07 20:15:57 +0000
 # ************************************************************
 
@@ -22,9 +22,9 @@
 
 # Dump of table comment
 # ------------------------------------------------------------
-DROP DATABASE IF EXISTS Stori;
-CREATE DATABASE Stori;
-USE Stori;
+DROP DATABASE IF EXISTS SubPlot;
+CREATE DATABASE SubPlot;
+USE SubPlot;
 CREATE TABLE `comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
